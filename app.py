@@ -554,15 +554,21 @@ def create_armor_picker_interface():
     
     # Create interface components
     with gr.Blocks(title="QM Armor Picker", theme=gr.themes.Soft()) as interface:
-        # Language selector
-        language_selector = gr.Dropdown(
-            choices=list(picker.languages.keys()),
-            value="English",
-            label="Language / Язык / Sprache / Langue / Idioma / Język / Dil / Idioma / 언어 / 言語 / 语言"
-        )
+        # Title and language selector on same row
+        with gr.Row():
+            with gr.Column(scale=4):
+                title_md = gr.Markdown("# QM Armor Picker")
+            with gr.Column(scale=1, min_width=150):
+                language_selector = gr.Dropdown(
+                    choices=list(picker.languages.keys()),
+                    value="English",
+                    label="Language",
+                    scale=0,
+                    container=True,
+                    elem_classes=["compact-dropdown"]
+                )
         
         # Dynamic content that updates with language
-        title_md = gr.Markdown("# QM Armor Picker")
         subtitle_md = gr.Markdown("Select resistance requirements and search for armors. Results show up to 4 items from each armor class.")
         legend_md = gr.Markdown("**Color Legend**: Resistance values are colored from 🔴 Red (low) to 🟢 Green (high)")
         
@@ -571,17 +577,19 @@ def create_armor_picker_interface():
                 filters_md = gr.Markdown("## Resistance Filters")
                 
                 # Create toggle and value inputs for each resistance type
-                inputs = [language_selector]  # Include language selector in inputs
                 resistance_inputs = []
                 
                 for resist_type in picker.resistance_types:
                     with gr.Row():
                         toggle = gr.Checkbox(
-                            label=f"Enable {resist_type.title()}",
-                            value=False
+                            #label=f"Enable {resist_type.title()}",
+                            label=f"{resist_type.title()}",
+                            value=True,
                         )
                         value = gr.Number(
-                            label=f"Min {resist_type.title()} Value",
+                            #label=f"Min {resist_type.title()} Value",
+                            show_label=False,
+                            label=None,
                             value=0,
                             minimum=0,
                             maximum=100,
@@ -589,7 +597,6 @@ def create_armor_picker_interface():
                         )
                         resistance_inputs.extend([toggle, value])
                 
-                inputs.extend(resistance_inputs)
                 search_btn = gr.Button("Search Armors", variant="primary")
             
             with gr.Column(scale=3):
@@ -599,36 +606,31 @@ def create_armor_picker_interface():
                     value="<p>Click 'Search Armors' to see results...</p>"
                 )
         
-        # Language change handler
+        # Language change handler - only update text elements, not input components
         def update_ui_language(language):
             picker.load_armor_data(language)
             
-            # Update all UI elements with new translations
+            # Only update text elements (Markdown, Button, HTML)
             updates = []
-            updates.append(gr.Markdown.update(value=f"# {picker.get_translation('title')}"))  # title
-            updates.append(gr.Markdown.update(value=picker.get_translation('subtitle')))  # subtitle
-            updates.append(gr.Markdown.update(value=picker.get_translation('color_legend')))  # legend
-            updates.append(gr.Markdown.update(value=f"## {picker.get_translation('resistance_filters')}"))  # filters
-            updates.append(gr.Markdown.update(value=f"## {picker.get_translation('results')}"))  # results
-            updates.append(gr.Button.update(value=picker.get_translation('search_button')))  # search button
-            updates.append(gr.HTML.update(value=f"<p>{picker.get_translation('click_search')}</p>"))  # results
+            updates.append(f"# {picker.get_translation('title')}")  # title
+            updates.append(picker.get_translation('subtitle'))  # subtitle
+            updates.append(picker.get_translation('color_legend'))  # legend
+            updates.append(f"## {picker.get_translation('resistance_filters')}")  # filters
+            updates.append(f"## {picker.get_translation('results')}")  # results
+            updates.append(picker.get_translation('search_button'))  # search button
+            updates.append(f"<p>{picker.get_translation('click_search')}</p>")  # results
             
-            # Update resistance filter labels
-            resistance_updates = []
-            for i, resist_type in enumerate(picker.resistance_types):
-                resistance_updates.append(gr.Checkbox.update(label=f"{picker.get_translation('enable')} {picker.get_translation(resist_type).title()}"))
-                resistance_updates.append(gr.Number.update(label=picker.get_translation('min_value').format(picker.get_translation(resist_type).title())))
-            
-            updates.extend(resistance_updates)
             return updates
         
-        # Set up event handlers
+        # Set up event handlers - only update text components
         language_selector.change(
             fn=update_ui_language,
             inputs=[language_selector],
-            outputs=[title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, results] + resistance_inputs
+            outputs=[title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, results]
         )
         
+        # Update inputs list to include language selector
+        inputs = [language_selector] + resistance_inputs
         search_btn.click(
             fn=search_armors,
             inputs=inputs,
@@ -636,6 +638,8 @@ def create_armor_picker_interface():
         )
     
     return interface
+
+
 
 # Launch the application
 if __name__ == "__main__":
