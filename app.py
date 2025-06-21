@@ -651,7 +651,7 @@ def create_armor_picker_interface():
         filtered_armors = picker.filter_armors(resistance_filters)
         
         # Get top 4 from each armor class
-        top_armors = picker.get_top_armors_per_class(filtered_armors, max_per_class=4)
+        top_armors = picker.get_top_armors_per_class(filtered_armors, max_per_class=99)
         
         # Create styled HTML table
         html_table = picker.create_styled_table_html(top_armors)
