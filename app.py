@@ -9,6 +9,14 @@ class ArmorPicker:
         self.current_language = "English"
         self.armor_data = {}
 
+        # Color gradient configuration
+        self.color_stops = [
+            (0.0, "#F8696B"),   # Red at 0%
+            (0.3, "#FED280"),   # Orange at 30%
+            (0.6, "#C0D980"),   # Yellow at 60%
+            (1.0, "#63BE7B")    # Green at 100%
+        ]
+
         # Language configuration
         self.languages = {
             "English": {"code": "english", "file": "armor_data_english.json"},
@@ -434,23 +442,57 @@ class ArmorPicker:
         
         return ranges
     
-    def value_to_color(self, value: int, min_val: int, max_val: int) -> str:
-        """Convert resistance value to color gradient (red to green)"""
+    def value_to_color(self, value: int, min_val: int, max_val: int, color_stops: list = None) -> str:
+        """Convert resistance value to color gradient with multiple color stops"""
         if max_val == min_val:
-            return "#FFFF99"  # Yellow for single value
+            return "#000000"  # Black for single value
+        
+        # Default color stops: Red → Yellow → Green
+        if self.color_stops is None:
+            self.color_stops = [
+                (0.0, "#FF0000"),   # Red at 0%
+                (0.5, "#FFFF00"),   # Yellow at 50%
+                (1.0, "#00FF00")    # Green at 100%
+            ]
+        
+        def hex_to_rgb(hex_color: str) -> tuple:
+            hex_color = hex_color.lstrip('#')
+            return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+        
+        def rgb_to_hex(r: int, g: int, b: int) -> str:
+            return f"#{r:02x}{g:02x}{b:02x}"
         
         # Normalize value between 0 and 1
         normalized = (value - min_val) / (max_val - min_val)
         
-        # Create gradient from red (0) to green (1)
-        red = int(255 * (1 - normalized))
-        green = int(255 * normalized)
-        blue = 0
+        # Find the two color stops to interpolate between
+        for i in range(len(self.color_stops) - 1):
+            pos1, color1 = self.color_stops[i]
+            pos2, color2 = self.color_stops[i + 1]
+            
+            if pos1 <= normalized <= pos2:
+                # Interpolate between these two colors
+                local_normalized = (normalized - pos1) / (pos2 - pos1)
+                
+                rgb1 = hex_to_rgb(color1)
+                rgb2 = hex_to_rgb(color2)
+                
+                red = int(rgb1[0] + (rgb2[0] - rgb1[0]) * local_normalized)
+                green = int(rgb1[1] + (rgb2[1] - rgb1[1]) * local_normalized)
+                blue = int(rgb1[2] + (rgb2[2] - rgb1[2]) * local_normalized)
+                
+                return rgb_to_hex(red, green, blue)
         
-        return f"#{red:02x}{green:02x}{blue:02x}"
+        # Fallback to last color if normalized > 1
+        return color_stops[-1][1]
     
     def create_styled_table_html(self, armors: List[Dict]) -> str:
-        """Create HTML table with color gradients"""
+        """Create HTML table with color gradients
+        
+        Args:
+            armors: List of armor dictionaries
+            text_align: Text alignment option - "left", "center", or "right"
+        """
         if not armors:
             return f"<p>{self.get_translation('no_armors')}</p>"
         
@@ -458,31 +500,46 @@ class ArmorPicker:
         resist_ranges = self.get_resistance_range(armors)
         
         # Start HTML table
-        html = """
+        html = f"""
         <style>
-        .armor-table {
-            border-collapse: collapse;
-            width: 100%;
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-        }
-        .armor-table th, .armor-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        .armor-table th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        .armor-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .resist-cell {
-            font-weight: bold;
-            color: white;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-        }
+        .armor-table {{
+            border-collapse: collapse !important;
+            width: 100% !important;
+            font-family: 'Roboto', Arial, sans-serif !important;
+            font-size: 16px !important;
+        }}
+        .armor-table th, .armor-table td {{
+            border: 1px solid #000 !important; /* Force black border */
+            padding: 8px !important;
+            text-align: left !important; /* Dynamic text alignment */
+            background-color: #333 !important; /* Dark grey background */
+            color: #fff !important; /* White text for readability */
+        }}
+        .armor-table th {{
+            background-color: #555 !important; /* Slightly darker grey for header */
+            font-weight: bold !important;
+        }}
+        .armor-table tr:nth-child(even) td {{
+            background-color: #444 !important; /* Alternate row color */
+        }}
+        .armor-table .resist-cell {{
+            font-weight: bold !important;
+            color: #000 !important; /* Force black text for resistance cells */
+            text-shadow: none !important; /* Remove text shadow for better readability */
+            text-align: center !important; /* Keep resistance cells centered for better readability */
+        }}
+        /* Override Gradio's default table styling */
+        .gradio-container .prose table.armor-table,
+        .gradio-container .prose table.armor-table tr,
+        .gradio-container .prose table.armor-table td,
+        .gradio-container .prose table.armor-table th {{
+            border: 1px solid #000 !important;
+            text-align: left !important;
+        }}
+        .gradio-container .prose table.armor-table .resist-cell {{
+            color: #000 !important;
+            text-align: center !important; /* Keep resistance cells centered */
+        }}
         </style>
         <table class="armor-table">
         <thead>
@@ -520,7 +577,7 @@ class ArmorPicker:
                 value = resist_dict.get(resist_type, 0)
                 min_val, max_val = resist_ranges[resist_type]
                 color = self.value_to_color(value, min_val, max_val)
-                html += f'<td class="resist-cell" style="background-color: {color}">{value}</td>'
+                html += f'<td class="resist-cell" style="background-color: {color} !important; color: #000 !important;">{value}</td>'
             
             html += "</tr>"
         
