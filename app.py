@@ -358,8 +358,19 @@ class ArmorPicker:
             for resist_type, filter_config in resistance_filters.items():
                 if not filter_config["enabled"]:
                     continue
-                    
+                
                 required_value = filter_config["value"]
+                
+                # Skip if required_value is None or empty
+                if required_value is None:
+                    continue
+                
+                # Convert to int if it's a string, default to 0 if conversion fails
+                try:
+                    required_value = int(required_value)
+                except (ValueError, TypeError):
+                    required_value = 0
+                
                 armor_resist_value = 0
                 
                 # Find the resistance value in armor's ResistSheet
