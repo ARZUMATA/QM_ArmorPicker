@@ -395,7 +395,7 @@ def main():
         # # Save to JSON
         # save_data_to_json(filtered_data, config['output_file'])
         
-        # Also create individual language files
+        # Create individual language files
         if config.get('use_localization') and not config.get('language_filter'):
             print("\nCreating individual language files...")
             for lang_info in localization_data['languages']:
@@ -415,50 +415,6 @@ def main():
         print(f"Error: Could not find file - {str(e)}")
     except Exception as e:
         print(f"Error processing file: {str(e)}")
-
-# def custom_parse_with_localization(input_file, localization_file, required_headers, 
-#                                  selected_headers=None, language_filter=None, 
-#                                  output_file='output.json'):
-#     """
-#     Convenience function for custom parsing with localization support.
-    
-#     Args:
-#         input_file (str): Path to config file
-#         localization_file (str): Path to localization.txt file
-#         required_headers (list): Headers that must be present to include a category
-#         selected_headers (list): Headers to keep in output (None = keep all)
-#         language_filter (str): Specific language to extract (None = all languages)
-#         output_file (str): Output JSON file name
-#     """
-#     try:
-#         # Parse localization data
-#         localization_data = parse_localization_file(localization_file)
-        
-#         # Parse with required headers and localization
-#         matching_categories = parse_config_items(
-#             input_file, 
-#             required_headers, 
-#             localization_data
-#         )
-        
-#         # Apply language filter if specified
-#         if language_filter:
-#             matching_categories = create_language_specific_data(
-#                 matching_categories, 
-#                 language_filter
-#             )
-        
-#         # Filter to selected headers
-#         filtered_data = filter_data_by_headers(matching_categories, selected_headers)
-        
-#         # Save to JSON
-#         save_data_to_json(filtered_data, output_file)
-        
-#         return filtered_data
-        
-#     except Exception as e:
-#         print(f"Error: {str(e)}")
-#         return None
 
 def debug_localization_file(localization_path, max_items=5):
     """
@@ -489,30 +445,3 @@ def debug_localization_file(localization_path, max_items=5):
 
 if __name__ == "__main__":
     main()
-    
-    # # Example usage:
-    # print("\n" + "="*60)
-    # print("EXAMPLE USAGE:")
-    
-    # # Example 1: Get armor data with English translations only
-    # print("\nExample 1: Armor with English translations")
-    # custom_parse_with_localization(
-    #     'config_items.txt',
-    #     'e:/Temp/Quasi/AssetRipper_export_20250604_121357/ExportedProject/Assets/Resources/localization.txt',
-    #     required_headers=['ArmorClass'],
-    #     selected_headers=['Type', 'Id', 'ArmorClass', 'Price', 'Name', 'Description'],
-    #     language_filter='English',
-    #     output_file='armor_english_example.json'
-    # )
-    
-    # # Example 2: Get all items with price, include all languages
-    # print("\nExample 2: All priced items with all languages")
-    # custom_parse_with_localization(
-    #     'config_items.txt',
-    #     'e:/Temp/Quasi/AssetRipper_export_20250604_121357/ExportedProject/Assets/Resources/localization.txt',
-    #     required_headers=['Price'],
-    #     selected_headers=['Type', 'Id', 'Price'],  # Will include all Name_* and Description_* fields
-    #     language_filter=None,
-    #     output_file='priced_items_multilang.json'
-    # )
-
