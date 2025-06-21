@@ -481,6 +481,184 @@ class ArmorPicker:
             # If sorting fails, return original list
             return armors
 
+    def find_armor_combinations(self, resistance_filters: Dict[str, Dict], language: str = None) -> str:
+        """Find armor combinations that meet resistance requirements"""
+        if language and language != self.current_language:
+            self.load_armor_data(language)
+        
+        # Get enabled resistance requirements
+        enabled_requirements = {}
+        for resist_type, filter_config in resistance_filters.items():
+            if filter_config["enabled"] and filter_config["value"] > 0:
+                enabled_requirements[resist_type] = filter_config["value"]
+        
+        if not enabled_requirements:
+            return f"<p>{self.get_translation('no_requirements_set')}</p>"
+        
+        # Get all armors grouped by type
+        armor_by_type = {}
+        for category_name, category_content in self.armor_data.items():
+            if not isinstance(category_content, dict) or "data" not in category_content:
+                continue
+                
+            for armor in category_content.get("data", []):
+                armor_type = armor.get("Type", "Unknown")
+                if armor_type not in armor_by_type:
+                    armor_by_type[armor_type] = []
+                armor_with_category = armor.copy()
+                armor_with_category["Category"] = category_name
+                armor_by_type[armor_type].append(armor_with_category)
+        
+        # Find best armor combinations
+        combinations = []
+        armor_types = list(armor_by_type.keys())
+        
+        # Generate combinations (one armor per type)
+        from itertools import product
+        
+        # Limit combinations to prevent performance issues
+        max_combinations_per_type = 5
+        limited_armor_by_type = {}
+        for armor_type, armors in armor_by_type.items():
+            # Sort by total resistance for enabled requirements
+            def get_total_enabled_resistance(armor):
+                total = 0
+                for resist in armor.get("ResistSheet", []):
+                    resist_type = resist.get("ResistType")
+                    if resist_type in enabled_requirements:
+                        total += resist.get("ResistValue", 0)
+                return total
+            
+            sorted_armors = sorted(armors, key=get_total_enabled_resistance, reverse=True)
+            limited_armor_by_type[armor_type] = sorted_armors[:max_combinations_per_type]
+        
+        # Generate all possible combinations
+        if len(limited_armor_by_type) > 1:
+            armor_lists = list(limited_armor_by_type.values())
+            for combination in product(*armor_lists):
+                combo_score = self.evaluate_combination(combination, enabled_requirements)
+                if combo_score['meets_threshold']:
+                    combinations.append({
+                        'armors': combination,
+                        'score': combo_score
+                    })
+        
+        # Sort combinations by quality and limit to top 10
+        combinations.sort(key=lambda x: (x['score']['avg_coverage'], -x['score']['variance']), reverse=True)
+        combinations = combinations[:10]
+        
+        if not combinations:
+            return f"<p>{self.get_translation('no_combinations_found')}</p>"
+        
+        # Create HTML table for combinations
+        return self.create_combinations_table_html(combinations, enabled_requirements)
+
+    def evaluate_combination(self, armor_combination, requirements: Dict[str, int]) -> Dict:
+        """Evaluate how well an armor combination meets requirements"""
+        total_resistances = {}
+        
+        # Calculate total resistance for each type
+        for armor in armor_combination:
+            for resist in armor.get("ResistSheet", []):
+                resist_type = resist.get("ResistType")
+                resist_value = resist.get("ResistValue", 0)
+                total_resistances[resist_type] = total_resistances.get(resist_type, 0) + resist_value
+        
+        # Calculate coverage for each required resistance
+        coverages = []
+        for resist_type, required_value in requirements.items():
+            actual_value = total_resistances.get(resist_type, 0)
+            coverage = min(actual_value / required_value, 1.0) if required_value > 0 else 1.0
+            coverages.append(coverage)
+        
+        # Calculate metrics
+        avg_coverage = sum(coverages) / len(coverages) if coverages else 0
+        variance = sum((c - avg_coverage) ** 2 for c in coverages) / len(coverages) if coverages else 0
+        meets_threshold = avg_coverage >= 0.9  # At least 90% of requirements met
+        
+        return {
+            'avg_coverage': avg_coverage,
+            'variance': variance,
+            'meets_threshold': meets_threshold,
+            'total_resistances': total_resistances,
+            'coverages': coverages
+        }
+
+    def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int]) -> str:
+        """Create HTML table for armor combinations"""
+        html = f"""
+        <style>
+        .combo-table {{
+            border-collapse: collapse !important;
+            width: 100% !important;
+            font-family: 'Roboto', Arial, sans-serif !important;
+            font-size: 14px !important;
+            margin-bottom: 20px !important;
+        }}
+        .combo-table th, .combo-table td {{
+            border: 1px solid #000 !important;
+            padding: 6px !important;
+            text-align: left !important;
+            background-color: #333 !important;
+            color: #fff !important;
+        }}
+        .combo-table th {{
+            background-color: #555 !important;
+            font-weight: bold !important;
+        }}
+        .combo-table .armor-list {{
+            font-size: 12px !important;
+        }}
+        .combo-table .resistance-summary {{
+            font-weight: bold !important;
+            text-align: center !important;
+        }}
+        .coverage-good {{ color: #4CAF50 !important; }}
+        .coverage-ok {{ color: #FF9800 !important; }}
+        .coverage-poor {{ color: #F44336 !important; }}
+        </style>
+        """
+        
+        html += f"<h3>{self.get_translation('armor_combinations')}</h3>"
+        html += f"<p>{self.get_translation('combinations_explanation')}</p>"
+        
+        html += '<table class="combo-table"><thead><tr>'
+        html += f'<th>{self.get_translation("combination")}</th>'
+        html += f'<th>{self.get_translation("coverage")}</th>'
+        
+        # Add columns for each required resistance
+        for resist_type in requirements.keys():
+            html += f'<th>{self.get_translation(resist_type)}</th>'
+        
+        html += '</tr></thead><tbody>'
+        
+        for i, combo in enumerate(combinations, 1):
+            html += '<tr>'
+            
+            # Armor list
+            armor_names = []
+            for armor in combo['armors']:
+                armor_names.append(f"{armor.get('Name', 'Unknown')} ({armor.get('Type', 'Unknown')})")
+            html += f'<td class="armor-list">{", ".join(armor_names)}</td>'
+            
+            # Coverage percentage
+            coverage_pct = combo['score']['avg_coverage'] * 100
+            coverage_class = 'coverage-good' if coverage_pct >= 90 else 'coverage-ok' if coverage_pct >= 70 else 'coverage-poor'
+            html += f'<td class="resistance-summary {coverage_class}">{coverage_pct:.1f}%</td>'
+            
+            # Individual resistance values
+            for resist_type in requirements.keys():
+                actual = combo['score']['total_resistances'].get(resist_type, 0)
+                required = requirements[resist_type]
+                coverage = min(actual / required, 1.0) if required > 0 else 1.0
+                coverage_class = 'coverage-good' if coverage >= 0.9 else 'coverage-ok' if coverage >= 0.7 else 'coverage-poor'
+                html += f'<td class="resistance-summary {coverage_class}">{actual}/{required}</td>'
+            
+            html += '</tr>'
+        
+        html += '</tbody></table>'
+        return html
+        
     def get_top_armors_per_type(self, filtered_armors: List[Dict], max_per_type: int = 4) -> List[Dict]:
         """Get top armors from each armor type"""
         armor_types = {}
@@ -754,7 +932,10 @@ def create_armor_picker_interface():
         # Create styled HTML table with sort indicators - pass language explicitly
         html_table = picker.create_styled_table_html(sorted_armors, current_sort_by, current_sort_order, language)
         
-        return html_table, current_sort_by, current_sort_order
+        # Find armor combinations
+        combinations_html = picker.find_armor_combinations(resistance_filters, language)
+        
+        return html_table, combinations_html, current_sort_by, current_sort_order
     
     def handle_sort_with_js_params(json_data, current_language, current_version, *current_resistance_args):
         """Handle sort with parameters returned from JavaScript as JSON"""
@@ -876,10 +1057,19 @@ def create_armor_picker_interface():
             
             with gr.Column(scale=3):
                 results_md = gr.Markdown("## Results")
-                results = gr.HTML(
-                    label="Matching Armors",
-                    value="<p>Click 'Search Armors' to see results...</p>"
-                )
+                
+                with gr.Tabs():
+                    with gr.TabItem("Individual Armors"):
+                        individual_results = gr.HTML(
+                            label="Matching Armors",
+                            value="<p>Click 'Search Armors' to see results...</p>"
+                        )
+                    
+                    with gr.TabItem("Armor Combinations"):
+                        combination_results = gr.HTML(
+                            label="Armor Combinations",
+                            value="<p>Click 'Search Armors' to see combinations...</p>"
+                        )
                 
                 # Hidden elements for JavaScript communication
                 with gr.Column(visible=False):
@@ -949,7 +1139,7 @@ def create_armor_picker_interface():
         version_selector.change(
             fn=change_version,
             inputs=[version_selector],
-            outputs=[results]
+            outputs=[individual_results]
         )
 
         # Language change handler - update text elements and checkbox labels
@@ -974,7 +1164,7 @@ def create_armor_picker_interface():
             return updates
         
         # Set up event handlers - update text components and checkbox labels
-        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, results, version_selector] + resistance_checkboxes
+        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, version_selector] + resistance_checkboxes
         
         language_selector.change(
             fn=update_ui_language,
@@ -984,14 +1174,14 @@ def create_armor_picker_interface():
         
         # Search button click handler
         def initial_search(language, version, *args):
-            result_html, new_sort_by, new_sort_order = search_armors(language, version, "name", "asc", *args)
-            return result_html, new_sort_by, new_sort_order
+            result_html, combo_html, new_sort_by, new_sort_order = search_armors(language, version, "name", "asc", *args)
+            return result_html, combo_html, new_sort_by, new_sort_order
         
         search_inputs = [language_selector, version_selector] + resistance_inputs
         search_btn.click(
             fn=initial_search,
             inputs=search_inputs,
-            outputs=[results, sort_by_state, sort_order_state]
+            outputs=[individual_results, combination_results, sort_by_state, sort_order_state]
         )
         
         # Sort trigger handler - now uses actual Gradio component values
@@ -1001,7 +1191,7 @@ def create_armor_picker_interface():
         sort_trigger_btn.click(
             fn=handle_sort_with_js_params,
             inputs=sort_inputs,  # Use actual Gradio components
-            outputs=[results, sort_by_state, sort_order_state],
+            outputs=[individual_results, sort_by_state, sort_order_state],
             js="""
             function(dummy_input, language, version, ...resistance_args) {
                 // Only send sort parameters from JavaScript, everything else comes from Gradio
