@@ -7,6 +7,7 @@ class ArmorPicker:
     def __init__(self):
         self.resistance_types = ["blunt", "pierce", "lacer", "fire", "cold", "poison", "shock", "beam"]
         self.current_language = "English"
+        self.current_version = "0.9"  # Default version
         self.armor_data = {}
 
         # Color gradient configuration
@@ -18,7 +19,7 @@ class ArmorPicker:
         ]
 
         # Language configuration
-        self.languages = {
+        self.base_languages = {
             "English": {"code": "english", "file": "armor_data_english.json"},
             "Русский": {"code": "russian", "file": "armor_data_russian.json"},
             "Deutsch": {"code": "german", "file": "armor_data_german.json"},
@@ -322,9 +323,30 @@ class ArmorPicker:
             }
         }
         
+        # Initialize languages for default version
+        self.languages = self.get_version_languages(self.current_version)
+
         # Load default language data
         self.load_armor_data("English")
     
+    def get_version_languages(self, version: str) -> Dict:
+        """Get language configuration for specific version"""
+        version_languages = {}
+        for lang_name, lang_config in self.base_languages.items():
+            version_languages[lang_name] = {
+                "code": lang_config["code"],
+                "file": f"versions/{version}/{lang_config['file']}"
+            }
+        return version_languages
+    
+    def change_version(self, version: str) -> str:
+            """Handle version change and reload language configuration"""
+            self.current_version = version
+            self.languages = self.get_version_languages(version)
+            # Reload current language data with new version
+            self.load_armor_data(self.current_language)
+            return f"<p>{self.get_translation('click_search')}</p>"
+
     def load_armor_data(self, language: str) -> Dict:
         """Load armor data from JSON file for specified language"""
         if language not in self.languages:
@@ -445,7 +467,7 @@ class ArmorPicker:
     def value_to_color(self, value: int, min_val: int, max_val: int, color_stops: list = None) -> str:
         """Convert resistance value to color gradient with multiple color stops"""
         if max_val == min_val:
-            return "#000000"  # Black for single value
+            return "#3D3D3D"  # Black for single value
         
         # Default color stops: Red → Yellow → Green
         if self.color_stops is None:
@@ -588,14 +610,19 @@ class ArmorPicker:
 def create_armor_picker_interface():
     picker = ArmorPicker()
     
-    def change_language(language):
-        """Handle language change"""
-        picker.load_armor_data(language)
-        return f"<p>{picker.get_translation('click_search')}</p>"
+    # def change_language(language):
+    #     """Handle language change"""
+    #     picker.load_armor_data(language)
+    #     return f"<p>{picker.get_translation('click_search')}</p>"
     
-    def search_armors(language, *args):
+    def change_version(version):
+        """Handle version change"""
+        return picker.change_version(version)
+    
+    def search_armors(language, version, *args):
         """Search armors with current language"""
-        # Ensure data is loaded for current language
+        # Ensure version and data are loaded for current language
+        picker.change_version(version)
         picker.load_armor_data(language)
         
         # Parse resistance filter arguments
@@ -675,6 +702,15 @@ def create_armor_picker_interface():
             with gr.Column(scale=1):
                 filters_md = gr.Markdown("## Resistance Filters")
                 
+                # Version selector
+                with gr.Row():
+                    version_selector = gr.Dropdown(
+                        choices=["0.9", "0.9.2"],
+                        value="0.9",
+                        label="Game Version",
+                        scale=1
+                    )
+                
                 # Create toggle and value inputs for each resistance type
                 resistance_inputs = []
                 resistance_checkboxes = []  # Store checkbox references
@@ -705,6 +741,13 @@ def create_armor_picker_interface():
                     value="<p>Click 'Search Armors' to see results...</p>"
                 )
         
+        # Version change handler
+        version_selector.change(
+            fn=change_version,
+            inputs=[version_selector],
+            outputs=[results]
+        )
+
         # Language change handler - update text elements and checkbox labels
         def update_ui_language(language):
             picker.load_armor_data(language)
@@ -735,7 +778,7 @@ def create_armor_picker_interface():
         )
         
         # Update inputs list to include language selector
-        inputs = [language_selector] + resistance_inputs
+        inputs = [language_selector, version_selector] + resistance_inputs
         search_btn.click(
             fn=search_armors,
             inputs=inputs,
