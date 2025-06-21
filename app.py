@@ -382,52 +382,63 @@ class ArmorPicker:
         """Get translation for current language"""
         return self.translations.get(self.current_language, self.translations["English"]).get(key, key)
     
-    def get_armor_classes(self) -> List[str]:
-        """Get unique armor classes from the data"""
-        armor_classes = set()
+    def get_armor_types(self) -> List[str]:
+        """Get unique armor types from the data"""
+        armor_types = set()
         for armor in self.armor_data.get("armors", {}).get("data", []):
-            armor_classes.add(armor.get("ArmorClass", "Unknown"))
-        return sorted(list(armor_classes))
+            armor_types.add(armor.get("Type", "Unknown"))
+        return sorted(list(armor_types))
     
     def filter_armors(self, resistance_filters: Dict[str, Dict]) -> List[Dict]:
         """Filter armors based on resistance requirements"""
         filtered_armors = []
         
-        for armor in self.armor_data.get("armors", {}).get("data", []):
-            meets_requirements = True
+        # Dynamically get all armor categories from the data
+        for category_name, category_content in self.armor_data.items():
+            # Skip if this isn't a category with armor data
+            if not isinstance(category_content, dict) or "data" not in category_content:
+                continue
+                
+            category_data = category_content.get("data", [])
             
-            # Check each resistance requirement
-            for resist_type, filter_config in resistance_filters.items():
-                if not filter_config["enabled"]:
-                    continue
+            for armor in category_data:
+                meets_requirements = True
                 
-                required_value = filter_config["value"]
-                
-                # Skip if required_value is None or empty
-                if required_value is None:
-                    continue
-                
-                # Convert to int if it's a string, default to 0 if conversion fails
-                try:
-                    required_value = int(required_value)
-                except (ValueError, TypeError):
-                    required_value = 0
-                
-                armor_resist_value = 0
-                
-                # Find the resistance value in armor's ResistSheet
-                for resist in armor.get("ResistSheet", []):
-                    if resist.get("ResistType") == resist_type:
-                        armor_resist_value = resist.get("ResistValue", 0)
+                # Check each resistance requirement
+                for resist_type, filter_config in resistance_filters.items():
+                    if not filter_config["enabled"]:
+                        continue
+                    
+                    required_value = filter_config["value"]
+                    
+                    # Skip if required_value is None or empty
+                    if required_value is None:
+                        continue
+                    
+                    # Convert to int if it's a string, default to 0 if conversion fails
+                    try:
+                        required_value = int(required_value)
+                    except (ValueError, TypeError):
+                        required_value = 0
+                    
+                    armor_resist_value = 0
+                    
+                    # Find the resistance value in armor's ResistSheet
+                    for resist in armor.get("ResistSheet", []):
+                        if resist.get("ResistType") == resist_type:
+                            armor_resist_value = resist.get("ResistValue", 0)
+                            break
+                    
+                    # Check if armor meets minimum requirement
+                    if armor_resist_value < required_value:
+                        meets_requirements = False
                         break
                 
-                # Check if armor meets minimum requirement
-                if armor_resist_value < required_value:
-                    meets_requirements = False
-                    break
-            
-            if meets_requirements:
-                filtered_armors.append(armor)
+                if meets_requirements:
+                    # Add category information to the armor data for better identification
+                    armor_with_category = armor.copy()
+                    armor_with_category["Category"] = category_name
+                    filtered_armors.append(armor_with_category)
         
         return filtered_armors
     
@@ -440,8 +451,8 @@ class ArmorPicker:
             """Get the value to sort by for a given column"""
             if column == "name":
                 return armor.get('Name', '').lower()
-            elif column == "class":
-                return armor.get('ArmorClass', '').lower()
+            elif column == "type":
+                return armor.get('Type', '').lower()
             elif column == "durability":
                 try:
                     return int(armor.get('MaxDurability', 0))
@@ -470,27 +481,27 @@ class ArmorPicker:
             # If sorting fails, return original list
             return armors
 
-    def get_top_armors_per_class(self, filtered_armors: List[Dict], max_per_class: int = 4) -> List[Dict]:
-        """Get top armors from each armor class"""
-        armor_classes = {}
+    def get_top_armors_per_type(self, filtered_armors: List[Dict], max_per_type: int = 4) -> List[Dict]:
+        """Get top armors from each armor type"""
+        armor_types = {}
         
-        # Group by armor class
+        # Group by armor type
         for armor in filtered_armors:
-            armor_class = armor.get("ArmorClass", "Unknown")
-            if armor_class not in armor_classes:
-                armor_classes[armor_class] = []
-            armor_classes[armor_class].append(armor)
+            armor_type = armor.get("Type", "Unknown")
+            if armor_type not in armor_types:
+                armor_types[armor_type] = []
+            armor_types[armor_type].append(armor)
         
-        # Get top items from each class (sorted by total resistance)
+        # Get top items from each type (sorted by total resistance)
         result = []
-        for armor_class, armors in armor_classes.items():
+        for armor_type, armors in armor_types.items():
             # Sort by total resistance value (descending)
             sorted_armors = sorted(armors, key=lambda x: sum(
                 resist.get("ResistValue", 0) for resist in x.get("ResistSheet", [])
             ), reverse=True)
             
-            # Take top N items from this class
-            result.extend(sorted_armors[:max_per_class])
+            # Take top N items from this type
+            result.extend(sorted_armors[:max_per_type])
         
         return result
     
@@ -574,7 +585,7 @@ class ArmorPicker:
         # Define sortable columns and their display names
         sortable_columns = {
             "name": self.get_translation('name'),
-            "class": self.get_translation('class'),
+            "type": self.get_translation('type'),
             "durability": self.get_translation('durability'),
             "weight": self.get_translation('weight'),
             "blunt": self.get_translation('blunt'),
@@ -656,7 +667,7 @@ class ArmorPicker:
         
         # Add headers with translations and sorting functionality
         html += create_header("name", sortable_columns["name"])
-        html += create_header("class", sortable_columns["class"])
+        html += create_header("type", sortable_columns["type"])
         html += f"<th>{self.get_translation('description')}</th>"  # Description not sortable
         html += create_header("durability", sortable_columns["durability"])
         html += create_header("weight", sortable_columns["weight"])
@@ -671,7 +682,7 @@ class ArmorPicker:
         for armor in armors:
             html += "<tr>"
             html += f"<td><strong>{armor.get('Name', 'Unknown')}</strong></td>"
-            html += f"<td>{armor.get('ArmorClass', 'Unknown')}</td>"
+            html += f"<td>{armor.get('Type', 'Unknown')}</td>"
             html += f"<td>{armor.get('Description', 'N/A')}</td>"
             html += f"<td>{armor.get('MaxDurability', 'N/A')}</td>"
             html += f"<td>{armor.get('Weight', 'N/A')}</td>"
@@ -729,8 +740,8 @@ def create_armor_picker_interface():
         # Filter armors
         filtered_armors = picker.filter_armors(resistance_filters)
 
-        # Get top 4 from each armor class
-        top_armors = picker.get_top_armors_per_class(filtered_armors, max_per_class=99)
+        # Get top 4 from each armor type
+        top_armors = picker.get_top_armors_per_type(filtered_armors, max_per_type=99)
         
         # Ensure we have sort parameters
         if not current_sort_by:
