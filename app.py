@@ -8,6 +8,7 @@ class ArmorPicker:
         self.resistance_types = ["blunt", "pierce", "lacer", "fire", "cold", "poison", "shock", "beam"]
         self.current_language = "English"
         self.armor_data = {}
+        self.resistance_names = {}  # Store localized resistance names
 
         # Language configuration
         self.languages = {
@@ -28,7 +29,7 @@ class ArmorPicker:
         self.translations = {
             "English": {
                 "title": "QM Armor Picker",
-                "subtitle": "Select resistance requirements and search for armors. Results show up to 4 items from each armor class.",
+                "subtitle": "Select resistance requirements and search for armors.",
                 "color_legend": "**Color Legend**: Resistance values are colored from 🔴 Red (low) to 🟢 Green (high)",
                 "language": "Language",
                 "resistance_filters": "Resistance Filters",
@@ -54,7 +55,7 @@ class ArmorPicker:
             },
             "Русский": {
                 "title": "QM Подборщик Брони",
-                "subtitle": "Выберите требования к сопротивлению и найдите броню. Результаты показывают до 4 предметов из каждого класса брони.",
+                "subtitle": "Выберите требования к сопротивлению и найдите броню.",
                 "color_legend": "**Легенда цветов**: Значения сопротивления окрашены от 🔴 Красного (низкое) до 🟢 Зеленого (высокое)",
                 "language": "Язык",
                 "resistance_filters": "Фильтры Сопротивления",
@@ -80,7 +81,7 @@ class ArmorPicker:
             },
             "Deutsch": {
                 "title": "QM Rüstungs-Picker",
-                "subtitle": "Wählen Sie Widerstandsanforderungen und suchen Sie nach Rüstungen. Ergebnisse zeigen bis zu 4 Gegenstände aus jeder Rüstungsklasse.",
+                "subtitle": "Wählen Sie Widerstandsanforderungen und suchen Sie nach Rüstungen.",
                 "color_legend": "**Farblegende**: Widerstandswerte sind von 🔴 Rot (niedrig) bis 🟢 Grün (hoch) gefärbt",
                 "language": "Sprache",
                 "resistance_filters": "Widerstandsfilter",
@@ -106,7 +107,7 @@ class ArmorPicker:
             },
             "Français": {
                 "title": "QM Sélecteur d'Armure",
-                "subtitle": "Sélectionnez les exigences de résistance et recherchez des armures. Les résultats montrent jusqu'à 4 objets de chaque classe d'armure.",
+                "subtitle": "Sélectionnez les exigences de résistance et recherchez des armures.",
                 "color_legend": "**Légende des couleurs**: Les valeurs de résistance sont colorées du 🔴 Rouge (faible) au 🟢 Vert (élevé)",
                 "language": "Langue",
                 "resistance_filters": "Filtres de Résistance",
@@ -132,7 +133,7 @@ class ArmorPicker:
             },
             "Español": {
                 "title": "QM Selector de Armadura",
-                "subtitle": "Seleccione los requisitos de resistencia y busque armaduras. Los resultados muestran hasta 4 elementos de cada clase de armadura.",
+                "subtitle": "Seleccione los requisitos de resistencia y busque armaduras.",
                 "color_legend": "**Leyenda de colores**: Los valores de resistencia están coloreados desde 🔴 Rojo (bajo) hasta 🟢 Verde (alto)",
                 "language": "Idioma",
                 "resistance_filters": "Filtros de Resistencia",
@@ -158,7 +159,7 @@ class ArmorPicker:
             },
             "Polski": {
                 "title": "QM Wybieracz Zbroi",
-                "subtitle": "Wybierz wymagania odporności i wyszukaj zbroje. Wyniki pokazują do 4 przedmiotów z każdej klasy zbroi.",
+                "subtitle": "Wybierz wymagania odporności i wyszukaj zbroje.",
                 "color_legend": "**Legenda kolorów**: Wartości odporności są kolorowane od 🔴 Czerwonego (niskie) do 🟢 Zielonego (wysokie)",
                 "language": "Język",
                 "resistance_filters": "Filtry Odporności",
@@ -184,7 +185,7 @@ class ArmorPicker:
             },
             "Türkçe": {
                 "title": "QM Zırh Seçici",
-                "subtitle": "Direnç gereksinimlerini seçin ve zırhları arayın. Sonuçlar her zırh sınıfından en fazla 4 öğe gösterir.",
+                "subtitle": "Direnç gereksinimlerini seçin ve zırhları arayın.",
                 "color_legend": "**Renk Açıklaması**: Direnç değerleri 🔴 Kırmızı (düşük) ile 🟢 Yeşil (yüksek) arasında renklendirilmiştir",
                 "language": "Dil",
                 "resistance_filters": "Direnç Filtreleri",
@@ -210,7 +211,7 @@ class ArmorPicker:
             },
             "Português Brasileiro": {
                 "title": "QM Seletor de Armadura",
-                "subtitle": "Selecione os requisitos de resistência e procure armaduras. Os resultados mostram até 4 itens de cada classe de armadura.",
+                "subtitle": "Selecione os requisitos de resistência e procure armaduras.",
                 "color_legend": "**Legenda de cores**: Os valores de resistência são coloridos de 🔴 Vermelho (baixo) a 🟢 Verde (alto)",
                 "language": "Idioma",
                 "resistance_filters": "Filtros de Resistência",
@@ -236,7 +237,7 @@ class ArmorPicker:
             },
             "한국어": {
                 "title": "QM 갑옷 선택기",
-                "subtitle": "저항 요구사항을 선택하고 갑옷을 검색하세요. 결과는 각 갑옷 클래스에서 최대 4개 아이템을 보여줍니다.",
+                "subtitle": "저항 요구사항을 선택하고 갑옷을 검색하세요.",
                 "color_legend": "**색상 범례**: 저항 값은 🔴 빨간색(낮음)에서 🟢 녹색(높음)으로 색칠됩니다",
                 "language": "언어",
                 "resistance_filters": "저항 필터",
@@ -262,7 +263,7 @@ class ArmorPicker:
             },
             "日本": {
                 "title": "QM アーマーピッカー",
-                "subtitle": "抵抗要件を選択して防具を検索します。結果は各防具クラスから最大4つのアイテムを表示します。",
+                "subtitle": "抵抗要件を選択して防具を検索します。",
                 "color_legend": "**色の凡例**: 抵抗値は🔴赤（低）から🟢緑（高）まで色分けされています",
                 "language": "言語",
                 "resistance_filters": "抵抗フィルター",
@@ -288,7 +289,7 @@ class ArmorPicker:
             },
             "中国人": {
                 "title": "QM 护甲选择器",
-                "subtitle": "选择抗性要求并搜索护甲。结果显示每个护甲类别最多4个物品。",
+                "subtitle": "选择抗性要求并搜索护甲。",
                 "color_legend": "**颜色图例**: 抗性值从🔴红色（低）到🟢绿色（高）着色",
                 "language": "语言",
                 "resistance_filters": "抗性过滤器",
