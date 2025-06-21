@@ -60,7 +60,15 @@ class ArmorPicker:
                 "poison": "Poison",
                 "shock": "Shock",
                 "beam": "Beam",
-                "game_version": "Game Version"
+                "game_version": "Game Version",
+                "no_requirements_set": "No resistance requirements set for combination search.",
+                "no_combinations_found": "No armor combinations found that meet the requirements.",
+                "armor_combinations": "Armor Combinations",
+                "combinations_explanation": "Top 10 armor combinations (one per type) that best meet your resistance requirements:",
+                "combination": "Combination",
+                "coverage": "Coverage",
+                "item": "Item",
+                "type": "Type",
             },
             "Русский": {
                 "title": "QM Подборщик Брони",
@@ -543,9 +551,9 @@ class ArmorPicker:
                         'score': combo_score
                     })
         
-        # Sort combinations by quality and limit to top 10
+        # Sort combinations by quality and limit to top XX
         combinations.sort(key=lambda x: (x['score']['avg_coverage'], -x['score']['variance']), reverse=True)
-        combinations = combinations[:10]
+        combinations = combinations[:20]
         
         if not combinations:
             return f"<p>{self.get_translation('no_combinations_found')}</p>"
@@ -597,7 +605,7 @@ class ArmorPicker:
         }}
         .combo-table th, .combo-table td {{
             border: 1px solid #000 !important;
-            padding: 6px !important;
+            padding: 8px !important;
             text-align: left !important;
             background-color: #333 !important;
             color: #fff !important;
@@ -606,11 +614,32 @@ class ArmorPicker:
             background-color: #555 !important;
             font-weight: bold !important;
         }}
-        .combo-table .armor-list {{
-            font-size: 12px !important;
+        .combo-table tr:nth-child(even) td {{
+            background-color: #444 !important;
         }}
-        .combo-table .resistance-summary {{
+        .combo-summary {{
             font-weight: bold !important;
+            background-color: #2a2a2a !important;
+        }}
+        .combo-summary .combo-name {{
+            text-align: right !important;
+        }}
+        .combo-detail {{
+            padding-left: 20px !important;
+            font-style: italic !important;
+        }}
+        .combo-separator {{
+            background-color: transparent !important;
+        }}
+        .combo-separator td {{
+            background-color: transparent !important;
+            border: none !important;
+            padding: 8px !important;
+            height: 16px !important;
+        }}
+        .resist-cell {{
+            font-weight: bold !important;
+            color: #000 !important;
             text-align: center !important;
         }}
         .coverage-good {{ color: #4CAF50 !important; }}
@@ -623,7 +652,8 @@ class ArmorPicker:
         html += f"<p>{self.get_translation('combinations_explanation')}</p>"
         
         html += '<table class="combo-table"><thead><tr>'
-        html += f'<th>{self.get_translation("combination")}</th>'
+        html += f'<th>{self.get_translation("item")}</th>'
+        html += f'<th>{self.get_translation("type")}</th>'
         html += f'<th>{self.get_translation("coverage")}</th>'
         
         # Add columns for each required resistance
@@ -632,29 +662,95 @@ class ArmorPicker:
         
         html += '</tr></thead><tbody>'
         
+        # Get resistance ranges for color calculation (from all armors in combinations)
+        all_combo_armors = []
+        for combo in combinations:
+            all_combo_armors.extend(combo['armors'])
+        resist_ranges = self.get_resistance_range(all_combo_armors)
+        
         for i, combo in enumerate(combinations, 1):
-            html += '<tr>'
+            # Add separator row between combinations (except before the first one)
+            if i > 1:
+                html += '<tr class="combo-separator">'
+                html += f'<td colspan="{3 + len(requirements)}">&nbsp;</td>'
+                html += '</tr>'
             
-            # Armor list
-            armor_names = []
-            for armor in combo['armors']:
-                armor_names.append(f"{armor.get('Name', 'Unknown')} ({armor.get('Type', 'Unknown')})")
-            html += f'<td class="armor-list">{", ".join(armor_names)}</td>'
+            # Summary row - combination name with overall coverage
+            html += '<tr class="combo-summary">'
             
-            # Coverage percentage
+            # Combination name (right-aligned)
+            combo_name = f"Combination {i}"
+            html += f'<td class="combo-name"><strong>{combo_name}</strong></td>'
+            html += f'<td><strong>Total</strong></td>'
+            
+            # Overall coverage percentage
             coverage_pct = combo['score']['avg_coverage'] * 100
             coverage_class = 'coverage-good' if coverage_pct >= 90 else 'coverage-ok' if coverage_pct >= 70 else 'coverage-poor'
-            html += f'<td class="resistance-summary {coverage_class}">{coverage_pct:.1f}%</td>'
+            html += f'<td class="resist-cell {coverage_class}" style="background-color: #555 !important; color: #fff !important;">{coverage_pct:.1f}%</td>'
             
-            # Individual resistance values
+            # Individual resistance total values and percentages
             for resist_type in requirements.keys():
                 actual = combo['score']['total_resistances'].get(resist_type, 0)
                 required = requirements[resist_type]
                 coverage = min(actual / required, 1.0) if required > 0 else 1.0
+                coverage_pct_individual = coverage * 100
                 coverage_class = 'coverage-good' if coverage >= 0.9 else 'coverage-ok' if coverage >= 0.7 else 'coverage-poor'
-                html += f'<td class="resistance-summary {coverage_class}">{actual}/{required}</td>'
+                html += f'<td class="resist-cell {coverage_class}" style="background-color: #555 !important; color: #fff !important;">{actual} / {coverage_pct_individual:.1f}%</td>'
             
             html += '</tr>'
+            
+            # Group armors by type for coverage calculation
+            armors_by_type = {}
+            for armor in combo['armors']:
+                armor_type = armor.get('Type', 'Unknown')
+                armors_by_type[armor_type] = armor
+            
+            # Detail rows - one for each armor piece with type coverage
+            for armor in combo['armors']:
+                html += '<tr class="combo-detail">'
+                
+                # Armor name (indented under combination name)
+                armor_name = armor.get('Name', 'Unknown')
+                html += f'<td class="combo-detail">{armor_name}</td>'
+                
+                # Armor type
+                armor_type = armor.get('Type', 'Unknown')
+                html += f'<td class="combo-detail">{armor_type}</td>'
+                
+                # Calculate coverage for this armor type
+                armor_resist_dict = {}
+                for resist in armor.get("ResistSheet", []):
+                    armor_resist_dict[resist.get("ResistType")] = resist.get("ResistValue", 0)
+                
+                # Calculate average coverage for this armor piece across required resistances
+                armor_coverages = []
+                for resist_type in requirements.keys():
+                    armor_value = armor_resist_dict.get(resist_type, 0)
+                    required = requirements[resist_type]
+
+                    # Calculate what portion this armor contributes to the requirement
+                    armor_coverage = min(armor_value / required, 1.0) if required > 0 else 1.0
+                    armor_coverages.append(armor_coverage)
+                
+                avg_armor_coverage = sum(armor_coverages) / len(armor_coverages) if armor_coverages else 0
+                armor_coverage_pct = avg_armor_coverage * 100
+                armor_coverage_class = 'coverage-good' if avg_armor_coverage >= 0.3 else 'coverage-ok' if avg_armor_coverage >= 0.15 else 'coverage-poor'
+                html += f'<td class="resist-cell {armor_coverage_class}" style="background-color: #555 !important; color: #fff !important;">{armor_coverage_pct:.1f}%</td>'
+                
+                # Individual armor resistance values with colors and percentages
+                for resist_type in requirements.keys():
+                    value = armor_resist_dict.get(resist_type, 0)
+                    required = requirements[resist_type]
+                    individual_coverage = min(value / required, 1.0) if required > 0 else 1.0
+                    individual_coverage_pct = individual_coverage * 100
+                    
+                    # Use the same color calculation as individual armor table
+                    min_val, max_val = resist_ranges.get(resist_type, (0, 0))
+                    color = self.value_to_color(value, min_val, max_val)
+                    
+                    html += f'<td class="resist-cell" style="background-color: {color} !important; color: #000 !important;">{value} / {individual_coverage_pct:.1f}%</td>'
+                
+                html += '</tr>'
         
         html += '</tbody></table>'
         return html
@@ -1059,18 +1155,18 @@ def create_armor_picker_interface():
                 results_md = gr.Markdown("## Results")
                 
                 with gr.Tabs():
-                    with gr.TabItem("Individual Armors"):
-                        individual_results = gr.HTML(
-                            label="Matching Armors",
-                            value="<p>Click 'Search Armors' to see results...</p>"
-                        )
-                    
                     with gr.TabItem("Armor Combinations"):
                         combination_results = gr.HTML(
                             label="Armor Combinations",
                             value="<p>Click 'Search Armors' to see combinations...</p>"
                         )
                 
+                    with gr.TabItem("Individual Armors"):
+                        individual_results = gr.HTML(
+                            label="Matching Armors",
+                            value="<p>Click 'Search Armors' to see results...</p>"
+                        )
+                        
                 # Hidden elements for JavaScript communication
                 with gr.Column(visible=False):
                     sort_trigger_btn = gr.Button("Sort Trigger", elem_id="sort-trigger-btn")
