@@ -8,7 +8,6 @@ class ArmorPicker:
         self.resistance_types = ["blunt", "pierce", "lacer", "fire", "cold", "poison", "shock", "beam"]
         self.current_language = "English"
         self.armor_data = {}
-        self.resistance_names = {}  # Store localized resistance names
 
         # Language configuration
         self.languages = {
@@ -590,16 +589,15 @@ def create_armor_picker_interface():
                 
                 # Create toggle and value inputs for each resistance type
                 resistance_inputs = []
+                resistance_checkboxes = []  # Store checkbox references
                 
                 for resist_type in picker.resistance_types:
                     with gr.Row():
                         toggle = gr.Checkbox(
-                            #label=f"Enable {resist_type.title()}",
                             label=f"{resist_type.title()}",
                             value=True,
                         )
                         value = gr.Number(
-                            #label=f"Min {resist_type.title()} Value",
                             show_label=False,
                             label=None,
                             value=0,
@@ -608,6 +606,7 @@ def create_armor_picker_interface():
                             step=1
                         )
                         resistance_inputs.extend([toggle, value])
+                        resistance_checkboxes.append(toggle)  # Store checkbox reference
                 
                 search_btn = gr.Button("Search Armors", variant="primary")
             
@@ -618,11 +617,11 @@ def create_armor_picker_interface():
                     value="<p>Click 'Search Armors' to see results...</p>"
                 )
         
-        # Language change handler - only update text elements, not input components
+        # Language change handler - update text elements and checkbox labels
         def update_ui_language(language):
             picker.load_armor_data(language)
             
-            # Only update text elements (Markdown, Button, HTML)
+            # Update text elements
             updates = []
             updates.append(f"# {picker.get_translation('title')}")  # title
             updates.append(picker.get_translation('subtitle'))  # subtitle
@@ -632,13 +631,19 @@ def create_armor_picker_interface():
             updates.append(picker.get_translation('search_button'))  # search button
             updates.append(f"<p>{picker.get_translation('click_search')}</p>")  # results
             
+            # Update checkbox labels for resistance types
+            for resist_type in picker.resistance_types:
+                updates.append(gr.Checkbox(label=picker.get_translation(resist_type)))
+            
             return updates
         
-        # Set up event handlers - only update text components
+        # Set up event handlers - update text components and checkbox labels
+        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, results] + resistance_checkboxes
+        
         language_selector.change(
             fn=update_ui_language,
             inputs=[language_selector],
-            outputs=[title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, results]
+            outputs=outputs_list
         )
         
         # Update inputs list to include language selector
