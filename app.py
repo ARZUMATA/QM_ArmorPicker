@@ -2,6 +2,11 @@ import json
 import re
 import os
 
+localization_data = {
+    'languages': [],
+    'items': {}
+}
+
 def parse_localization_file(localization_path):
     """
     Parse the localization file to extract translations.
@@ -12,11 +17,7 @@ def parse_localization_file(localization_path):
     Returns:
         dict: Dictionary with language mappings and item translations
     """
-    localization_data = {
-        'languages': [],
-        'items': {}
-    }
-    
+
     try:
         with open(localization_path, 'r', encoding='utf-8') as file:
             lines = file.readlines()
@@ -55,7 +56,7 @@ def parse_localization_file(localization_path):
             translations = parts[1:len(languages)+1]  # Only take as many as we have languages
             
             # Extract item ID and type from key
-            if 'item.' in key and ('.name' in key or '.shortdesc' in key):
+            if ('item.' in key and ('.name' in key or '.shortdesc' in key)) or 'ui. in key':
                 item_id = key.replace('.name', '').replace('.shortdesc', '')
                 translation_type = 'name' if '.name' in key else 'description'
                 
@@ -243,6 +244,10 @@ def create_language_specific_data(categories_data, language_display_name):
         # Process data rows
         filtered_rows = []
         for row in category_info['data']:
+            if 'ResistSheet' in row and row['ResistSheet']:
+                tmp = parse_resistance_sheet(row['ResistSheet'], language_display_name)
+                row['ResistSheet'] = tmp
+
             new_row = {}
             
             # Copy base fields
@@ -254,7 +259,7 @@ def create_language_specific_data(categories_data, language_display_name):
                 new_row[new_header] = row.get(old_header, "")
             
             filtered_rows.append(new_row)
-        
+
         language_data[category_name] = {
             'headers': final_headers,
             'language': language_display_name,
@@ -281,12 +286,53 @@ def filter_data_by_headers(categories_data, selected_headers=None):
             
             filtered_data[category_name] = {
                 'headers': filtered_headers,
-                'original_headers': available_headers,
-                'required_headers_found': category_info.get('required_headers_found', []),
+                # 'original_headers': available_headers,
+                # 'required_headers_found': category_info.get('required_headers_found', []),
                 'data': filtered_rows
             }
     
     return filtered_data
+
+def parse_resistance_sheet(resist_sheet, language_display_name):
+    """
+    Parse ResistSheet string into structured resistance data
+    
+    Args:
+        resist_sheet (str): "blunt 6 pierce 0 lacer 0 fire 0 cold 5 poison 0 shock 0 beam 0"
+        
+    Returns:
+        list: [{"ResistType": "blunt", "ResistName": "Blunt", "ResistValue": 6}, ...]
+    """
+    if not resist_sheet or not isinstance(resist_sheet, str):
+        return []
+    
+    resistances = []
+    parts = resist_sheet.split()
+    
+    for i in range(0, len(parts), 2):
+        if i + 1 < len(parts):
+            resist_type = parts[i]
+            resist_value = int(parts[i + 1]) if parts[i + 1].isdigit() else 0
+            
+            # Get localized name from ui.damage.{type}
+            localized_name = resist_type.capitalize()  # fallback
+            if localization_data and 'items' in localization_data:
+                damage_key = f'ui.damage.{resist_type}'
+                if damage_key in localization_data['items']:
+                    name_data = localization_data['items'][damage_key].get('description', {})
+                    # Use first available language or English
+                    if 'en' in name_data:
+                        localized_name = name_data['en']
+                    elif name_data:
+                        localized_name = next(iter(name_data.values()))
+            
+            resistances.append({
+                "ResistType": resist_type,
+                "ResistName": localized_name,
+                "ResistValue": resist_value
+            })
+    
+    return resistances
 
 def save_data_to_json(categories_data, output_file='filtered_data.json'):
     with open(output_file, 'w', encoding='utf-8') as file:
@@ -312,7 +358,7 @@ def main():
             'selected_headers': ['Name', 'Description', 'Type', 'ArmorClass', 'ResistSheet', 'MaxDurability', 'Weight'],
             'output_file': 'armor_data_full.json',
             'use_localization': True,
-            'language_filter': 'English'
+            # 'language_filter': 'English'
         },
     }
     
@@ -354,7 +400,7 @@ def main():
                 lang_data = create_language_specific_data(matching_categories, lang_name)
                 lang_filtered = filter_data_by_headers(
                     lang_data,
-                    selected_headers=['Type', 'Id', 'ArmorClass', 'Price', 'Name', 'Description']
+                    selected_headers=['Name', 'Description', 'Type', 'ArmorClass', 'ResistSheet', 'MaxDurability', 'Weight'],
                 )
                 
                 lang_filename = f"armor_data_{lang_name.lower().replace(' ', '_')}.json"
