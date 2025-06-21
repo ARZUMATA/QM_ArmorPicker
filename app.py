@@ -171,19 +171,19 @@ def parse_config_items(file_path, required_headers=None, localization_data=None)
                                     # Add name and description for each language
                                     for lang_info in localization_data['languages']:
                                         lang_code = lang_info['code']
-                                        lang_display = lang_info['display_name']
+                                        #lang_display = lang_info['display_name']
                                         
                                         # Add name
                                         if 'name' in item_translations and lang_code in item_translations['name']:
-                                            row_dict[f'Name_{lang_display}'] = item_translations['name'][lang_code]
+                                            row_dict[f'Name_{lang_code}'] = item_translations['name'][lang_code]
                                         else:
-                                            row_dict[f'Name_{lang_display}'] = ""
+                                            row_dict[f'Name_{lang_code}'] = ""
                                         
                                         # Add description
                                         if 'description' in item_translations and lang_code in item_translations['description']:
-                                            row_dict[f'Description_{lang_display}'] = item_translations['description'][lang_code]
+                                            row_dict[f'Description_{lang_code}'] = item_translations['description'][lang_code]
                                         else:
-                                            row_dict[f'Description_{lang_display}'] = ""
+                                            row_dict[f'Description_{lang_code}'] = ""
                             
                             category_data.append(row_dict)
                         
@@ -244,10 +244,6 @@ def create_language_specific_data(categories_data, language_display_name):
         # Process data rows
         filtered_rows = []
         for row in category_info['data']:
-            if 'ResistSheet' in row and row['ResistSheet']:
-                tmp = parse_resistance_sheet(row['ResistSheet'], language_display_name)
-                row['ResistSheet'] = tmp
-
             new_row = {}
             
             # Copy base fields
@@ -258,6 +254,9 @@ def create_language_specific_data(categories_data, language_display_name):
             for old_header, new_header in header_mapping.items():
                 new_row[new_header] = row.get(old_header, "")
             
+                tmp = parse_resistance_sheet(row['ResistSheet'], language_display_name)
+                new_row['ResistSheet'] = tmp
+                
             filtered_rows.append(new_row)
 
         language_data[category_name] = {
@@ -320,11 +319,15 @@ def parse_resistance_sheet(resist_sheet, language_display_name):
                 damage_key = f'ui.damage.{resist_type}'
                 if damage_key in localization_data['items']:
                     name_data = localization_data['items'][damage_key].get('description', {})
+
                     # Use first available language or English
-                    if 'en' in name_data:
-                        localized_name = name_data['en']
-                    elif name_data:
-                        localized_name = next(iter(name_data.values()))
+                 
+
+                    if language_display_name in name_data:
+                        localized_name = name_data[language_display_name]
+                    # else:
+                    # elif name_data:
+                    #     localized_name = next(iter(name_data.values()))
             
             resistances.append({
                 "ResistType": resist_type,
@@ -338,10 +341,10 @@ def save_data_to_json(categories_data, output_file='filtered_data.json'):
     with open(output_file, 'w', encoding='utf-8') as file:
         json.dump(categories_data, file, indent=2, ensure_ascii=False)
     
-    print(f"Data saved to {output_file}")
-    print(f"Found {len(categories_data)} matching categories:")
-    for category_name, category_info in categories_data.items():
-        print(f"  - {category_name}: {len(category_info['data'])} items")
+    # print(f"Data saved to {output_file}")
+    # print(f"Found {len(categories_data)} matching categories:")
+    # for category_name, category_info in categories_data.items():
+    #     print(f"  - {category_name}: {len(category_info['data'])} items")
 
 def main():
     input_file = 'config_items.txt'
@@ -355,10 +358,10 @@ def main():
     config_options = {
         'armor_with_localization': {
             'required_headers': ['ArmorClass'],
-            'selected_headers': ['Name', 'Description', 'Type', 'ArmorClass', 'ResistSheet', 'MaxDurability', 'Weight'],
+            'selected_headers': ['Id', 'Name', 'Description', 'Type', 'ArmorClass', 'ResistSheet', 'MaxDurability', 'Weight'],
             'output_file': 'armor_data_full.json',
             'use_localization': True,
-            # 'language_filter': 'English'
+            # 'language_filter': 'Russian'
         },
     }
     
@@ -376,31 +379,31 @@ def main():
             localization_data=localization_data if config.get('use_localization') else None
         )
         
-        # Apply language filter if specified
-        if config.get('language_filter'):
-            matching_categories = create_language_specific_data(
-                matching_categories, 
-                config['language_filter']
-            )
+        # # Apply language filter if specified
+        # if config.get('language_filter'):
+        #     matching_categories = create_language_specific_data(
+        #         matching_categories, 
+        #         config['language_filter']
+        #     )
         
-        # Filter to selected headers
-        filtered_data = filter_data_by_headers(
-            matching_categories, 
-            selected_headers=config['selected_headers']
-        )
+        # # Filter to selected headers
+        # filtered_data = filter_data_by_headers(
+        #     matching_categories, 
+        #     selected_headers=config['selected_headers']
+        # )
         
-        # Save to JSON
-        save_data_to_json(filtered_data, config['output_file'])
+        # # Save to JSON
+        # save_data_to_json(filtered_data, config['output_file'])
         
         # Also create individual language files
         if config.get('use_localization') and not config.get('language_filter'):
             print("\nCreating individual language files...")
             for lang_info in localization_data['languages']:
-                lang_name = lang_info['display_name']
+                lang_name = lang_info['code']
                 lang_data = create_language_specific_data(matching_categories, lang_name)
                 lang_filtered = filter_data_by_headers(
                     lang_data,
-                    selected_headers=['Name', 'Description', 'Type', 'ArmorClass', 'ResistSheet', 'MaxDurability', 'Weight'],
+                    selected_headers=['Id', 'Name', 'Description', 'Type', 'ArmorClass', 'ResistSheet', 'MaxDurability', 'Weight'],
                 )
                 
                 lang_filename = f"armor_data_{lang_name.lower().replace(' ', '_')}.json"
