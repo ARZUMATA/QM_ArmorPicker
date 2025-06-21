@@ -59,7 +59,8 @@ class ArmorPicker:
                 "cold": "Cold",
                 "poison": "Poison",
                 "shock": "Shock",
-                "beam": "Beam"
+                "beam": "Beam",
+                "game_version": "Game Version"
             },
             "Русский": {
                 "title": "QM Подборщик Брони",
@@ -85,7 +86,8 @@ class ArmorPicker:
                 "cold": "Холод",
                 "poison": "Яд",
                 "shock": "Шок",
-                "beam": "Луч"
+                "beam": "Луч",
+                "game_version": "Версия Игры"
             },
             "Deutsch": {
                 "title": "QM Rüstungs-Picker",
@@ -111,7 +113,8 @@ class ArmorPicker:
                 "cold": "Kälte",
                 "poison": "Gift",
                 "shock": "Schock",
-                "beam": "Strahl"
+                "beam": "Strahl",
+                "game_version": "Spielversion"
             },
             "Français": {
                 "title": "QM Sélecteur d'Armure",
@@ -137,7 +140,8 @@ class ArmorPicker:
                 "cold": "Froid",
                 "poison": "Poison",
                 "shock": "Choc",
-                "beam": "Rayon"
+                "beam": "Rayon",
+                "game_version": "Version du Jeu"
             },
             "Español": {
                 "title": "QM Selector de Armadura",
@@ -163,7 +167,8 @@ class ArmorPicker:
                 "cold": "Frío",
                 "poison": "Veneno",
                 "shock": "Choque",
-                "beam": "Rayo"
+                "beam": "Rayo",
+                "game_version": "Versión del Juego"
             },
             "Polski": {
                 "title": "QM Wybieracz Zbroi",
@@ -189,7 +194,8 @@ class ArmorPicker:
                 "cold": "Zimno",
                 "poison": "Trucizna",
                 "shock": "Szok",
-                "beam": "Promień"
+                "beam": "Promień",
+                "game_version": "Wersja Gry"
             },
             "Türkçe": {
                 "title": "QM Zırh Seçici",
@@ -215,7 +221,8 @@ class ArmorPicker:
                 "cold": "Soğuk",
                 "poison": "Zehir",
                 "shock": "Şok",
-                "beam": "Işın"
+                "beam": "Işın",
+                "game_version": "Oyun Sürümü"
             },
             "Português Brasileiro": {
                 "title": "QM Seletor de Armadura",
@@ -241,7 +248,8 @@ class ArmorPicker:
                 "cold": "Frio",
                 "poison": "Veneno",
                 "shock": "Choque",
-                "beam": "Raio"
+                "beam": "Raio",
+                "game_version": "Versão do Jogo"
             },
             "한국어": {
                 "title": "QM 갑옷 선택기",
@@ -267,7 +275,8 @@ class ArmorPicker:
                 "cold": "냉기",
                 "poison": "독",
                 "shock": "충격",
-                "beam": "광선"
+                "beam": "광선",
+                "game_version": "게임 버전"
             },
             "日本": {
                 "title": "QM アーマーピッカー",
@@ -293,7 +302,8 @@ class ArmorPicker:
                 "cold": "冷気",
                 "poison": "毒",
                 "shock": "衝撃",
-                "beam": "光線"
+                "beam": "光線",
+                "game_version": "ゲームバージョン"
             },
             "中国人": {
                 "title": "QM 护甲选择器",
@@ -319,7 +329,8 @@ class ArmorPicker:
                 "cold": "寒冷",
                 "poison": "毒素",
                 "shock": "冲击",
-                "beam": "光束"
+                "beam": "光束",
+                "game_version": "游戏版本"
             }
         }
         
@@ -761,7 +772,8 @@ def create_armor_picker_interface():
             updates.append(f"## {picker.get_translation('results')}")  # results
             updates.append(picker.get_translation('search_button'))  # search button
             updates.append(f"<p>{picker.get_translation('click_search')}</p>")  # results
-            
+            updates.append(gr.Dropdown(label=picker.get_translation('game_version'))) # game version
+
             # Update checkbox labels for resistance types
             for resist_type in picker.resistance_types:
                 updates.append(gr.Checkbox(label=picker.get_translation(resist_type)))
@@ -769,7 +781,7 @@ def create_armor_picker_interface():
             return updates
         
         # Set up event handlers - update text components and checkbox labels
-        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, results] + resistance_checkboxes
+        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, results, version_selector] + resistance_checkboxes
         
         language_selector.change(
             fn=update_ui_language,
