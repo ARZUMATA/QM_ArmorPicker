@@ -352,8 +352,9 @@ class ArmorPicker:
     
     def change_version(self, version: str) -> str:
             """Handle version change and reload language configuration"""
-            self.current_version = version
-            self.languages = self.get_version_languages(version)
+            if version != None:
+                self.current_version = version
+                self.languages = self.get_version_languages(version)
             # Reload current language data with new version
             self.load_armor_data(self.current_language)
             return f"<p>{self.get_translation('click_search')}</p>"
@@ -430,6 +431,45 @@ class ArmorPicker:
         
         return filtered_armors
     
+    def sort_armors(self, armors: List[Dict], sort_by: str, sort_order: str) -> List[Dict]:
+        """Sort armors by specified column and order"""
+        if not armors or not sort_by:
+            return armors
+        
+        def get_sort_value(armor, column):
+            """Get the value to sort by for a given column"""
+            if column == "name":
+                return armor.get('Name', '').lower()
+            elif column == "class":
+                return armor.get('ArmorClass', '').lower()
+            elif column == "durability":
+                try:
+                    return int(armor.get('MaxDurability', 0))
+                except (ValueError, TypeError):
+                    return 0
+            elif column == "weight":
+                try:
+                    return float(armor.get('Weight', 0))
+                except (ValueError, TypeError):
+                    return 0.0
+            elif column in self.resistance_types:
+                # Find resistance value
+                for resist in armor.get("ResistSheet", []):
+                    if resist.get("ResistType") == column:
+                        return resist.get("ResistValue", 0)
+                return 0
+            else:
+                return ""
+        
+        # Sort the armors
+        reverse = (sort_order == "desc")
+        try:
+            sorted_armors = sorted(armors, key=lambda x: get_sort_value(x, sort_by), reverse=reverse)
+            return sorted_armors
+        except Exception:
+            # If sorting fails, return original list
+            return armors
+
     def get_top_armors_per_class(self, filtered_armors: List[Dict], max_per_class: int = 4) -> List[Dict]:
         """Get top armors from each armor class"""
         armor_classes = {}
@@ -519,18 +559,50 @@ class ArmorPicker:
         # Fallback to last color if normalized > 1
         return color_stops[-1][1]
     
-    def create_styled_table_html(self, armors: List[Dict]) -> str:
-        """Create HTML table with color gradients
-        
-        Args:
-            armors: List of armor dictionaries
-            text_align: Text alignment option - "left", "center", or "right"
-        """
+    def create_styled_table_html(self, armors: List[Dict], sort_by: str = "name", sort_order: str = "asc", language: str = None) -> str:
+        """Create HTML table with color gradients and sortable headers"""
         if not armors:
             return f"<p>{self.get_translation('no_armors')}</p>"
         
+        # Use provided language or fall back to current language
+        if language and language != self.current_language:
+            self.load_armor_data(language)
+        
         # Get resistance ranges for color calculation
         resist_ranges = self.get_resistance_range(armors)
+        
+        # Define sortable columns and their display names
+        sortable_columns = {
+            "name": self.get_translation('name'),
+            "class": self.get_translation('class'),
+            "durability": self.get_translation('durability'),
+            "weight": self.get_translation('weight'),
+            "blunt": self.get_translation('blunt'),
+            "pierce": self.get_translation('pierce'),
+            "lacer": self.get_translation('lacer'),
+            "fire": self.get_translation('fire'),
+            "cold": self.get_translation('cold'),
+            "poison": self.get_translation('poison'),
+            "shock": self.get_translation('shock'),
+            "beam": self.get_translation('beam')
+        }
+        
+        def create_header(column_key, display_name):
+            """Create a sortable header cell"""
+            if column_key == sort_by:
+                # Currently sorted column
+                if sort_order == "asc":
+                    next_order = "desc"
+                    arrow = " ↑"
+                else:
+                    next_order = "asc"
+                    arrow = " ↓"
+            else:
+                # Not currently sorted
+                next_order = "asc"
+                arrow = ""
+            
+            return f'''<th class="sortable-header" data-column="{column_key}" data-next-order="{next_order}" style="cursor: pointer; user-select: none;">{display_name}{arrow}</th>'''
         
         # Start HTML table
         html = f"""
@@ -551,6 +623,9 @@ class ArmorPicker:
         .armor-table th {{
             background-color: #555 !important; /* Slightly darker grey for header */
             font-weight: bold !important;
+        }}
+        .armor-table th.sortable-header:hover {{
+            background-color: #666 !important;
         }}
         .armor-table tr:nth-child(even) td {{
             background-color: #444 !important; /* Alternate row color */
@@ -579,16 +654,16 @@ class ArmorPicker:
         <tr>
         """
         
-        # Add headers with translations
-        html += f"<th>{self.get_translation('name')}</th>"
-        html += f"<th>{self.get_translation('class')}</th>"
-        html += f"<th>{self.get_translation('description')}</th>"
-        html += f"<th>{self.get_translation('durability')}</th>"
-        html += f"<th>{self.get_translation('weight')}</th>"
+        # Add headers with translations and sorting functionality
+        html += create_header("name", sortable_columns["name"])
+        html += create_header("class", sortable_columns["class"])
+        html += f"<th>{self.get_translation('description')}</th>"  # Description not sortable
+        html += create_header("durability", sortable_columns["durability"])
+        html += create_header("weight", sortable_columns["weight"])
         
         # Add resistance headers
         for resist_type in self.resistance_types:
-            html += f"<th>{self.get_translation(resist_type)}</th>"
+            html += create_header(resist_type, sortable_columns[resist_type])
         
         html += "</tr></thead><tbody>"
         
@@ -621,16 +696,11 @@ class ArmorPicker:
 def create_armor_picker_interface():
     picker = ArmorPicker()
     
-    # def change_language(language):
-    #     """Handle language change"""
-    #     picker.load_armor_data(language)
-    #     return f"<p>{picker.get_translation('click_search')}</p>"
-    
     def change_version(version):
         """Handle version change"""
         return picker.change_version(version)
     
-    def search_armors(language, version, *args):
+    def search_armors(language, version, current_sort_by, current_sort_order, *args):
         """Search armors with current language"""
         # Ensure version and data are loaded for current language
         picker.change_version(version)
@@ -638,28 +708,76 @@ def create_armor_picker_interface():
         
         # Parse resistance filter arguments
         resistance_filters = {}
+        expected_args = len(picker.resistance_types) * 2
+        if len(args) != expected_args:
+            args = list(args) + [True, 0] * (expected_args - len(args))
         
         for i, resist_type in enumerate(picker.resistance_types):
-            enabled = args[i * 2]  # Toggle
-            value = args[i * 2 + 1]  # Value
-            resistance_filters[resist_type] = {
-                "enabled": enabled,
-                "value": value
-            }
+            if i * 2 + 1 < len(args):
+                enabled = args[i * 2]  # Toggle
+                value = args[i * 2 + 1]  # Value
+                resistance_filters[resist_type] = {
+                    "enabled": enabled,
+                    "value": value
+                }
+            else:
+                resistance_filters[resist_type] = {
+                    "enabled": True,
+                    "value": 0
+                }
         
         # Filter armors
         filtered_armors = picker.filter_armors(resistance_filters)
-        
+
         # Get top 4 from each armor class
         top_armors = picker.get_top_armors_per_class(filtered_armors, max_per_class=99)
         
-        # Create styled HTML table
-        html_table = picker.create_styled_table_html(top_armors)
+        # Ensure we have sort parameters
+        if not current_sort_by:
+            current_sort_by = "name"
+            current_sort_order = "asc"
         
-        return html_table
+        # Sort armors
+        sorted_armors = picker.sort_armors(top_armors, current_sort_by, current_sort_order)
+        
+        # Create styled HTML table with sort indicators - pass language explicitly
+        html_table = picker.create_styled_table_html(sorted_armors, current_sort_by, current_sort_order, language)
+        
+        return html_table, current_sort_by, current_sort_order
+    
+    def handle_sort_with_js_params(json_data, current_language, current_version, *current_resistance_args):
+        """Handle sort with parameters returned from JavaScript as JSON"""
+        try:
+            import json
+            data = json.loads(json_data)
+            
+            sort_column = data.get('sortColumn', 'name')
+            sort_order = data.get('sortOrder', 'asc')
+            
+            # Use the current Gradio state values instead of JavaScript values
+            language = current_language
+            version = current_version
+            resistance_args = current_resistance_args
+            
+            # Ensure the picker has the correct language loaded
+            picker.change_version(version)
+            picker.load_armor_data(language)
+            
+            if sort_column and sort_order:
+                return search_armors(language, version, sort_column, sort_order, *resistance_args)
+            else:
+                return search_armors(language, version, "name", "asc", *resistance_args)
+                    
+        except (json.JSONDecodeError, Exception) as e:
+            return gr.update(), gr.update(), gr.update()
+
     
     # Create interface components
     with gr.Blocks(title="QM Armor Picker", theme=gr.themes.Soft()) as interface:
+        # Hidden state for sorting
+        sort_by_state = gr.State(value="name")
+        sort_order_state = gr.State(value="asc")
+        
         # Title and language selector on same row
         with gr.Row():
             with gr.Column(scale=4):
@@ -706,7 +824,7 @@ def create_armor_picker_interface():
                 )
 
         # Dynamic content that updates with language
-        subtitle_md = gr.Markdown("Select resistance requirements and search for armors. Results show up to 4 items from each armor class.")
+        subtitle_md = gr.Markdown("Select resistance requirements and search for armors. Click column headers to sort results.")
         legend_md = gr.Markdown("**Color Legend**: Resistance values are colored from 🔴 Red (low) to 🟢 Green (high)")
         
         with gr.Row():
@@ -751,6 +869,70 @@ def create_armor_picker_interface():
                     label="Matching Armors",
                     value="<p>Click 'Search Armors' to see results...</p>"
                 )
+                
+                # Hidden elements for JavaScript communication
+                with gr.Column(visible=False):
+                    sort_trigger_btn = gr.Button("Sort Trigger", elem_id="sort-trigger-btn")
+                    js_data_input = gr.Textbox(elem_id="js-data-input")
+        
+        # Add JavaScript after interface is loaded
+        interface.load(
+            fn=None,
+            inputs=None,
+            outputs=None,
+            js="""
+            function() {
+                window.currentSortColumn = '';
+                window.currentSortOrder = '';
+                
+                function setupTableSortHandlers() {
+                    document.removeEventListener('click', handleTableClick);
+                    document.addEventListener('click', handleTableClick);
+                }
+                
+                function handleTableClick(event) {
+                    const target = event.target;
+                    
+                    if (target.classList.contains('sortable-header')) {
+                        event.preventDefault();
+                        
+                        const column = target.getAttribute('data-column');
+                        const nextOrder = target.getAttribute('data-next-order');
+                        
+                        if (column && nextOrder) {
+                            window.currentSortColumn = column;
+                            window.currentSortOrder = nextOrder;
+                            
+                            const sortButton = document.getElementById('sort-trigger-btn');
+                            if (sortButton) {
+                                sortButton.click();
+                            }
+                        }
+                    }
+                }
+                
+                setupTableSortHandlers();
+                
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'childList') {
+                            const armorTable = document.querySelector('.armor-table');
+                            if (armorTable) {
+                                setupTableSortHandlers();
+                            }
+                        }
+                    });
+                });
+                
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+                
+                return [];
+            }
+            """
+        )
         
         # Version change handler
         version_selector.change(
@@ -789,16 +971,45 @@ def create_armor_picker_interface():
             outputs=outputs_list
         )
         
-        # Update inputs list to include language selector
-        inputs = [language_selector, version_selector] + resistance_inputs
+        # Search button click handler
+        def initial_search(language, version, *args):
+            result_html, new_sort_by, new_sort_order = search_armors(language, version, "name", "asc", *args)
+            return result_html, new_sort_by, new_sort_order
+        
+        search_inputs = [language_selector, version_selector] + resistance_inputs
         search_btn.click(
-            fn=search_armors,
-            inputs=inputs,
-            outputs=[results]
+            fn=initial_search,
+            inputs=search_inputs,
+            outputs=[results, sort_by_state, sort_order_state]
+        )
+        
+        # Sort trigger handler - now uses actual Gradio component values
+        sort_inputs = [js_data_input, language_selector, version_selector] + resistance_inputs
+        
+        # Sort trigger handler
+        sort_trigger_btn.click(
+            fn=handle_sort_with_js_params,
+            inputs=sort_inputs,  # Use actual Gradio components
+            outputs=[results, sort_by_state, sort_order_state],
+            js="""
+            function(dummy_input, language, version, ...resistance_args) {
+                // Only send sort parameters from JavaScript, everything else comes from Gradio
+                const data = {
+                    sortColumn: window.currentSortColumn || 'name',
+                    sortOrder: window.currentSortOrder || 'asc'
+                };
+                
+                console.log('Sending sort data:', data);
+                console.log('Language from Gradio:', language);
+                console.log('Version from Gradio:', version);
+                console.log('Resistance args count:', resistance_args.length);
+                
+                return [JSON.stringify(data), language, version, ...resistance_args];
+            }
+            """
         )
     
     return interface
-
 
 
 # Launch the application
