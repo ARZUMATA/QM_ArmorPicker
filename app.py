@@ -2,6 +2,7 @@ import gradio as gr
 import json
 import pandas as pd
 from typing import Dict, List, Any, Tuple
+import math
 
 class ArmorPicker:
     def __init__(self):
@@ -673,22 +674,48 @@ class ArmorPicker:
         # Create HTML table for combinations
         return self.create_combinations_table_html(final_combinations, enabled_requirements)
 
-    def evaluate_combination(self, armor_combination, requirements: Dict[str, int]) -> Dict:
-        """Evaluate how well an armor combination meets requirements"""
-        total_resistances = {}
+    def calculate_resulting_resistance(self, total_armor_score: int) -> float:
+        """Calculate resulting resistance percentage using the formula"""
+        if total_armor_score <= 0:
+            return 0.0
         
-        # Calculate total resistance for each type
+        try:
+            # 1 - 1.75^(-0.035 * v_armor)
+            result = 1 - math.pow(1.75, -0.035 * total_armor_score)
+            return max(0.0, min(1.0, result)) # Clamp between 0 and 1
+        except (OverflowError, ValueError):
+            # Handle edge cases where calculation might fail
+            return 1.0 if total_armor_score > 100 else 0.0
+        
+    def evaluate_combination(self, armor_combination, requirements: Dict[str, int]) -> Dict:
+        """Evaluate how well an armor combination meets requirements using resistance formula"""
+        total_armor_scores = {}
+        
+        # Calculate total armor score for each resistance type
         for armor in armor_combination:
             for resist in armor.get("ResistSheet", []):
                 resist_type = resist.get("ResistType")
                 resist_value = resist.get("ResistValue", 0)
-                total_resistances[resist_type] = total_resistances.get(resist_type, 0) + resist_value
+                total_armor_scores[resist_type] = total_armor_scores.get(resist_type, 0) + resist_value
         
-        # Calculate coverage for each required resistance
+        # Calculate resulting resistance percentages and coverage
+        resulting_resistances = {}
         coverages = []
-        for resist_type, required_value in requirements.items():
-            actual_value = total_resistances.get(resist_type, 0)
-            coverage = min(actual_value / required_value, 1.0) if required_value > 0 else 1.0
+        
+        for resist_type, required_percentage in requirements.items():
+            total_score = total_armor_scores.get(resist_type, 0)
+            resulting_resistance = self.calculate_resulting_resistance(total_score)
+            resulting_percentage = resulting_resistance * 100  # Convert to percentage
+            
+            resulting_resistances[resist_type] = {
+                'score': total_score,
+                'percentage': resulting_percentage
+            }
+            
+            # Calculate coverage (how well we meet the requirement)
+            # Required percentage should be treated as the target resistance percentage
+            required_decimal = required_percentage / 100.0 if required_percentage > 1 else required_percentage
+            coverage = min(resulting_resistance / required_decimal, 1.0) if required_decimal > 0 else 1.0
             coverages.append(coverage)
         
         # Calculate metrics
@@ -700,7 +727,8 @@ class ArmorPicker:
             'avg_coverage': avg_coverage,
             'variance': variance,
             'meets_threshold': meets_threshold,
-            'total_resistances': total_resistances,
+            'total_armor_scores': total_armor_scores,  # Keep for backward compatibility
+            'resulting_resistances': resulting_resistances,  # New: actual resistance percentages
             'coverages': coverages
         }
 
@@ -736,6 +764,11 @@ class ArmorPicker:
         .combo-detail {{
             padding-left: 20px !important;
             font-style: bold !important;
+        }}
+        .combo-score-summary {{
+            font-weight: bold !important;
+            background-color: #444 !important;
+            font-style: italic !important;
         }}
         .combo-separator {{
             background-color: transparent !important;
@@ -797,7 +830,7 @@ class ArmorPicker:
                 html += f'<td colspan="{3 + len(requirements)}">&nbsp;</td>'
                 html += '</tr>'
             
-            # Summary row - combination name with overall coverage
+            # Summary row - combination name with raw score
             html += '<tr class="combo-summary">'
             
             # Combination name (right-aligned)
@@ -810,30 +843,12 @@ class ArmorPicker:
             coverage_color = self.get_coverage_color(coverage_pct)
             html += f'<td class="resist-cell coverage-colored" style="--coverage-color: {coverage_color}; background-color: #555 !important;">{coverage_pct:.1f}%</td>'
             
-            # Individual resistance coverage percentages with difference indicators
+            # Show just the raw scores
             for resist_type in requirements.keys():
-                actual = combo['score']['total_resistances'].get(resist_type, 0)
-                required = requirements[resist_type]
-                difference = actual - required
-                coverage = min(actual / required, 1.0) if required > 0 else 1.0
-                coverage_pct_individual = coverage * 100
+                resistance_info = combo['score']['resulting_resistances'].get(resist_type, {'score': 0, 'percentage': 0})
+                total_score = resistance_info['score']
                 
-                # Get gradient colors
-                diff_color = self.get_difference_color(difference, required)
-                
-                # Format difference text
-                if difference > 0:
-                    diff_text = f"(+{difference})"
-                elif difference < 0:
-                    diff_text = f"({difference})"
-                else:
-                    diff_text = "(0)"
-                
-                # Use CSS custom properties
-                html += f'''<td class="resist-cell" style="--diff-color: {diff_color}; background-color: #555 !important;">
-                            <span class="percent-white">{coverage_pct_individual:.1f}%</span> 
-                            <span class="diff-colored">{diff_text}</span>
-                            </td>'''
+                html += f'<td class="resist-cell" style="background-color: #555 !important; color: #fff !important;">{total_score}</td>'
             
             html += '</tr>'
             
@@ -867,6 +882,39 @@ class ArmorPicker:
                     html += f'<td class="resist-cell" style="background-color: {color} !important; color: #000 !important;">{value}</td>'
                 
                 html += '</tr>'
+            
+            # Resulting Resistance row - shows percentages with brackets
+            html += '<tr class="combo-score-summary">'
+            html += f'<td class="combo-detail" style="font-style: italic;">Resulting Resistance</td>'
+            html += f'<td class="combo-detail" style="font-style: italic;">Percentages</td>'
+            html += '<td></td>'  # Empty coverage cell
+            
+            # Show percentage with difference in brackets
+            for resist_type in requirements.keys():
+                resistance_info = combo['score']['resulting_resistances'].get(resist_type, {'score': 0, 'percentage': 0})
+                resulting_percentage = resistance_info['percentage']
+                required_percentage = requirements[resist_type]
+                
+                # Calculate difference in percentage points
+                difference = resulting_percentage - required_percentage
+                
+                # Get gradient colors
+                diff_color = self.get_difference_color(difference, required_percentage)
+                
+                # Format difference text
+                if difference > 0:
+                    diff_text = f"(+{difference:.1f}%)"
+                elif difference < 0:
+                    diff_text = f"({difference:.1f}%)"
+                else:
+                    diff_text = "(0%)"
+                
+                html += f'''<td class="resist-cell" style="--diff-color: {diff_color}; background-color: #444 !important;">
+                            <span class="percent-white">{resulting_percentage:.1f}%</span> 
+                            <span class="diff-colored">{diff_text}</span>
+                            </td>'''
+            
+            html += '</tr>'
         
         html += '</tbody></table>'
         return html
