@@ -656,7 +656,12 @@ class ArmorPicker:
                 })
         
         # Sort combinations by quality (best matches first)
-        combinations.sort(key=lambda x: (x['score']['avg_coverage'], -x['score']['variance']), reverse=True)
+        # Now includes dispersion: lower dispersion (more balanced) is better
+        combinations.sort(key=lambda x: (
+            -x['score']['dispersion'],       # Lower dispersion is better (more balanced)
+             x['score']['avg_coverage'],      # Higher coverage is better
+            -x['score']['variance']          # Lower variance is better
+        ), reverse=True)
         
         # Filter combinations that meet threshold, but keep at least one
         good_combinations = [combo for combo in combinations if combo['score']['meets_threshold']]
@@ -701,6 +706,7 @@ class ArmorPicker:
         # Calculate resulting resistance percentages and coverage
         resulting_resistances = {}
         coverages = []
+        enabled_resistance_percentages = []  # For dispersion calculation
         
         for resist_type, required_percentage in requirements.items():
             total_score = total_armor_scores.get(resist_type, 0)
@@ -712,11 +718,24 @@ class ArmorPicker:
                 'percentage': resulting_percentage
             }
             
+            # Store for dispersion calculation
+            enabled_resistance_percentages.append(resulting_percentage)
+            
             # Calculate coverage (how well we meet the requirement)
             # Required percentage should be treated as the target resistance percentage
             required_decimal = required_percentage / 100.0 if required_percentage > 1 else required_percentage
             coverage = min(resulting_resistance / required_decimal, 1.0) if required_decimal > 0 else 1.0
             coverages.append(coverage)
+        
+        # Calculate dispersion (standard deviation of resistance percentages)
+        # Lower dispersion = more balanced protection, Higher dispersion = uneven protection
+        dispersion = 0.0
+
+        # Only calculate dispersion if we have more than one resistance type enabled
+        if len(enabled_resistance_percentages) > 1:
+            mean_percentage = sum(enabled_resistance_percentages) / len(enabled_resistance_percentages)
+            variance = sum((percentage - mean_percentage) ** 2 for percentage in enabled_resistance_percentages) / (len(enabled_resistance_percentages)-1)
+            dispersion = variance ** 0.5  # Standard deviation
         
         # Calculate metrics
         avg_coverage = sum(coverages) / len(coverages) if coverages else 0
@@ -729,7 +748,9 @@ class ArmorPicker:
             'meets_threshold': meets_threshold,
             'total_armor_scores': total_armor_scores,  # Keep for backward compatibility
             'resulting_resistances': resulting_resistances,  # New: actual resistance percentages
-            'coverages': coverages
+            'coverages': coverages,
+            'dispersion': dispersion,  # New: resistance flatness measure
+            'mean_resistance': sum(enabled_resistance_percentages) / len(enabled_resistance_percentages) if enabled_resistance_percentages else 0
         }
 
     def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int]) -> str:
@@ -841,7 +862,10 @@ class ArmorPicker:
             # Overall coverage percentage with gradient color
             coverage_pct = combo['score']['avg_coverage'] * 100
             coverage_color = self.get_coverage_color(coverage_pct)
-            html += f'<td class="resist-cell coverage-colored" style="--coverage-color: {coverage_color}; background-color: #555 !important;">{coverage_pct:.1f}%</td>'
+            dispersion = combo['score']['dispersion']
+            html += f'''<td class="resist-cell coverage-colored" style="--coverage-color: {coverage_color}; background-color: #555 !important;">
+            <div>{coverage_pct:.1f}% σ: {dispersion:.1f}</div>
+            </td>'''
             
             # Show just the raw scores
             for resist_type in requirements.keys():
