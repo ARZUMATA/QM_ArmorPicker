@@ -593,14 +593,14 @@ class ArmorPicker:
         }
 
     def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int]) -> str:
-        """Create HTML table for armor combinations"""
+        """Create HTML table for armor combinations with expanded format"""
         html = f"""
         <style>
         .combo-table {{
             border-collapse: collapse !important;
             width: 100% !important;
             font-family: 'Roboto', Arial, sans-serif !important;
-            font-size: 14px !important;
+            font-size: 16px !important;
             margin-bottom: 20px !important;
         }}
         .combo-table th, .combo-table td {{
@@ -615,7 +615,7 @@ class ArmorPicker:
             font-weight: bold !important;
         }}
         .combo-table tr:nth-child(even) td {{
-            background-color: #444 !important;
+            // background-color: #444 !important;
         }}
         .combo-summary {{
             font-weight: bold !important;
@@ -633,7 +633,7 @@ class ArmorPicker:
         }}
         .combo-separator td {{
             background-color: transparent !important;
-            border: none !important;
+            border: transparent !important;
             padding: 8px !important;
             height: 16px !important;
         }}
@@ -688,24 +688,18 @@ class ArmorPicker:
             coverage_class = 'coverage-good' if coverage_pct >= 90 else 'coverage-ok' if coverage_pct >= 70 else 'coverage-poor'
             html += f'<td class="resist-cell {coverage_class}" style="background-color: #555 !important; color: #fff !important;">{coverage_pct:.1f}%</td>'
             
-            # Individual resistance total values and percentages
+            # Individual resistance coverage percentages
             for resist_type in requirements.keys():
                 actual = combo['score']['total_resistances'].get(resist_type, 0)
                 required = requirements[resist_type]
                 coverage = min(actual / required, 1.0) if required > 0 else 1.0
                 coverage_pct_individual = coverage * 100
                 coverage_class = 'coverage-good' if coverage >= 0.9 else 'coverage-ok' if coverage >= 0.7 else 'coverage-poor'
-                html += f'<td class="resist-cell {coverage_class}" style="background-color: #555 !important; color: #fff !important;">{actual} / {coverage_pct_individual:.1f}%</td>'
+                html += f'<td class="resist-cell {coverage_class}" style="background-color: #555 !important; color: #fff !important;">{coverage_pct_individual:.1f}%</td>'
             
             html += '</tr>'
             
-            # Group armors by type for coverage calculation
-            armors_by_type = {}
-            for armor in combo['armors']:
-                armor_type = armor.get('Type', 'Unknown')
-                armors_by_type[armor_type] = armor
-            
-            # Detail rows - one for each armor piece with type coverage
+            # Detail rows - one for each armor piece
             for armor in combo['armors']:
                 html += '<tr class="combo-detail">'
                 
@@ -717,38 +711,22 @@ class ArmorPicker:
                 armor_type = armor.get('Type', 'Unknown')
                 html += f'<td class="combo-detail">{armor_type}</td>'
                 
-                # Calculate coverage for this armor type
+                # Empty coverage cell for detail rows
+                html += '<td></td>'
+                
+                # Individual armor resistance values with colors
                 armor_resist_dict = {}
                 for resist in armor.get("ResistSheet", []):
                     armor_resist_dict[resist.get("ResistType")] = resist.get("ResistValue", 0)
                 
-                # Calculate average coverage for this armor piece across required resistances
-                armor_coverages = []
-                for resist_type in requirements.keys():
-                    armor_value = armor_resist_dict.get(resist_type, 0)
-                    required = requirements[resist_type]
-
-                    # Calculate what portion this armor contributes to the requirement
-                    armor_coverage = min(armor_value / required, 1.0) if required > 0 else 1.0
-                    armor_coverages.append(armor_coverage)
-                
-                avg_armor_coverage = sum(armor_coverages) / len(armor_coverages) if armor_coverages else 0
-                armor_coverage_pct = avg_armor_coverage * 100
-                armor_coverage_class = 'coverage-good' if avg_armor_coverage >= 0.3 else 'coverage-ok' if avg_armor_coverage >= 0.15 else 'coverage-poor'
-                html += f'<td class="resist-cell {armor_coverage_class}" style="background-color: #555 !important; color: #fff !important;">{armor_coverage_pct:.1f}%</td>'
-                
-                # Individual armor resistance values with colors and percentages
                 for resist_type in requirements.keys():
                     value = armor_resist_dict.get(resist_type, 0)
-                    required = requirements[resist_type]
-                    individual_coverage = min(value / required, 1.0) if required > 0 else 1.0
-                    individual_coverage_pct = individual_coverage * 100
                     
                     # Use the same color calculation as individual armor table
                     min_val, max_val = resist_ranges.get(resist_type, (0, 0))
                     color = self.value_to_color(value, min_val, max_val)
                     
-                    html += f'<td class="resist-cell" style="background-color: {color} !important; color: #000 !important;">{value} / {individual_coverage_pct:.1f}%</td>'
+                    html += f'<td class="resist-cell" style="background-color: {color} !important; color: #000 !important;">{value}</td>'
                 
                 html += '</tr>'
         
