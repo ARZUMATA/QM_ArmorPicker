@@ -577,6 +577,8 @@ class ArmorPicker:
         # Get enabled resistance requirements
         enabled_requirements = {}
         for resist_type, filter_config in resistance_filters.items():
+if filter_config["value"] == None: # If NoneType as we have nothing in the input
+                filter_config["value"] = 0
             if filter_config["enabled"] and filter_config["value"] > 0:
                 enabled_requirements[resist_type] = filter_config["value"]
         
