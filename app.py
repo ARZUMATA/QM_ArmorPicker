@@ -806,8 +806,8 @@ class ArmorPicker:
             color: #000 !important;
             text-align: center !important;
         }}
-        .coverage-colored {{
-            color: var(--coverage-color) !important;
+        .dispersion-colored {{
+            color: var(--dispersion-color) !important;
         }}
         .diff-colored {{
             color: var(--diff-color) !important;
@@ -824,7 +824,7 @@ class ArmorPicker:
         html += '<table class="combo-table"><thead><tr>'
         html += f'<th>{self.get_translation("item")}</th>'
         html += f'<th>{self.get_translation("type")}</th>'
-        html += f'<th>{self.get_translation("coverage")}</th>'
+        html += f'<th>{self.get_translation("dispersion")}</th>'
         
         # Add columns for each required resistance
         for resist_type in requirements.keys():
@@ -844,6 +844,11 @@ class ArmorPicker:
 
         resist_ranges = self.get_resistance_range(all_combo_armors)
         
+        # Get dispersion range for color calculation
+        all_dispersions = [combo['score']['dispersion'] for combo in combinations]
+        min_dispersion = min(all_dispersions) if all_dispersions else 0
+        max_dispersion = max(all_dispersions) if all_dispersions else 0
+        
         for i, combo in enumerate(combinations, 1):
             # Add separator row between combinations (except before the first one)
             if i > 1:
@@ -851,7 +856,7 @@ class ArmorPicker:
                 html += f'<td colspan="{3 + len(requirements)}">&nbsp;</td>'
                 html += '</tr>'
             
-            # Summary row - combination name with raw score
+            # Summary row - combination name with raw scores
             html += '<tr class="combo-summary">'
             
             # Combination name (right-aligned)
@@ -859,13 +864,12 @@ class ArmorPicker:
             html += f'<td class="combo-name"><strong>{combo_name}</strong></td>'
             html += f'<td><strong>Total</strong></td>'
             
-            # Overall coverage percentage with gradient color
-            coverage_pct = combo['score']['avg_coverage'] * 100
-            coverage_color = self.get_coverage_color(coverage_pct)
+            # Dispersion with gradient color (lower dispersion = better = greener)
             dispersion = combo['score']['dispersion']
-            html += f'''<td class="resist-cell coverage-colored" style="--coverage-color: {coverage_color}; background-color: #555 !important;">
-            <div>{coverage_pct:.1f}% σ: {dispersion:.1f}</div>
-            </td>'''
+            # Invert the color mapping: lower dispersion should be green (better)
+            inverted_dispersion = max_dispersion - dispersion if max_dispersion > min_dispersion else 0
+            dispersion_color = self.value_to_color(inverted_dispersion, 0, max_dispersion - min_dispersion)
+            html += f'<td class="resist-cell dispersion-colored" style="background-color: {dispersion_color} !important; color: #000 !important;">{dispersion:.1f}</td>'
             
             # Show just the raw scores
             for resist_type in requirements.keys():
@@ -888,7 +892,7 @@ class ArmorPicker:
                 armor_type = armor.get('Type', 'Unknown')
                 html += f'<td class="combo-detail">{armor_type}</td>'
                 
-                # Empty coverage cell for detail rows
+                # Empty dispersion cell for detail rows
                 html += '<td></td>'
                 
                 # Individual armor resistance values with colors
@@ -907,11 +911,14 @@ class ArmorPicker:
                 
                 html += '</tr>'
             
-            # Resulting Resistance row - shows percentages with brackets
+            # Resulting Resistance row - shows percentages with brackets and mean percentage
             html += '<tr class="combo-score-summary">'
             html += f'<td class="combo-detail" style="font-style: italic;">Resulting Resistance</td>'
             html += f'<td class="combo-detail" style="font-style: italic;">Percentages</td>'
-            html += '<td></td>'  # Empty coverage cell
+            
+            # Show mean percentage in the dispersion column
+            mean_resistance = combo['score']['mean_resistance']
+            html += f'<td class="resist-cell" style="background-color: #444 !important; color: #fff !important; font-style: italic;">Mean: {mean_resistance:.1f}%</td>'
             
             # Show percentage with difference in brackets
             for resist_type in requirements.keys():
