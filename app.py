@@ -649,21 +649,29 @@ class ArmorPicker:
             armor_lists = list(limited_armor_by_type.values())
             for combination in product(*armor_lists):
                 combo_score = self.evaluate_combination(combination, enabled_requirements)
-                if combo_score['meets_threshold']:
                     combinations.append({
                         'armors': combination,
                         'score': combo_score
                     })
         
-        # Sort combinations by quality and limit to top XX
+        # Sort combinations by quality (best matches first)
         combinations.sort(key=lambda x: (x['score']['avg_coverage'], -x['score']['variance']), reverse=True)
-        combinations = combinations[:20]
         
-        if not combinations:
+        # Filter combinations that meet threshold, but keep at least one
+        good_combinations = [combo for combo in combinations if combo['score']['meets_threshold']]
+        
+        if good_combinations:
+            # Use combinations that meet the threshold
+            final_combinations = good_combinations[:20]
+        elif combinations:
+            # No combinations meet threshold, but return the best match(es)
+            final_combinations = combinations[:5]  # Return top 5 best matches even if they don't meet requirements
+        else:
+            # This should rarely happen, but handle the edge case
             return f"<p>{self.get_translation('no_combinations_found')}</p>"
         
         # Create HTML table for combinations
-        return self.create_combinations_table_html(combinations, enabled_requirements)
+        return self.create_combinations_table_html(final_combinations, enabled_requirements)
 
     def evaluate_combination(self, armor_combination, requirements: Dict[str, int]) -> Dict:
         """Evaluate how well an armor combination meets requirements"""
