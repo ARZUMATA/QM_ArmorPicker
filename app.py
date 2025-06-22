@@ -778,6 +778,11 @@ class ArmorPicker:
         
         html += '</tr></thead><tbody>'
         
+        # Add separator row after header
+        html += '<tr class="combo-separator">'
+        html += f'<td colspan="{3 + len(requirements)}">&nbsp;</td>'
+        html += '</tr>'
+        
         # Get resistance ranges for color calculation (from all armors in combinations)
         all_combo_armors = []
         for combo in combinations:
