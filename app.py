@@ -724,15 +724,17 @@ class ArmorPicker:
                 resist_type = resist.get("ResistType")
                 resist_value = resist.get("ResistValue", 0)
                 
-                # Apply Invincible perk: +12 to all resistances
-                if invincible_perk:
-                    resist_value = resist_value + 12
-                
-                # Apply Hardened talent: +10% to resistances
-                if hardened_talent:
-                    resist_value = resist_value * 1.1  # +10%
-                
                 total_armor_scores[resist_type] = total_armor_scores.get(resist_type, 0) + resist_value
+        
+        # Apply perks to the total combined resistance scores
+        for resist_type in total_armor_scores:
+            # Apply Invincible perk: +12 to all resistances
+            if invincible_perk:
+                total_armor_scores[resist_type] = total_armor_scores[resist_type] + 12
+            
+            # Apply Hardened talent: +10% to resistances
+            if hardened_talent:
+                total_armor_scores[resist_type] = total_armor_scores[resist_type] * 1.1  # +10%
         
         # Calculate resulting resistance percentages and coverage
         resulting_resistances = {}
@@ -941,18 +943,10 @@ class ArmorPicker:
                 # Empty dispersion cell for detail rows
                 html += '<td></td>'
                 
-                # Individual armor resistance values with colors and perk bonuses applied
+                # Individual armor resistance values
                 armor_resist_dict = {}
                 for resist in armor.get("ResistSheet", []):
                     resist_value = resist.get("ResistValue", 0)
-                    
-                    # Apply Invincible perk: +12 to all resistances
-                    if invincible_perk:
-                        resist_value = resist_value + 12
-                    
-                    # Apply Hardened talent: +10% to resistances
-                    if hardened_talent:
-                        resist_value = resist_value * 1.1  # +10%
                     
                     armor_resist_dict[resist.get("ResistType")] = resist_value
                 
