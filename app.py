@@ -798,9 +798,7 @@ class ArmorPicker:
         .combo-table th, .combo-table td {{
             border: 1px solid #000 !important;
             padding: 8px !important;
-            text-align: left !important;
             background-color: #333 !important;
-            color: #fff !important;
         }}
         .combo-table th {{
             background-color: #555 !important;
@@ -832,11 +830,35 @@ class ArmorPicker:
             padding: 8px !important;
             height: 16px !important;
         }}
-        .resist-cell {{
+        .dispersion-cell {{
             font-weight: bold !important;
+            text-align: left !important;
             color: #000 !important;
-            text-align: center !important;
         }}
+        .summary-resist-cell {{
+            font-weight: bold !important;
+            text-align: left !important;
+            background-color: #555 !important;
+            color: #fff !important;
+        }}
+        .armor-resist-cell {{
+            text-align: right !important;
+            background-color: #333 !important;
+            color: #fff !important;
+        }}
+        .result-resist-cell {{
+            font-weight: bold !important;
+            text-align: left !important;
+            background-color: #444 !important;
+        }}
+        .mean-cell {{
+            font-weight: bold !important;
+            text-align: left !important;
+            background-color: #444 !important;
+            color: #fff !important;
+            font-style: italic !important;
+        }}
+        
         .dispersion-colored {{
             color: var(--dispersion-color) !important;
         }}
