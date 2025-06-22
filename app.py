@@ -699,7 +699,7 @@ class ArmorPicker:
             return f"<p>{self.get_translation('no_combinations_found')}</p>"
         
         # Create HTML table for combinations
-        return self.create_combinations_table_html(final_combinations, enabled_requirements)
+        return self.create_combinations_table_html(final_combinations, enabled_requirements, invincible_perk, hardened_talent)
 
     def calculate_resulting_resistance(self, total_armor_score: int) -> float:
         """Calculate resulting resistance percentage using the formula"""
@@ -784,7 +784,7 @@ class ArmorPicker:
             'mean_resistance': sum(enabled_resistance_percentages) / len(enabled_resistance_percentages) if enabled_resistance_percentages else 0
         }
 
-    def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int]) -> str:
+    def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int], invincible_perk: bool = False, hardened_talent: bool = False) -> str:
         """Create HTML table for armor combinations with CSS custom properties"""
         
         html = f"""
@@ -868,10 +868,31 @@ class ArmorPicker:
         html += f'<td colspan="{3 + len(requirements)}">&nbsp;</td>'
         html += '</tr>'
         
-        # Get resistance ranges for color calculation (from all armors in combinations)
+        # Get resistance ranges for color calculation (from all armors in combinations with perk bonuses applied)
         all_combo_armors = []
         for combo in combinations:
-            all_combo_armors.extend(combo['armors'])
+            for armor in combo['armors']:
+                # Create a copy of armor with perk-modified resistance values
+                armor_with_perks = armor.copy()
+                modified_resist_sheet = []
+                
+                for resist in armor.get("ResistSheet", []):
+                    resist_value = resist.get("ResistValue", 0)
+                    
+                    # Apply Invincible perk: +12 to all resistances
+                    if invincible_perk:
+                        resist_value = resist_value + 12
+                    
+                    # Apply Hardened talent: +10% to resistances
+                    if hardened_talent:
+                        resist_value = resist_value * 1.1  # +10%
+                    
+                    modified_resist = resist.copy()
+                    modified_resist["ResistValue"] = resist_value
+                    modified_resist_sheet.append(modified_resist)
+                
+                armor_with_perks["ResistSheet"] = modified_resist_sheet
+                all_combo_armors.append(armor_with_perks)
 
         resist_ranges = self.get_resistance_range(all_combo_armors)
         
@@ -907,7 +928,7 @@ class ArmorPicker:
                 resistance_info = combo['score']['resulting_resistances'].get(resist_type, {'score': 0, 'percentage': 0})
                 total_score = resistance_info['score']
                 
-                html += f'<td class="resist-cell" style="background-color: #555 !important; color: #fff !important;">{total_score}</td>'
+                html += f'<td class="resist-cell" style="background-color: #555 !important; color: #fff !important;">{total_score:.0f}</td>'
             
             html += '</tr>'
             
@@ -926,10 +947,20 @@ class ArmorPicker:
                 # Empty dispersion cell for detail rows
                 html += '<td></td>'
                 
-                # Individual armor resistance values with colors
+                # Individual armor resistance values with colors and perk bonuses applied
                 armor_resist_dict = {}
                 for resist in armor.get("ResistSheet", []):
-                    armor_resist_dict[resist.get("ResistType")] = resist.get("ResistValue", 0)
+                    resist_value = resist.get("ResistValue", 0)
+                    
+                    # Apply Invincible perk: +12 to all resistances
+                    if invincible_perk:
+                        resist_value = resist_value + 12
+                    
+                    # Apply Hardened talent: +10% to resistances
+                    if hardened_talent:
+                        resist_value = resist_value * 1.1  # +10%
+                    
+                    armor_resist_dict[resist.get("ResistType")] = resist_value
                 
                 for resist_type in requirements.keys():
                     value = armor_resist_dict.get(resist_type, 0)
@@ -938,7 +969,7 @@ class ArmorPicker:
                     min_val, max_val = resist_ranges.get(resist_type, (0, 0))
                     color = self.value_to_color(value, min_val, max_val)
                     
-                    html += f'<td class="resist-cell" style="background-color: {color} !important; color: #000 !important;">{value}</td>'
+                    html += f'<td class="resist-cell" style="background-color: {color} !important; color: #000 !important;">{value:.0f}</td>'
                 
                 html += '</tr>'
             
