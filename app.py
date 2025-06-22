@@ -868,34 +868,6 @@ class ArmorPicker:
         html += f'<td colspan="{3 + len(requirements)}">&nbsp;</td>'
         html += '</tr>'
         
-        # Get resistance ranges for color calculation (from all armors in combinations with perk bonuses applied)
-        all_combo_armors = []
-        for combo in combinations:
-            for armor in combo['armors']:
-                # Create a copy of armor with perk-modified resistance values
-                armor_with_perks = armor.copy()
-                modified_resist_sheet = []
-                
-                for resist in armor.get("ResistSheet", []):
-                    resist_value = resist.get("ResistValue", 0)
-                    
-                    # Apply Invincible perk: +12 to all resistances
-                    if invincible_perk:
-                        resist_value = resist_value + 12
-                    
-                    # Apply Hardened talent: +10% to resistances
-                    if hardened_talent:
-                        resist_value = resist_value * 1.1  # +10%
-                    
-                    modified_resist = resist.copy()
-                    modified_resist["ResistValue"] = resist_value
-                    modified_resist_sheet.append(modified_resist)
-                
-                armor_with_perks["ResistSheet"] = modified_resist_sheet
-                all_combo_armors.append(armor_with_perks)
-
-        resist_ranges = self.get_resistance_range(all_combo_armors)
-        
         # Get dispersion range for color calculation
         all_dispersions = [combo['score']['dispersion'] for combo in combinations]
         min_dispersion = min(all_dispersions) if all_dispersions else 0
@@ -921,14 +893,14 @@ class ArmorPicker:
             # Invert the color mapping: lower dispersion should be green (better)
             inverted_dispersion = max_dispersion - dispersion if max_dispersion > min_dispersion else 0
             dispersion_color = self.value_to_color(inverted_dispersion, 0, max_dispersion - min_dispersion)
-            html += f'<td class="resist-cell dispersion-colored" style="background-color: {dispersion_color} !important; color: #000 !important;">{dispersion:.2f}</td>'
+            html += f'<td class="dispersion-cell" style="background-color: {dispersion_color} !important;">{dispersion:.2f}</td>'
             
             # Show just the raw scores
             for resist_type in requirements.keys():
                 resistance_info = combo['score']['resulting_resistances'].get(resist_type, {'score': 0, 'percentage': 0})
                 total_score = resistance_info['score']
                 
-                html += f'<td class="resist-cell" style="background-color: #555 !important; color: #fff !important;">{total_score:.0f}</td>'
+                html += f'<td class="summary-resist-cell">{total_score:.0f}</td>'
             
             html += '</tr>'
             
@@ -965,11 +937,7 @@ class ArmorPicker:
                 for resist_type in requirements.keys():
                     value = armor_resist_dict.get(resist_type, 0)
                     
-                    # Use the same color calculation as individual armor table
-                    min_val, max_val = resist_ranges.get(resist_type, (0, 0))
-                    color = self.value_to_color(value, min_val, max_val)
-                    
-                    html += f'<td class="resist-cell" style="background-color: {color} !important; color: #000 !important;">{value:.0f}</td>'
+                    html += f'<td class="armor-resist-cell">{value:.0f}</td>'
                 
                 html += '</tr>'
             
@@ -980,7 +948,7 @@ class ArmorPicker:
             
             # Show mean percentage in the dispersion column
             mean_resistance = combo['score']['mean_resistance']
-            html += f'<td class="resist-cell" style="background-color: #444 !important; color: #fff !important; font-style: italic;">Mean: {mean_resistance:.1f}%</td>'
+            html += f'<td class="mean-cell">Mean: {mean_resistance:.2f}%</td>'
             
             # Show percentage with difference in brackets
             for resist_type in requirements.keys():
@@ -1002,7 +970,7 @@ class ArmorPicker:
                 else:
                     diff_text = "(0%)"
                 
-                html += f'''<td class="resist-cell" style="--diff-color: {diff_color}; background-color: #444 !important;">
+                html += f'''<td class="result-resist-cell" style="--diff-color: {diff_color};">
                             <span class="percent-white">{resulting_percentage:.1f}%</span> 
                             <span class="diff-colored">{diff_text}</span>
                             </td>'''
