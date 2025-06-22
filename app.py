@@ -69,6 +69,8 @@ class ArmorPicker:
                 "coverage": "Coverage",
                 "item": "Item",
                 "type": "Type",
+                "armor_combinations_tab": "Armor Combinations",
+                "individual_armors_tab": "Individual Armors",
             },
             "Русский": {
                 "title": "QM Подборщик Брони",
@@ -104,6 +106,8 @@ class ArmorPicker:
                 "coverage": "Покрытие",
                 "item": "Предмет",
                 "type": "Тип",
+                "armor_combinations_tab": "Комбинации Брони",
+                "individual_armors_tab": "Общий список брони",
             },
             "Deutsch": {
                 "title": "QM Rüstungs-Picker",
@@ -139,6 +143,8 @@ class ArmorPicker:
                 "coverage": "Abdeckung",
                 "item": "Gegenstand", 
                 "type": "Typ",
+                "armor_combinations_tab": "Rüstungskombinationen",
+                "individual_armors_tab": "Einzelne Rüstungen",
             },
             "Français": {
                 "title": "QM Sélecteur d'Armure",
@@ -173,7 +179,9 @@ class ArmorPicker:
                 "combination": "Combinaison",
                 "coverage": "Couverture",
                 "item": "Objet",
-                "type": "Type"
+                "type": "Type",
+                "armor_combinations_tab": "Combinaisons d'Armures",
+                "individual_armors_tab": "Armures Individuelles",
             },
             "Español": {
                 "title": "QM Selector de Armadura",
@@ -209,6 +217,8 @@ class ArmorPicker:
                 "coverage": "Cobertura",
                 "item": "Objeto",
                 "type": "Tipo",
+                "armor_combinations_tab": "Combinaciones de Armaduras",
+                "individual_armors_tab": "Armaduras Individuales",
             },
             "Polski": {
                 "title": "QM Wybieracz Zbroi",
@@ -244,6 +254,8 @@ class ArmorPicker:
                 "coverage": "Pokrycie",
                 "item": "Przedmiot",
                 "type": "Typ",
+                "armor_combinations_tab": "Kombinacje Zbroi",
+                "individual_armors_tab": "Pojedyncze Zbroje",
             },
             "Türkçe": {
                 "title": "QM Zırh Seçici",
@@ -279,6 +291,8 @@ class ArmorPicker:
                 "coverage": "Kapsama",
                 "item": "Eşya",
                 "type": "Tür",
+                "armor_combinations_tab": "Zırh Kombinasyonları",
+                "individual_armors_tab": "Tekil Zırhlar",
             },
             "Português Brasileiro": {
                 "title": "QM Seletor de Armadura",
@@ -314,6 +328,8 @@ class ArmorPicker:
                 "coverage": "Cobertura",
                 "item": "Item",
                 "type": "Tipo",
+                "armor_combinations_tab": "Combinações de Armaduras",
+                "individual_armors_tab": "Armaduras Individuais",
             },
             "한국어": {
                 "title": "QM 갑옷 선택기",
@@ -349,6 +365,8 @@ class ArmorPicker:
                 "coverage": "커버리지",
                 "item": "아이템",
                 "type": "유형",
+                "armor_combinations_tab": "갑옷 조합",
+                "individual_armors_tab": "개별 갑옷",
             },
             "日本": {
                 "title": "QM アーマーピッカー",
@@ -384,6 +402,8 @@ class ArmorPicker:
                 "coverage": "カバレッジ",
                 "item": "アイテム",
                 "type": "タイプ",
+                "armor_combinations_tab": "防具の組み合わせ",
+                "individual_armors_tab": "個別の防具",
             },
             "中国人": {
                 "title": "QM 护甲选择器",
@@ -419,6 +439,8 @@ class ArmorPicker:
                 "coverage": "覆盖率",
                 "item": "物品",
                 "type": "类型",
+                "armor_combinations_tab": "护甲组合",
+                "individual_armors_tab": "单个护甲",
             }
         }
         
@@ -1213,13 +1235,15 @@ def create_armor_picker_interface():
                 results_md = gr.Markdown("## Results")
                 
                 with gr.Tabs():
-                    with gr.TabItem("Armor Combinations"):
+                    armor_combinations_tab = gr.TabItem("Armor Combinations")
+                    with armor_combinations_tab:
                         combination_results = gr.HTML(
                             label="Armor Combinations",
-                            value="<p>Click 'Search Armors' to see combinations...</p>"
+                            value="<p>Click 'Search Armors' to see results...</p>"
                         )
                 
-                    with gr.TabItem("Individual Armors"):
+                    individual_armors_tab = gr.TabItem("Individual Armors")
+                    with individual_armors_tab:
                         individual_results = gr.HTML(
                             label="Matching Armors",
                             value="<p>Click 'Search Armors' to see results...</p>"
@@ -1308,8 +1332,11 @@ def create_armor_picker_interface():
             updates.append(f"## {picker.get_translation('resistance_filters')}")  # filters
             updates.append(f"## {picker.get_translation('results')}")  # results
             updates.append(picker.get_translation('search_button'))  # search button
-            updates.append(f"<p>{picker.get_translation('click_search')}</p>")  # results
+            updates.append(f"<p>{picker.get_translation('click_search')}</p>")  # individual_results
+            updates.append(f"<p>{picker.get_translation('click_search')}</p>")  # combination_results
             updates.append(gr.Dropdown(label=picker.get_translation('game_version'))) # game version
+            updates.append(gr.TabItem(label=picker.get_translation('armor_combinations_tab')))  # armor combinations tab
+            updates.append(gr.TabItem(label=picker.get_translation('individual_armors_tab')))  # individual armors tab
 
             # Update checkbox labels for resistance types
             for resist_type in picker.resistance_types:
@@ -1318,7 +1345,7 @@ def create_armor_picker_interface():
             return updates
         
         # Set up event handlers - update text components and checkbox labels
-        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, version_selector] + resistance_checkboxes
+        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, combination_results, version_selector, armor_combinations_tab, individual_armors_tab] + resistance_checkboxes
         
         language_selector.change(
             fn=update_ui_language,
