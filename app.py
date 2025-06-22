@@ -869,7 +869,7 @@ class ArmorPicker:
             # Invert the color mapping: lower dispersion should be green (better)
             inverted_dispersion = max_dispersion - dispersion if max_dispersion > min_dispersion else 0
             dispersion_color = self.value_to_color(inverted_dispersion, 0, max_dispersion - min_dispersion)
-            html += f'<td class="resist-cell dispersion-colored" style="background-color: {dispersion_color} !important; color: #000 !important;">{dispersion:.1f}</td>'
+            html += f'<td class="resist-cell dispersion-colored" style="background-color: {dispersion_color} !important; color: #000 !important;">{dispersion:.2f}</td>'
             
             # Show just the raw scores
             for resist_type in requirements.keys():
