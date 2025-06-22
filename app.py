@@ -72,6 +72,8 @@ class ArmorPicker:
                 "type": "Type",
                 "armor_combinations_tab": "Armor Combinations",
                 "individual_armors_tab": "Individual Armors",
+                "perk_invincible": "Invincible Perk (+12 all resistances)",
+                "talent_all_resists": "Hardened (+10% resistances)",
             },
             "Русский": {
                 "title": "QM Подборщик Брони",
@@ -109,6 +111,8 @@ class ArmorPicker:
                 "type": "Тип",
                 "armor_combinations_tab": "Комбинации Брони",
                 "individual_armors_tab": "Общий список брони",
+                "perk_invincible": "Непобедимый (+12 ко всем сопротивлениям)",
+                "talent_all_resists": "Закаленный (+10% к сопротивлениям)",
             },
             "Deutsch": {
                 "title": "QM Rüstungs-Picker",
@@ -146,6 +150,8 @@ class ArmorPicker:
                 "type": "Typ",
                 "armor_combinations_tab": "Rüstungskombinationen",
                 "individual_armors_tab": "Einzelne Rüstungen",
+                "perk_invincible": "Unverwundbar (+12 alle Widerstände)",
+                "talent_all_resists": "Abhärtung (+10% Widerstände)",
             },
             "Français": {
                 "title": "QM Sélecteur d'Armure",
@@ -183,6 +189,8 @@ class ArmorPicker:
                 "type": "Type",
                 "armor_combinations_tab": "Combinaisons d'Armures",
                 "individual_armors_tab": "Armures Individuelles",
+                "perk_invincible": "Invincible (+12 toutes résistances)",
+                "talent_all_resists": "Durcissement (+10% résistances)",
             },
             "Español": {
                 "title": "QM Selector de Armadura",
@@ -220,6 +228,8 @@ class ArmorPicker:
                 "type": "Tipo",
                 "armor_combinations_tab": "Combinaciones de Armaduras",
                 "individual_armors_tab": "Armaduras Individuales",
+                "perk_invincible": "Invencible (+12 todas las resistencias)",
+                "talent_all_resists": "Fortalecedor (+10% resistencias)",
             },
             "Polski": {
                 "title": "QM Wybieracz Zbroi",
@@ -257,6 +267,8 @@ class ArmorPicker:
                 "type": "Typ",
                 "armor_combinations_tab": "Kombinacje Zbroi",
                 "individual_armors_tab": "Pojedyncze Zbroje",
+                "perk_invincible": "Niezniszczalność (+12 wszystkie odporności)",
+                "talent_all_resists": "Utwardzanie (+10% odporności)",
             },
             "Türkçe": {
                 "title": "QM Zırh Seçici",
@@ -294,6 +306,8 @@ class ArmorPicker:
                 "type": "Tür",
                 "armor_combinations_tab": "Zırh Kombinasyonları",
                 "individual_armors_tab": "Tekil Zırhlar",
+                "perk_invincible": "Yenilmez (+12 tüm dirençler)",
+                "talent_all_resists": "Sertleşme (+10% dirençler)",
             },
             "Português Brasileiro": {
                 "title": "QM Seletor de Armadura",
@@ -331,6 +345,8 @@ class ArmorPicker:
                 "type": "Tipo",
                 "armor_combinations_tab": "Combinações de Armaduras",
                 "individual_armors_tab": "Armaduras Individuais",
+                "perk_invincible": "Invencível (+12 todas resistências)",
+                "talent_all_resists": "Enrijecimento (+10% resistências)",
             },
             "한국어": {
                 "title": "QM 갑옷 선택기",
@@ -368,6 +384,8 @@ class ArmorPicker:
                 "type": "유형",
                 "armor_combinations_tab": "갑옷 조합",
                 "individual_armors_tab": "개별 갑옷",
+                "perk_invincible": "천하무적 (+12 모든 저항)",
+                "talent_all_resists": "경화 (+10% 저항)",
             },
             "日本": {
                 "title": "QM アーマーピッカー",
@@ -405,6 +423,8 @@ class ArmorPicker:
                 "type": "タイプ",
                 "armor_combinations_tab": "防具の組み合わせ",
                 "individual_armors_tab": "個別の防具",
+                "perk_invincible": "無敵 (+12 全抵抗)",
+                "talent_all_resists": "硬化 (+10% 抵抗)",
             },
             "中国人": {
                 "title": "QM 护甲选择器",
@@ -442,6 +462,8 @@ class ArmorPicker:
                 "type": "类型",
                 "armor_combinations_tab": "护甲组合",
                 "individual_armors_tab": "单个护甲",
+                "perk_invincible": "无敌无敌天赋 (+12 所有抗性)",
+                "talent_all_resists": "皮糙肉厚 (+10% 抗性)",
             }
         }
         
@@ -592,7 +614,7 @@ class ArmorPicker:
             # If sorting fails, return original list
             return armors
 
-    def find_armor_combinations(self, resistance_filters: Dict[str, Dict], language: str = None) -> str:
+    def find_armor_combinations(self, resistance_filters: Dict[str, Dict], language: str = None, invincible_perk: bool = False, hardened_talent: bool = False) -> str:
         """Find armor combinations that meet resistance requirements"""
         if language and language != self.current_language:
             self.load_armor_data(language)
@@ -649,7 +671,7 @@ class ArmorPicker:
         if len(limited_armor_by_type) > 1:
             armor_lists = list(limited_armor_by_type.values())
             for combination in product(*armor_lists):
-                combo_score = self.evaluate_combination(combination, enabled_requirements)
+                combo_score = self.evaluate_combination(combination, enabled_requirements, invincible_perk, hardened_talent)
                 combinations.append({
                     'armors': combination,
                     'score': combo_score
@@ -692,7 +714,7 @@ class ArmorPicker:
             # Handle edge cases where calculation might fail
             return 1.0 if total_armor_score > 100 else 0.0
         
-    def evaluate_combination(self, armor_combination, requirements: Dict[str, int]) -> Dict:
+    def evaluate_combination(self, armor_combination, requirements: Dict[str, int], invincible_perk: bool = False, hardened_talent: bool = False) -> Dict:
         """Evaluate how well an armor combination meets requirements using resistance formula"""
         total_armor_scores = {}
         
@@ -701,6 +723,15 @@ class ArmorPicker:
             for resist in armor.get("ResistSheet", []):
                 resist_type = resist.get("ResistType")
                 resist_value = resist.get("ResistValue", 0)
+                
+                # Apply Invincible perk: +12 to all resistances
+                if invincible_perk:
+                    resist_value = resist_value + 12
+                
+                # Apply Hardened talent: +10% to resistances
+                if hardened_talent:
+                    resist_value = resist_value * 1.1  # +10%
+                
                 total_armor_scores[resist_type] = total_armor_scores.get(resist_type, 0) + resist_value
         
         # Calculate resulting resistance percentages and coverage
@@ -730,7 +761,7 @@ class ArmorPicker:
         # Calculate dispersion (standard deviation of resistance percentages)
         # Lower dispersion = more balanced protection, Higher dispersion = uneven protection
         dispersion = 0.0
-
+        
         # Only calculate dispersion if we have more than one resistance type enabled
         if len(enabled_resistance_percentages) > 1:
             mean_percentage = sum(enabled_resistance_percentages) / len(enabled_resistance_percentages)
@@ -1239,7 +1270,7 @@ def create_armor_picker_interface():
         """Handle version change"""
         return picker.change_version(version)
     
-    def search_armors(language, version, current_sort_by, current_sort_order, *args):
+    def search_armors(language, version, current_sort_by, current_sort_order, invincible_perk, hardened_talent, *args):
         """Search armors with current language"""
         # Ensure version and data are loaded for current language
         picker.change_version(version)
@@ -1283,7 +1314,7 @@ def create_armor_picker_interface():
         html_table = picker.create_styled_table_html(sorted_armors, current_sort_by, current_sort_order, language)
         
         # Find armor combinations
-        combinations_html = picker.find_armor_combinations(resistance_filters, language)
+        combinations_html = picker.find_armor_combinations(resistance_filters, language, invincible_perk, hardened_talent)
         
         return html_table, combinations_html, current_sort_by, current_sort_order
     
@@ -1403,6 +1434,15 @@ def create_armor_picker_interface():
                         resistance_inputs.extend([toggle, value])
                         resistance_checkboxes.append(toggle)  # Store checkbox reference
                 
+                with gr.Row():
+                    invincible_perk = gr.Checkbox(
+                        label="Invincible Perk (+12 all resistances)",
+                        value=False,
+                    )
+                    hardened_talent = gr.Checkbox(
+                        label="Hardened (+10% resistances)", 
+                        value=False,
+                    )
                 search_btn = gr.Button("Search Armors", variant="primary")
             
             with gr.Column(scale=3):
@@ -1511,6 +1551,8 @@ def create_armor_picker_interface():
             updates.append(gr.Dropdown(label=picker.get_translation('game_version'))) # game version
             updates.append(gr.TabItem(label=picker.get_translation('armor_combinations_tab')))  # armor combinations tab
             updates.append(gr.TabItem(label=picker.get_translation('individual_armors_tab')))  # individual armors tab
+            updates.append(gr.Checkbox(label=picker.get_translation('perk_invincible')))
+            updates.append(gr.Checkbox(label=picker.get_translation('talent_all_resists')))
 
             # Update checkbox labels for resistance types
             for resist_type in picker.resistance_types:
@@ -1519,8 +1561,8 @@ def create_armor_picker_interface():
             return updates
         
         # Set up event handlers - update text components and checkbox labels
-        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, combination_results, version_selector, armor_combinations_tab, individual_armors_tab] + resistance_checkboxes
-        
+        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, combination_results, version_selector, armor_combinations_tab, individual_armors_tab, invincible_perk, hardened_talent] + resistance_checkboxes
+
         language_selector.change(
             fn=update_ui_language,
             inputs=[language_selector],
@@ -1532,7 +1574,7 @@ def create_armor_picker_interface():
             result_html, combo_html, new_sort_by, new_sort_order = search_armors(language, version, "name", "asc", *args)
             return result_html, combo_html, new_sort_by, new_sort_order
         
-        search_inputs = [language_selector, version_selector] + resistance_inputs
+        search_inputs = [language_selector, version_selector, invincible_perk, hardened_talent] + resistance_inputs
         search_btn.click(
             fn=initial_search,
             inputs=search_inputs,
