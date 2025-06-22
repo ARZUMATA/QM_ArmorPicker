@@ -577,7 +577,7 @@ class ArmorPicker:
         # Get enabled resistance requirements
         enabled_requirements = {}
         for resist_type, filter_config in resistance_filters.items():
-if filter_config["value"] == None: # If NoneType as we have nothing in the input
+            if filter_config["value"] == None: # If NoneType as we have nothing in the input
                 filter_config["value"] = 0
             if filter_config["enabled"] and filter_config["value"] > 0:
                 enabled_requirements[resist_type] = filter_config["value"]
@@ -681,7 +681,6 @@ if filter_config["value"] == None: # If NoneType as we have nothing in the input
         .combo-table {{
             border-collapse: collapse !important;
             width: 100% !important;
-            font-family: 'Roboto', Arial, sans-serif !important;
             font-size: 16px !important;
             margin-bottom: 20px !important;
         }}
@@ -696,9 +695,6 @@ if filter_config["value"] == None: # If NoneType as we have nothing in the input
             background-color: #555 !important;
             font-weight: bold !important;
         }}
-        .combo-table tr:nth-child(even) td {{
-            // background-color: #444 !important;
-        }}
         .combo-summary {{
             font-weight: bold !important;
             background-color: #2a2a2a !important;
@@ -708,10 +704,11 @@ if filter_config["value"] == None: # If NoneType as we have nothing in the input
         }}
         .combo-detail {{
             padding-left: 20px !important;
-            font-style: italic !important;
+            font-style: bold !important;
         }}
         .combo-separator {{
             background-color: transparent !important;
+            border: 1px solid transparent !important;
         }}
         .combo-separator td {{
             background-color: transparent !important;
@@ -748,6 +745,7 @@ if filter_config["value"] == None: # If NoneType as we have nothing in the input
         all_combo_armors = []
         for combo in combinations:
             all_combo_armors.extend(combo['armors'])
+
         resist_ranges = self.get_resistance_range(all_combo_armors)
         
         for i, combo in enumerate(combinations, 1):
