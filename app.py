@@ -649,10 +649,10 @@ class ArmorPicker:
             armor_lists = list(limited_armor_by_type.values())
             for combination in product(*armor_lists):
                 combo_score = self.evaluate_combination(combination, enabled_requirements)
-                    combinations.append({
-                        'armors': combination,
-                        'score': combo_score
-                    })
+                combinations.append({
+                    'armors': combination,
+                    'score': combo_score
+                })
         
         # Sort combinations by quality (best matches first)
         combinations.sort(key=lambda x: (x['score']['avg_coverage'], -x['score']['variance']), reverse=True)
@@ -705,7 +705,8 @@ class ArmorPicker:
         }
 
     def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int]) -> str:
-        """Create HTML table for armor combinations with expanded format"""
+        """Create HTML table for armor combinations with CSS custom properties"""
+        
         html = f"""
         <style>
         .combo-table {{
@@ -751,9 +752,15 @@ class ArmorPicker:
             color: #000 !important;
             text-align: center !important;
         }}
-        .coverage-good {{ color: #4CAF50 !important; }}
-        .coverage-ok {{ color: #FF9800 !important; }}
-        .coverage-poor {{ color: #F44336 !important; }}
+        .coverage-colored {{
+            color: var(--coverage-color) !important;
+        }}
+        .diff-colored {{
+            color: var(--diff-color) !important;
+        }}
+        .percent-white {{
+            color: #fff !important;
+        }}
         </style>
         """
         
@@ -793,19 +800,35 @@ class ArmorPicker:
             html += f'<td class="combo-name"><strong>{combo_name}</strong></td>'
             html += f'<td><strong>Total</strong></td>'
             
-            # Overall coverage percentage
+            # Overall coverage percentage with gradient color
             coverage_pct = combo['score']['avg_coverage'] * 100
-            coverage_class = 'coverage-good' if coverage_pct >= 90 else 'coverage-ok' if coverage_pct >= 70 else 'coverage-poor'
-            html += f'<td class="resist-cell {coverage_class}" style="background-color: #555 !important; color: #fff !important;">{coverage_pct:.1f}%</td>'
+            coverage_color = self.get_coverage_color(coverage_pct)
+            html += f'<td class="resist-cell coverage-colored" style="--coverage-color: {coverage_color}; background-color: #555 !important;">{coverage_pct:.1f}%</td>'
             
-            # Individual resistance coverage percentages
+            # Individual resistance coverage percentages with difference indicators
             for resist_type in requirements.keys():
                 actual = combo['score']['total_resistances'].get(resist_type, 0)
                 required = requirements[resist_type]
+                difference = actual - required
                 coverage = min(actual / required, 1.0) if required > 0 else 1.0
                 coverage_pct_individual = coverage * 100
-                coverage_class = 'coverage-good' if coverage >= 0.9 else 'coverage-ok' if coverage >= 0.7 else 'coverage-poor'
-                html += f'<td class="resist-cell {coverage_class}" style="background-color: #555 !important; color: #fff !important;">{coverage_pct_individual:.1f}%</td>'
+                
+                # Get gradient colors
+                diff_color = self.get_difference_color(difference, required)
+                
+                # Format difference text
+                if difference > 0:
+                    diff_text = f"(+{difference})"
+                elif difference < 0:
+                    diff_text = f"({difference})"
+                else:
+                    diff_text = "(0)"
+                
+                # Use CSS custom properties
+                html += f'''<td class="resist-cell" style="--diff-color: {diff_color}; background-color: #555 !important;">
+                            <span class="percent-white">{coverage_pct_individual:.1f}%</span> 
+                            <span class="diff-colored">{diff_text}</span>
+                            </td>'''
             
             html += '</tr>'
             
@@ -842,6 +865,65 @@ class ArmorPicker:
         
         html += '</tbody></table>'
         return html
+
+    def get_difference_color(self, difference: int, required: int) -> str:
+        """Get color for difference value based on gradient using existing color system"""
+        if required == 0:
+            return "#fff"  # White for zero requirement
+        
+        # Normalize difference as percentage of requirement
+        # -1.0 = completely missing requirement, 0 = exact match, +1.0 = double requirement
+        normalized_diff = difference / required
+        
+        # Clamp to reasonable range for color calculation
+        normalized_diff = max(-1.0, min(1.0, normalized_diff))
+        
+        # Map to 0-1 range for color gradient
+        # -1.0 -> 0.0 (red), 0.0 -> 0.5 (yellow), +1.0 -> 1.0 (green)
+        color_position = (normalized_diff + 1.0) / 2.0
+        
+        # Use the existing color system from the class
+        return self.value_to_color_from_position(color_position)
+
+    def get_coverage_color(self, coverage_pct: float) -> str:
+        """Get color for coverage percentage using existing color system"""
+        # Map coverage percentage (0-100) to color position (0-1)
+        color_position = coverage_pct / 100.0
+        return self.value_to_color_from_position(color_position)
+
+    def value_to_color_from_position(self, position: float) -> str:
+        """Convert a normalized position (0-1) to color using existing gradient system"""
+        # Clamp position to 0-1 range
+        position = max(0.0, min(1.0, position))
+        
+        def hex_to_rgb(hex_color: str) -> tuple:
+            hex_color = hex_color.lstrip('#')
+            return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+        
+        def rgb_to_hex(r: int, g: int, b: int) -> str:
+            return f"#{r:02x}{g:02x}{b:02x}"
+        
+        # Find the two color stops to interpolate between
+        for i in range(len(self.color_stops) - 1):
+            pos1, color1 = self.color_stops[i]
+            pos2, color2 = self.color_stops[i + 1]
+            
+            if pos1 <= position <= pos2:
+                # Interpolate between these two colors
+                local_normalized = (position - pos1) / (pos2 - pos1)
+                
+                rgb1 = hex_to_rgb(color1)
+                rgb2 = hex_to_rgb(color2)
+                
+                red = int(rgb1[0] + (rgb2[0] - rgb1[0]) * local_normalized)
+                green = int(rgb1[1] + (rgb2[1] - rgb1[1]) * local_normalized)
+                blue = int(rgb1[2] + (rgb2[2] - rgb1[2]) * local_normalized)
+                
+                return rgb_to_hex(red, green, blue)
+        
+        # Fallback to last color if position >= 1
+        return self.color_stops[-1][1]
+
         
     def get_top_armors_per_type(self, filtered_armors: List[Dict], max_per_type: int = 4) -> List[Dict]:
         """Get top armors from each armor type"""
