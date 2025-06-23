@@ -3,6 +3,7 @@ import json
 import pandas as pd
 from typing import Dict, List, Any, Tuple
 import math
+from languages import translations
 
 class ArmorPicker:
     def __init__(self):
@@ -34,438 +35,7 @@ class ArmorPicker:
             "中国人": {"code": "chinese", "file": "armor_data_chinesesimp.json"}
         }
         
-        # UI translations
-        self.translations = {
-            "English": {
-                "title": "QM Armor Picker",
-                "subtitle": "Select resistance requirements and search for armors.",
-                "color_legend": "**Color Legend**: Resistance values are colored from 🔴 Red (low) to 🟢 Green (high)",
-                "language": "Language",
-                "resistance_filters": "Resistance Filters",
-                "enable": "Enable",
-                "min_value": "Min {} Value",
-                "search_button": "Search Armors",
-                "results": "Results",
-                "click_search": "Click 'Search Armors' to see results...",
-                "no_armors": "No armors found matching the criteria.",
-                "name": "Name",
-                "class": "Class",
-                "description": "Description",
-                "durability": "Durability",
-                "weight": "Weight",
-                "blunt": "Blunt",
-                "pierce": "Pierce",
-                "lacer": "Cut",
-                "fire": "Fire",
-                "cold": "Cold",
-                "poison": "Poison",
-                "shock": "Shock",
-                "beam": "Beam",
-                "game_version": "Game Version",
-                "no_requirements_set": "No resistance requirements set for combination search.",
-                "no_combinations_found": "No armor combinations found that meet the requirements.",
-                "armor_combinations": "Armor Combinations",
-                "combinations_explanation": "Armor combinations that best meet resistance requirements:",
-                "combination": "Combination",
-                "dispersion": "Dispersion",
-                "item": "Item",
-                "type": "Type",
-                "armor_combinations_tab": "Armor Combinations",
-                "individual_armors_tab": "Individual Armors",
-                "perk_invincible": "Invincible Perk (+12 all resistances)",
-                "talent_all_resists": "Hardened (+10% resistances)",
-            },
-            "Русский": {
-                "title": "QM Подборщик Брони",
-                "subtitle": "Выберите требования к сопротивлению и найдите броню.",
-                "color_legend": "**Легенда цветов**: Значения сопротивления окрашены от 🔴 Красного (низкое) до 🟢 Зеленого (высокое)",
-                "language": "Язык",
-                "resistance_filters": "Фильтры Сопротивления",
-                "enable": "Включить",
-                "min_value": "Мин. {} Значение",
-                "search_button": "Поиск Брони",
-                "results": "Результаты",
-                "click_search": "Нажмите 'Поиск Брони' для просмотра результатов...",
-                "no_armors": "Броня, соответствующая критериям, не найдена.",
-                "name": "Название",
-                "class": "Класс",
-                "description": "Описание",
-                "durability": "Прочность",
-                "weight": "Вес",
-                "blunt": "Дробящий",
-                "pierce": "Проникающий",
-                "lacer": "Режущий",
-                "fire": "Огонь",
-                "cold": "Холод",
-                "poison": "Ядовитый",
-                "shock": "Электрический",
-                "beam": "Лучевой",
-                "game_version": "Версия Игры",
-                "no_requirements_set": "Не установлены требования к сопротивлению для поиска комбинаций.",
-                "no_combinations_found": "Не найдено комбинаций брони, соответствующих требованиям.",
-                "armor_combinations": "Комбинации Брони",
-                "combinations_explanation": "Комбинации брони, которые лучше всего соответствуют требованиям к сопротивлению:",
-                "combination": "Комбинация",
-                "dispersion": "Дисперсия",
-                "item": "Предмет",
-                "type": "Тип",
-                "armor_combinations_tab": "Комбинации Брони",
-                "individual_armors_tab": "Общий список брони",
-                "perk_invincible": "Непобедимый (+12 ко всем сопротивлениям)",
-                "talent_all_resists": "Закаленный (+10% к сопротивлениям)",
-            },
-            "Deutsch": {
-                "title": "QM Rüstungs-Picker",
-                "subtitle": "Wählen Sie Widerstandsanforderungen und suchen Sie nach Rüstungen.",
-                "color_legend": "**Farblegende**: Widerstandswerte sind von 🔴 Rot (niedrig) bis 🟢 Grün (hoch) gefärbt",
-                "language": "Sprache",
-                "resistance_filters": "Widerstandsfilter",
-                "enable": "Aktivieren",
-                "min_value": "Min. {} Wert",
-                "search_button": "Rüstung Suchen",
-                "results": "Ergebnisse",
-                "click_search": "Klicken Sie auf 'Rüstung Suchen' um Ergebnisse zu sehen...",
-                "no_armors": "Keine Rüstung gefunden, die den Kriterien entspricht.",
-                "name": "Name",
-                "class": "Klasse",
-                "description": "Beschreibung",
-                "durability": "Haltbarkeit",
-                "weight": "Gewicht",
-                "blunt": "Stumpf",
-                "pierce": "Durchschlag",
-                "lacer": "Schneiden",
-                "fire": "Feuer",
-                "cold": "Kälte",
-                "poison": "Gift",
-                "shock": "Schock",
-                "beam": "Strahl",
-                "game_version": "Spielversion",
-                "no_requirements_set": "Keine Widerstandsanforderungen für die Kombinationssuche festgelegt.",
-                "no_combinations_found": "Keine Rüstungskombinationen gefunden, die den Anforderungen entsprechen.",
-                "armor_combinations": "Rüstungskombinationen",
-                "combinations_explanation": "Rüstungskombinationen, die den Widerstandsanforderungen am besten entsprechen:",
-                "combination": "Kombination",
-                "dispersion": "Streuung",
-                "item": "Gegenstand", 
-                "type": "Typ",
-                "armor_combinations_tab": "Rüstungskombinationen",
-                "individual_armors_tab": "Einzelne Rüstungen",
-                "perk_invincible": "Unverwundbar (+12 alle Widerstände)",
-                "talent_all_resists": "Abhärtung (+10% Widerstände)",
-            },
-            "Français": {
-                "title": "QM Sélecteur d'Armure",
-                "subtitle": "Sélectionnez les exigences de résistance et recherchez des armures.",
-                "color_legend": "**Légende des couleurs**: Les valeurs de résistance sont colorées du 🔴 Rouge (faible) au 🟢 Vert (élevé)",
-                "language": "Langue",
-                "resistance_filters": "Filtres de Résistance",
-                "enable": "Activer",
-                "min_value": "Valeur {} Min.",
-                "search_button": "Rechercher Armures",
-                "results": "Résultats",
-                "click_search": "Cliquez sur 'Rechercher Armures' pour voir les résultats...",
-                "no_armors": "Aucune armure trouvée correspondant aux critères.",
-                "name": "Nom",
-                "class": "Classe",
-                "description": "Description",
-                "durability": "Durabilité",
-                "weight": "Poids",
-                "blunt": "Сontondants",
-                "pierce": "Perforants",
-                "lacer": "Coupe",
-                "fire": "Feu",
-                "cold": "Froid",
-                "poison": "Toxique",
-                "shock": "Choc",
-                "beam": "Faisceau",
-                "game_version": "Version du Jeu",
-                "no_requirements_set": "Aucune exigence de résistance définie pour la recherche de combinaisons.",
-                "no_combinations_found": "Aucune combinaison d'armures trouvée qui répond aux exigences.",
-                "armor_combinations": "Combinaisons d'Armures",
-                "combinations_explanation": "Combinaisons d'armures qui répondent le mieux aux exigences de résistance:",
-                "combination": "Combinaison",
-                "dispersion": "Dispersion",
-                "item": "Objet",
-                "type": "Type",
-                "armor_combinations_tab": "Combinaisons d'Armures",
-                "individual_armors_tab": "Armures Individuelles",
-                "perk_invincible": "Invincible (+12 toutes résistances)",
-                "talent_all_resists": "Durcissement (+10% résistances)",
-            },
-            "Español": {
-                "title": "QM Selector de Armadura",
-                "subtitle": "Seleccione los requisitos de resistencia y busque armaduras.",
-                "color_legend": "**Leyenda de colores**: Los valores de resistencia están coloreados desde 🔴 Rojo (bajo) hasta 🟢 Verde (alto)",
-                "language": "Idioma",
-                "resistance_filters": "Filtros de Resistencia",
-                "enable": "Habilitar",
-                "min_value": "Valor {} Mín.",
-                "search_button": "Buscar Armaduras",
-                "results": "Resultados",
-                "click_search": "Haga clic en 'Buscar Armaduras' para ver los resultados...",
-                "no_armors": "No se encontraron armaduras que coincidan con los criterios.",
-                "name": "Nombre",
-                "class": "Clase",
-                "description": "Descripción",
-                "durability": "Durabilidad",
-                "weight": "Peso",
-                "blunt": "Daño contundente",
-                "pierce": "Perforador",
-                "lacer": "Corte",
-                "fire": "Fuego",
-                "cold": "Frío",
-                "poison": "Venenoso",
-                "shock": "Choque",
-                "beam": "Rayo",
-                "game_version": "Versión del Juego",
-                "no_requirements_set": "No se han establecido requisitos de resistencia para la búsqueda de combinaciones.",
-                "no_combinations_found": "No se encontraron combinaciones de armaduras que cumplan con los requisitos.",
-                "armor_combinations": "Combinaciones de Armaduras",
-                "combinations_explanation": "Combinaciones de armaduras que mejor cumplen con los requisitos de resistencia:",
-                "combination": "Combinación",
-                "dispersion": "Dispersión",
-                "item": "Objeto",
-                "type": "Tipo",
-                "armor_combinations_tab": "Combinaciones de Armaduras",
-                "individual_armors_tab": "Armaduras Individuales",
-                "perk_invincible": "Invencible (+12 todas las resistencias)",
-                "talent_all_resists": "Fortalecedor (+10% resistencias)",
-            },
-            "Polski": {
-                "title": "QM Wybieracz Zbroi",
-                "subtitle": "Wybierz wymagania odporności i wyszukaj zbroje.",
-                "color_legend": "**Legenda kolorów**: Wartości odporności są kolorowane od 🔴 Czerwonego (niskie) do 🟢 Zielonego (wysokie)",
-                "language": "Język",
-                "resistance_filters": "Filtry Odporności",
-                "enable": "Włącz",
-                "min_value": "Min. Wartość {}",
-                "search_button": "Szukaj Zbroi",
-                "results": "Wyniki",
-                "click_search": "Kliknij 'Szukaj Zbroi' aby zobaczyć wyniki...",
-                "no_armors": "Nie znaleziono zbroi spełniających kryteria.",
-                "name": "Nazwa",
-                "class": "Klasa",
-                "description": "Opis",
-                "durability": "Wytrzymałość",
-                "weight": "Waga",
-                "blunt": "Obuchowe",
-                "pierce": "Przebicie",
-                "lacer": "Cięcie",
-                "fire": "Ogień",
-                "cold": "Zimno",
-                "poison": "Trujący",
-                "shock": "Wstrząs",
-                "beam": "Promień",
-                "game_version": "Wersja Gry",
-                "no_requirements_set": "Nie ustawiono wymagań odporności dla wyszukiwania kombinacji.",
-                "no_combinations_found": "Nie znaleziono kombinacji zbroi spełniających wymagania.",
-                "armor_combinations": "Kombinacje Zbroi",
-                "combinations_explanation": "Kombinacje zbroi, które najlepiej spełniają wymagania odporności:",
-                "combination": "Kombinacja",
-                "dispersion": "Rozproszenie",
-                "item": "Przedmiot",
-                "type": "Typ",
-                "armor_combinations_tab": "Kombinacje Zbroi",
-                "individual_armors_tab": "Pojedyncze Zbroje",
-                "perk_invincible": "Niezniszczalność (+12 wszystkie odporności)",
-                "talent_all_resists": "Utwardzanie (+10% odporności)",
-            },
-            "Türkçe": {
-                "title": "QM Zırh Seçici",
-                "subtitle": "Direnç gereksinimlerini seçin ve zırhları arayın.",
-                "color_legend": "**Renk Açıklaması**: Direnç değerleri 🔴 Kırmızı (düşük) ile 🟢 Yeşil (yüksek) arasında renklendirilmiştir",
-                "language": "Dil",
-                "resistance_filters": "Direnç Filtreleri",
-                "enable": "Etkinleştir",
-                "min_value": "Min {} Değeri",
-                "search_button": "Zırh Ara",
-                "results": "Sonuçlar",
-                "click_search": "Sonuçları görmek için 'Zırh Ara'ya tıklayın...",
-                "no_armors": "Kriterlere uyan zırh bulunamadı.",
-                "name": "İsim",
-                "class": "Sınıf",
-                "description": "Açıklama",
-                "durability": "Dayanıklılık",
-                "weight": "Ağırlık",
-                "blunt": "Darbe",
-                "pierce": "Delici",
-                "lacer": "Kesik",
-                "fire": "Ateş",
-                "cold": "Soğuk",
-                "poison": "Zehirli",
-                "shock": "Şok",
-                "beam": "Işın",
-                "game_version": "Oyun Sürümü",
-                "no_requirements_set": "Kombinasyon araması için direnç gereksinimleri belirlenmedi.",
-                "no_combinations_found": "Gereksinimleri karşılayan zırh kombinasyonu bulunamadı.",
-                "armor_combinations": "Zırh Kombinasyonları",
-                "combinations_explanation": "Direnç gereksinimlerini en iyi karşılayan zırh kombinasyonları:",
-                "combination": "Kombinasyon",
-                "dispersion": "Dağılım",
-                "item": "Eşya",
-                "type": "Tür",
-                "armor_combinations_tab": "Zırh Kombinasyonları",
-                "individual_armors_tab": "Tekil Zırhlar",
-                "perk_invincible": "Yenilmez (+12 tüm dirençler)",
-                "talent_all_resists": "Sertleşme (+10% dirençler)",
-            },
-            "Português Brasileiro": {
-                "title": "QM Seletor de Armadura",
-                "subtitle": "Selecione os requisitos de resistência e procure armaduras.",
-                "color_legend": "**Legenda de cores**: Os valores de resistência são coloridos de 🔴 Vermelho (baixo) a 🟢 Verde (alto)",
-                "language": "Idioma",
-                "resistance_filters": "Filtros de Resistência",
-                "enable": "Ativar",
-                "min_value": "Valor {} Mín.",
-                "search_button": "Buscar Armaduras",
-                "results": "Resultados",
-                "click_search": "Clique em 'Buscar Armaduras' para ver os resultados...",
-                "no_armors": "Nenhuma armadura encontrada que corresponda aos critérios.",
-                "name": "Nome",
-                "class": "Classe",
-                "description": "Descrição",
-                "durability": "Durabilidade",
-                "weight": "Peso",
-                "blunt": "Golpe",
-                "pierce": "Perfuração",
-                "lacer": "Corte",
-                "fire": "Fogo",
-                "cold": "Frio",
-                "poison": "Veneno",
-                "shock": "Choque",
-                "beam": "Feixe",
-                "game_version": "Versão do Jogo",
-                "no_requirements_set": "Nenhum requisito de resistência definido para busca de combinações.",
-                "no_combinations_found": "Nenhuma combinação de armaduras encontrada que atenda aos requisitos.",
-                "armor_combinations": "Combinações de Armaduras",
-                "combinations_explanation": "Combinações de armaduras que melhor atendem aos requisitos de resistência:",
-                "combination": "Combinação",
-                "dispersion": "Dispersão",
-                "item": "Item",
-                "type": "Tipo",
-                "armor_combinations_tab": "Combinações de Armaduras",
-                "individual_armors_tab": "Armaduras Individuais",
-                "perk_invincible": "Invencível (+12 todas resistências)",
-                "talent_all_resists": "Enrijecimento (+10% resistências)",
-            },
-            "한국어": {
-                "title": "QM 갑옷 선택기",
-                "subtitle": "저항 요구사항을 선택하고 갑옷을 검색하세요.",
-                "color_legend": "**색상 범례**: 저항 값은 🔴 빨간색(낮음)에서 🟢 녹색(높음)으로 색칠됩니다",
-                "language": "언어",
-                "resistance_filters": "저항 필터",
-                "enable": "활성화",
-                "min_value": "최소 {} 값",
-                "search_button": "갑옷 검색",
-                "results": "결과",
-                "click_search": "결과를 보려면 '갑옷 검색'을 클릭하세요...",
-                "no_armors": "기준에 맞는 갑옷을 찾을 수 없습니다.",
-                "name": "이름",
-                "class": "클래스",
-                "description": "설명",
-                "durability": "내구도",
-                "weight": "무게",
-                "blunt": "둔기",
-                "pierce": "관통",
-                "lacer": "절단",
-                "fire": "불",
-                "cold": "냉기",
-                "poison": "독",
-                "shock": "충격",
-                "beam": "빔",
-                "game_version": "게임 버전",
-                "no_requirements_set": "조합 검색을 위한 저항 요구사항이 설정되지 않았습니다.",
-                "no_combinations_found": "요구사항을 충족하는 갑옷 조합을 찾을 수 없습니다.",
-                "armor_combinations": "갑옷 조합",
-                "combinations_explanation": "저항 요구사항을 가장 잘 충족하는 갑옷 조합:",
-                "combination": "조합",
-                "dispersion": "분산",
-                "item": "아이템",
-                "type": "유형",
-                "armor_combinations_tab": "갑옷 조합",
-                "individual_armors_tab": "개별 갑옷",
-                "perk_invincible": "천하무적 (+12 모든 저항)",
-                "talent_all_resists": "경화 (+10% 저항)",
-            },
-            "日本": {
-                "title": "QM アーマーピッカー",
-                "subtitle": "抵抗要件を選択して防具を検索します。",
-                "color_legend": "**色の凡例**: 抵抗値は🔴赤（低）から🟢緑（高）まで色分けされています",
-                "language": "言語",
-                "resistance_filters": "抵抗フィルター",
-                "enable": "有効化",
-                "min_value": "最小{}値",
-                "search_button": "防具を検索",
-                "results": "結果",
-                "click_search": "結果を表示するには「防具を検索」をクリックしてください...",
-                "no_armors": "条件に一致する防具が見つかりませんでした。",
-                "name": "名前",
-                "class": "クラス",
-                "description": "説明",
-                "durability": "耐久性",
-                "weight": "重量",
-                "blunt": "打撃",
-                "pierce": "突き刺し",
-                "lacer": "斬撃",
-                "fire": "火",
-                "cold": "凍結",
-                "poison": "毒",
-                "shock": "ショック",
-                "beam": "ビーム",
-                "game_version": "ゲームバージョン",
-                "no_requirements_set": "組み合わせ検索の抵抗要件が設定されていません。",
-                "no_combinations_found": "要件を満たす防具の組み合わせが見つかりませんでした。",
-                "armor_combinations": "防具の組み合わせ",
-                "combinations_explanation": "抵抗要件を最もよく満たす防具の組み合わせ:",
-                "combination": "組み合わせ",
-                "dispersion": "分散",
-                "item": "アイテム",
-                "type": "タイプ",
-                "armor_combinations_tab": "防具の組み合わせ",
-                "individual_armors_tab": "個別の防具",
-                "perk_invincible": "無敵 (+12 全抵抗)",
-                "talent_all_resists": "硬化 (+10% 抵抗)",
-            },
-            "中国人": {
-                "title": "QM 护甲选择器",
-                "subtitle": "选择抗性要求并搜索护甲。",
-                "color_legend": "**颜色图例**: 抗性值从🔴红色（低）到🟢绿色（高）着色",
-                "language": "语言",
-                "resistance_filters": "抗性过滤器",
-                "enable": "启用",
-                "min_value": "最小{}值",
-                "search_button": "搜索护甲",
-                "results": "结果",
-                "click_search": '点击"搜索护甲"查看结果...',
-                "no_armors": "未找到符合条件的护甲。",
-                "name": "名称",
-                "class": "类别",
-                "description": "描述",
-                "durability": "耐久度",
-                "weight": "重量",
-                "blunt": "钝击",
-                "pierce": "穿刺",
-                "lacer": "切割",
-                "fire": "火焰",
-                "cold": "寒冷",
-                "poison": "有毒",
-                "shock": "电的",
-                "beam": "辐射的",
-                "game_version": "游戏版本",
-                "no_requirements_set": "未设置组合搜索的抗性要求。",
-                "no_combinations_found": "未找到满足要求的护甲组合。",
-                "armor_combinations": "护甲组合",
-                "combinations_explanation": "最符合抗性要求的护甲组合:",
-                "combination": "组合",
-                "dispersion": "离散度",
-                "item": "物品",
-                "type": "类型",
-                "armor_combinations_tab": "护甲组合",
-                "individual_armors_tab": "单个护甲",
-                "perk_invincible": "无敌无敌天赋 (+12 所有抗性)",
-                "talent_all_resists": "皮糙肉厚 (+10% 抗性)",
-            }
-        }
+        self.translations = translations
         
         # Initialize languages for default version
         self.languages = self.get_version_languages(self.current_version)
@@ -614,7 +184,7 @@ class ArmorPicker:
             # If sorting fails, return original list
             return armors
 
-    def find_armor_combinations(self, resistance_filters: Dict[str, Dict], language: str = None, invincible_perk: bool = False, hardened_talent: bool = False) -> str:
+    def find_armor_combinations(self, resistance_filters: Dict[str, Dict], language: str = None, invincible_perk: bool = False, hardened_talent: bool = False, hardened_talent_lvl: int = 1) -> str:
         """Find armor combinations that meet resistance requirements"""
         if language and language != self.current_language:
             self.load_armor_data(language)
@@ -671,7 +241,7 @@ class ArmorPicker:
         if len(limited_armor_by_type) > 1:
             armor_lists = list(limited_armor_by_type.values())
             for combination in product(*armor_lists):
-                combo_score = self.evaluate_combination(combination, enabled_requirements, invincible_perk, hardened_talent)
+                combo_score = self.evaluate_combination(combination, enabled_requirements, invincible_perk, hardened_talent, hardened_talent_lvl)
                 combinations.append({
                     'armors': combination,
                     'score': combo_score
@@ -699,7 +269,7 @@ class ArmorPicker:
             return f"<p>{self.get_translation('no_combinations_found')}</p>"
         
         # Create HTML table for combinations
-        return self.create_combinations_table_html(final_combinations, enabled_requirements, invincible_perk, hardened_talent)
+        return self.create_combinations_table_html(final_combinations, enabled_requirements)
 
     def calculate_resulting_resistance(self, total_armor_score: int) -> float:
         """Calculate resulting resistance percentage using the formula"""
@@ -714,7 +284,7 @@ class ArmorPicker:
             # Handle edge cases where calculation might fail
             return 1.0 if total_armor_score > 100 else 0.0
         
-    def evaluate_combination(self, armor_combination, requirements: Dict[str, int], invincible_perk: bool = False, hardened_talent: bool = False) -> Dict:
+    def evaluate_combination(self, armor_combination, requirements: Dict[str, int], invincible_perk: bool = False, hardened_talent: bool = False, hardened_talent_lvl: int = 1) -> Dict:
         """Evaluate how well an armor combination meets requirements using resistance formula"""
         total_armor_scores = {}
         
@@ -734,7 +304,14 @@ class ArmorPicker:
             
             # Apply Hardened talent: +10% to resistances
             if hardened_talent:
-                total_armor_scores[resist_type] = total_armor_scores[resist_type] * 1.1  # +10%
+                resistance_increase = {
+                    1: 1.1,   # +10%
+                    2: 1.2,   # +20%
+                    3: 1.3,   # +30%
+                    4: 1.4    # +40%
+                }
+                
+                total_armor_scores[resist_type] = total_armor_scores[resist_type] * resistance_increase.get(hardened_talent_lvl, 1)
         
         # Calculate resulting resistance percentages and coverage
         resulting_resistances = {}
@@ -786,7 +363,7 @@ class ArmorPicker:
             'mean_resistance': sum(enabled_resistance_percentages) / len(enabled_resistance_percentages) if enabled_resistance_percentages else 0
         }
 
-    def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int], invincible_perk: bool = False, hardened_talent: bool = False) -> str:
+    def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int]) -> str:
         """Create HTML table for armor combinations with CSS custom properties"""
         
         html = f"""
@@ -840,8 +417,7 @@ class ArmorPicker:
         .summary-resist-cell {{
             font-weight: bold !important;
             text-align: left !important;
-            background-color: #555 !important;
-            color: #fff !important;
+            color: #000 !important;
         }}
         .armor-resist-cell {{
             text-align: right !important;
@@ -919,12 +495,18 @@ class ArmorPicker:
             dispersion_color = self.value_to_color(inverted_dispersion, 0, max_dispersion - min_dispersion)
             html += f'<td class="dispersion-cell" style="background-color: {dispersion_color} !important;">{dispersion:.2f}</td>'
             
+            max_value = max(combo['score']['resulting_resistances'][key]['score'] for key in combo['score']['resulting_resistances'])
+            min_value = min(combo['score']['resulting_resistances'][key]['score'] for key in combo['score']['resulting_resistances'])
+            print(f"Maximum value: {max_value}")
+            print(f"Minimum value: {min_value}")
+
             # Show just the raw scores
             for resist_type in requirements.keys():
                 resistance_info = combo['score']['resulting_resistances'].get(resist_type, {'score': 0, 'percentage': 0})
                 total_score = resistance_info['score']
+                diff_color = self.value_to_color(total_score, min_value, max_value)
                 
-                html += f'<td class="summary-resist-cell">{total_score:.0f}</td>'
+                html += f'<td class="summary-resist-cell" style="background-color: {diff_color} !important;">{total_score:.0f}</td>'
             
             html += '</tr>'
             
@@ -1285,12 +867,12 @@ def create_armor_picker_interface():
         """Handle version change"""
         return picker.change_version(version)
     
-    def search_armors(language, version, current_sort_by, current_sort_order, invincible_perk, hardened_talent, *args):
+    def search_armors(language, version, current_sort_by, current_sort_order, invincible_perk, hardened_talent, hardened_talent_lvl, *args):
         """Search armors with current language"""
         # Ensure version and data are loaded for current language
         picker.change_version(version)
         picker.load_armor_data(language)
-        
+
         # Parse resistance filter arguments
         resistance_filters = {}
         expected_args = len(picker.resistance_types) * 2
@@ -1329,7 +911,7 @@ def create_armor_picker_interface():
         html_table = picker.create_styled_table_html(sorted_armors, current_sort_by, current_sort_order, language)
         
         # Find armor combinations
-        combinations_html = picker.find_armor_combinations(resistance_filters, language, invincible_perk, hardened_talent)
+        combinations_html = picker.find_armor_combinations(resistance_filters, language, invincible_perk, hardened_talent, hardened_talent_lvl)
         
         return html_table, combinations_html, current_sort_by, current_sort_order
     
@@ -1449,15 +1031,23 @@ def create_armor_picker_interface():
                         resistance_inputs.extend([toggle, value])
                         resistance_checkboxes.append(toggle)  # Store checkbox reference
                 
-                with gr.Row():
-                    invincible_perk = gr.Checkbox(
-                        label="Invincible Perk (+12 all resistances)",
-                        value=False,
-                    )
-                    hardened_talent = gr.Checkbox(
-                        label="Hardened (+10% resistances)", 
-                        value=False,
-                    )
+                with gr.Column(scale=1):
+                        invincible_perk = gr.Checkbox(
+                            label="Invincible Perk (+12 all resistances)",
+                            value=False,
+                        )
+                        hardened_talent = gr.Checkbox(
+                            label="Hardened (+10% resistances)", 
+                            value=False,
+                            scale=1,
+                        )
+                        hardened_talent_lvl = gr.Dropdown(
+                            choices=[1,2,3,4],
+                            value=1,
+                            scale=1,
+                            label="Hardened Level",
+                        )
+
                 search_btn = gr.Button("Search Armors", variant="primary")
             
             with gr.Column(scale=3):
@@ -1568,7 +1158,7 @@ def create_armor_picker_interface():
             updates.append(gr.TabItem(label=picker.get_translation('individual_armors_tab')))  # individual armors tab
             updates.append(gr.Checkbox(label=picker.get_translation('perk_invincible')))
             updates.append(gr.Checkbox(label=picker.get_translation('talent_all_resists')))
-
+            
             # Update checkbox labels for resistance types
             for resist_type in picker.resistance_types:
                 updates.append(gr.Checkbox(label=picker.get_translation(resist_type)))
@@ -1576,7 +1166,7 @@ def create_armor_picker_interface():
             return updates
         
         # Set up event handlers - update text components and checkbox labels
-        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, combination_results, version_selector, armor_combinations_tab, individual_armors_tab, invincible_perk, hardened_talent] + resistance_checkboxes
+        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, combination_results, version_selector, armor_combinations_tab, individual_armors_tab, invincible_perk, hardened_talent, hardened_talent_lvl] + resistance_checkboxes
 
         language_selector.change(
             fn=update_ui_language,
@@ -1589,7 +1179,8 @@ def create_armor_picker_interface():
             result_html, combo_html, new_sort_by, new_sort_order = search_armors(language, version, "name", "asc", *args)
             return result_html, combo_html, new_sort_by, new_sort_order
         
-        search_inputs = [language_selector, version_selector, invincible_perk, hardened_talent] + resistance_inputs
+        search_inputs = [language_selector, version_selector, invincible_perk, hardened_talent, hardened_talent_lvl] + resistance_inputs
+
         search_btn.click(
             fn=initial_search,
             inputs=search_inputs,
@@ -1624,14 +1215,14 @@ def create_armor_picker_interface():
     
     return interface
 
+demo = create_armor_picker_interface()
 
 # Launch the application
 if __name__ == "__main__":
-    app = create_armor_picker_interface()
-    app.launch(
+    demo.launch(
         server_name="0.0.0.0",
         server_port=7860,
         share=False,
-        debug=True
+        debug=True,
     )
 
