@@ -867,7 +867,7 @@ def create_armor_picker_interface():
         # Ensure version and data are loaded for current language
         picker.change_version(version)
         picker.load_armor_data(language)
-        
+
         # Parse resistance filter arguments
         resistance_filters = {}
         expected_args = len(picker.resistance_types) * 2
@@ -1027,13 +1027,13 @@ def create_armor_picker_interface():
                         resistance_checkboxes.append(toggle)  # Store checkbox reference
                 
                 with gr.Column(scale=1):
-                    invincible_perk = gr.Checkbox(
-                        label="Invincible Perk (+12 all resistances)",
-                        value=False,
-                    )
-                    hardened_talent = gr.Checkbox(
-                        label="Hardened (+10% resistances)", 
-                        value=False,
+                        invincible_perk = gr.Checkbox(
+                            label="Invincible Perk (+12 all resistances)",
+                            value=False,
+                        )
+                        hardened_talent = gr.Checkbox(
+                            label="Hardened (+10% resistances)", 
+                            value=False,
                             scale=1,
                         )
                         hardened_talent_lvl = gr.Dropdown(
@@ -1153,7 +1153,7 @@ def create_armor_picker_interface():
             updates.append(gr.TabItem(label=picker.get_translation('individual_armors_tab')))  # individual armors tab
             updates.append(gr.Checkbox(label=picker.get_translation('perk_invincible')))
             updates.append(gr.Checkbox(label=picker.get_translation('talent_all_resists')))
-
+            
             # Update checkbox labels for resistance types
             for resist_type in picker.resistance_types:
                 updates.append(gr.Checkbox(label=picker.get_translation(resist_type)))
@@ -1210,14 +1210,14 @@ def create_armor_picker_interface():
     
     return interface
 
+demo = create_armor_picker_interface()
 
 # Launch the application
 if __name__ == "__main__":
-    app = create_armor_picker_interface()
-    app.launch(
+    demo.launch(
         server_name="0.0.0.0",
         server_port=7860,
         share=False,
-        debug=True
+        debug=True,
     )
 
