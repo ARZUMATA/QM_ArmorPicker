@@ -184,7 +184,7 @@ class ArmorPicker:
             # If sorting fails, return original list
             return armors
 
-    def find_armor_combinations(self, resistance_filters: Dict[str, Dict], language: str = None, invincible_perk: bool = False, hardened_talent: bool = False) -> str:
+    def find_armor_combinations(self, resistance_filters: Dict[str, Dict], language: str = None, invincible_perk: bool = False, hardened_talent: bool = False, hardened_talent_lvl: int = 1) -> str:
         """Find armor combinations that meet resistance requirements"""
         if language and language != self.current_language:
             self.load_armor_data(language)
@@ -241,7 +241,7 @@ class ArmorPicker:
         if len(limited_armor_by_type) > 1:
             armor_lists = list(limited_armor_by_type.values())
             for combination in product(*armor_lists):
-                combo_score = self.evaluate_combination(combination, enabled_requirements, invincible_perk, hardened_talent)
+                combo_score = self.evaluate_combination(combination, enabled_requirements, invincible_perk, hardened_talent, hardened_talent_lvl)
                 combinations.append({
                     'armors': combination,
                     'score': combo_score
@@ -269,7 +269,7 @@ class ArmorPicker:
             return f"<p>{self.get_translation('no_combinations_found')}</p>"
         
         # Create HTML table for combinations
-        return self.create_combinations_table_html(final_combinations, enabled_requirements, invincible_perk, hardened_talent)
+        return self.create_combinations_table_html(final_combinations, enabled_requirements)
 
     def calculate_resulting_resistance(self, total_armor_score: int) -> float:
         """Calculate resulting resistance percentage using the formula"""
@@ -284,7 +284,7 @@ class ArmorPicker:
             # Handle edge cases where calculation might fail
             return 1.0 if total_armor_score > 100 else 0.0
         
-    def evaluate_combination(self, armor_combination, requirements: Dict[str, int], invincible_perk: bool = False, hardened_talent: bool = False) -> Dict:
+    def evaluate_combination(self, armor_combination, requirements: Dict[str, int], invincible_perk: bool = False, hardened_talent: bool = False, hardened_talent_lvl: int = 1) -> Dict:
         """Evaluate how well an armor combination meets requirements using resistance formula"""
         total_armor_scores = {}
         
@@ -304,7 +304,14 @@ class ArmorPicker:
             
             # Apply Hardened talent: +10% to resistances
             if hardened_talent:
-                total_armor_scores[resist_type] = total_armor_scores[resist_type] * 1.1  # +10%
+                resistance_increase = {
+                    1: 1.1,   # +10%
+                    2: 1.2,   # +20%
+                    3: 1.3,   # +30%
+                    4: 1.4    # +40%
+                }
+                
+                total_armor_scores[resist_type] = total_armor_scores[resist_type] * resistance_increase.get(hardened_talent_lvl, 1)
         
         # Calculate resulting resistance percentages and coverage
         resulting_resistances = {}
@@ -356,7 +363,7 @@ class ArmorPicker:
             'mean_resistance': sum(enabled_resistance_percentages) / len(enabled_resistance_percentages) if enabled_resistance_percentages else 0
         }
 
-    def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int], invincible_perk: bool = False, hardened_talent: bool = False) -> str:
+    def create_combinations_table_html(self, combinations: List[Dict], requirements: Dict[str, int]) -> str:
         """Create HTML table for armor combinations with CSS custom properties"""
         
         html = f"""
@@ -855,7 +862,7 @@ def create_armor_picker_interface():
         """Handle version change"""
         return picker.change_version(version)
     
-    def search_armors(language, version, current_sort_by, current_sort_order, invincible_perk, hardened_talent, *args):
+    def search_armors(language, version, current_sort_by, current_sort_order, invincible_perk, hardened_talent, hardened_talent_lvl, *args):
         """Search armors with current language"""
         # Ensure version and data are loaded for current language
         picker.change_version(version)
@@ -899,7 +906,7 @@ def create_armor_picker_interface():
         html_table = picker.create_styled_table_html(sorted_armors, current_sort_by, current_sort_order, language)
         
         # Find armor combinations
-        combinations_html = picker.find_armor_combinations(resistance_filters, language, invincible_perk, hardened_talent)
+        combinations_html = picker.find_armor_combinations(resistance_filters, language, invincible_perk, hardened_talent, hardened_talent_lvl)
         
         return html_table, combinations_html, current_sort_by, current_sort_order
     
@@ -1019,7 +1026,7 @@ def create_armor_picker_interface():
                         resistance_inputs.extend([toggle, value])
                         resistance_checkboxes.append(toggle)  # Store checkbox reference
                 
-                with gr.Row():
+                with gr.Column(scale=1):
                     invincible_perk = gr.Checkbox(
                         label="Invincible Perk (+12 all resistances)",
                         value=False,
@@ -1027,7 +1034,15 @@ def create_armor_picker_interface():
                     hardened_talent = gr.Checkbox(
                         label="Hardened (+10% resistances)", 
                         value=False,
-                    )
+                            scale=1,
+                        )
+                        hardened_talent_lvl = gr.Dropdown(
+                            choices=[1,2,3,4],
+                            value=1,
+                            scale=1,
+                            label="Hardened Level",
+                        )
+
                 search_btn = gr.Button("Search Armors", variant="primary")
             
             with gr.Column(scale=3):
@@ -1146,7 +1161,7 @@ def create_armor_picker_interface():
             return updates
         
         # Set up event handlers - update text components and checkbox labels
-        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, combination_results, version_selector, armor_combinations_tab, individual_armors_tab, invincible_perk, hardened_talent] + resistance_checkboxes
+        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, combination_results, version_selector, armor_combinations_tab, individual_armors_tab, invincible_perk, hardened_talent, hardened_talent_lvl] + resistance_checkboxes
 
         language_selector.change(
             fn=update_ui_language,
@@ -1159,7 +1174,8 @@ def create_armor_picker_interface():
             result_html, combo_html, new_sort_by, new_sort_order = search_armors(language, version, "name", "asc", *args)
             return result_html, combo_html, new_sort_by, new_sort_order
         
-        search_inputs = [language_selector, version_selector, invincible_perk, hardened_talent] + resistance_inputs
+        search_inputs = [language_selector, version_selector, invincible_perk, hardened_talent, hardened_talent_lvl] + resistance_inputs
+
         search_btn.click(
             fn=initial_search,
             inputs=search_inputs,
