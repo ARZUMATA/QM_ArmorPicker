@@ -417,8 +417,7 @@ class ArmorPicker:
         .summary-resist-cell {{
             font-weight: bold !important;
             text-align: left !important;
-            background-color: #555 !important;
-            color: #fff !important;
+            color: #000 !important;
         }}
         .armor-resist-cell {{
             text-align: right !important;
@@ -496,12 +495,18 @@ class ArmorPicker:
             dispersion_color = self.value_to_color(inverted_dispersion, 0, max_dispersion - min_dispersion)
             html += f'<td class="dispersion-cell" style="background-color: {dispersion_color} !important;">{dispersion:.2f}</td>'
             
+            max_value = max(combo['score']['resulting_resistances'][key]['score'] for key in combo['score']['resulting_resistances'])
+            min_value = min(combo['score']['resulting_resistances'][key]['score'] for key in combo['score']['resulting_resistances'])
+            print(f"Maximum value: {max_value}")
+            print(f"Minimum value: {min_value}")
+
             # Show just the raw scores
             for resist_type in requirements.keys():
                 resistance_info = combo['score']['resulting_resistances'].get(resist_type, {'score': 0, 'percentage': 0})
                 total_score = resistance_info['score']
+                diff_color = self.value_to_color(total_score, min_value, max_value)
                 
-                html += f'<td class="summary-resist-cell">{total_score:.0f}</td>'
+                html += f'<td class="summary-resist-cell" style="background-color: {diff_color} !important;">{total_score:.0f}</td>'
             
             html += '</tr>'
             
