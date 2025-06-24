@@ -5,7 +5,11 @@
       "Name",
       "Description",
       "Type",
+      "Categories",
+      "TechLevel",
+      "ItemClass",
       "ArmorClass",
+      "ArmorSubClass",
       "ResistSheet",
       "MaxDurability",
       "Weight"
@@ -16,7 +20,11 @@
         "Name": "Remera",
         "Description": "Tela",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -67,7 +75,11 @@
         "Name": "Remera",
         "Description": "Ropa",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -118,7 +130,11 @@
         "Name": "Remera",
         "Description": "Ropa",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -169,7 +185,11 @@
         "Name": "Hibershirt",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -220,7 +240,11 @@
         "Name": "Hibershirt",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -271,7 +295,11 @@
         "Name": "Camisa Blanca",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -322,7 +350,11 @@
         "Name": "Camisa Negra",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -373,7 +405,11 @@
         "Name": "Carver",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -424,7 +460,11 @@
         "Name": "Vercetti",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -475,7 +515,11 @@
         "Name": "Galgo",
         "Description": "Sudadera Común",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -526,7 +570,11 @@
         "Name": "Sabueso",
         "Description": "Sudadera Común",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -577,7 +625,11 @@
         "Name": "Sylvester",
         "Description": "Chaqueta de Plástico",
         "Type": "armors",
+        "Categories": "Common Civillian",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -628,7 +680,11 @@
         "Name": "Bata",
         "Description": "Prenda Médica de Plástico",
         "Type": "armors",
+        "Categories": "Science Dilthey",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -679,7 +735,11 @@
         "Name": "Bata de Laboratorio",
         "Description": "Ropa de Laboratorio de Plástico",
         "Type": "armors",
+        "Categories": "Science Dilthey",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -730,7 +790,11 @@
         "Name": "Traje de Laboratorio",
         "Description": "Ropa de Laboratorio Compuesta",
         "Type": "armors",
+        "Categories": "Science Dilthey",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -781,7 +845,11 @@
         "Name": "Hazmat",
         "Description": "Prenda de Protección de Plástico",
         "Type": "armors",
+        "Categories": "Science Dilthey",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -832,7 +900,11 @@
         "Name": "Clínica-A",
         "Description": "Prenda Médica",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -883,7 +955,11 @@
         "Name": "Exfoliante-5",
         "Description": "Prenda Médica",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -934,7 +1010,11 @@
         "Name": "Med. Hazmat",
         "Description": "Traje de Protección de Plástico",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -985,7 +1065,11 @@
         "Name": "Pirogov",
         "Description": "Armadura Médica de Kevlar",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1036,7 +1120,11 @@
         "Name": "Ibn Sina",
         "Description": "Armadura Médica de Ceramita",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1087,7 +1175,11 @@
         "Name": "Marcado",
         "Description": "Ropa de Prisión",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1138,7 +1230,11 @@
         "Name": "Chaqueta de Cárcel",
         "Description": "Ropa",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1189,7 +1285,11 @@
         "Name": "Condenado",
         "Description": "Vestimenta Blindada de Prisión",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1240,7 +1340,11 @@
         "Name": "Brigante",
         "Description": "Armadura Improvisada",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1291,7 +1395,11 @@
         "Name": "Brutella",
         "Description": "Coraza de Kevlar de Prisión",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1342,7 +1450,11 @@
         "Name": "Coffey",
         "Description": "Coraza Chobham de Prisión",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1393,7 +1505,11 @@
         "Name": "Telnyashka",
         "Description": "Ropa Militar",
         "Type": "armors",
+        "Categories": "Military RealWare Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1444,7 +1560,11 @@
         "Name": "Chaqueta Verde",
         "Description": "Ropa",
         "Type": "armors",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1495,7 +1615,11 @@
         "Name": "Comando",
         "Description": "Chaqueta Militar",
         "Type": "armors",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1546,7 +1670,11 @@
         "Name": "Sanitario",
         "Description": "Armadura de Metal Médica Militar",
         "Type": "armors",
+        "Categories": "Military Medical Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1597,7 +1725,11 @@
         "Name": "Gloria",
         "Description": "Chaqueta Blindada de Metal",
         "Type": "armors",
+        "Categories": "Security RealWare Grasshopper Tianming",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1648,7 +1780,11 @@
         "Name": "Cadete",
         "Description": "Armadura de Aramida Militar",
         "Type": "armors",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1699,7 +1835,11 @@
         "Name": "Armadura Legendaria",
         "Description": "Armadura de Aramida",
         "Type": "armors",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1750,7 +1890,11 @@
         "Name": "Carkas",
         "Description": "Servoarmadura Сhobham",
         "Type": "armors",
+        "Categories": "Military RealWare Grasshopper",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1801,7 +1945,11 @@
         "Name": "Manitas",
         "Description": "Ropa de Trabajo",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1852,7 +2000,11 @@
         "Name": "Corredor de Línea",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1903,7 +2055,11 @@
         "Name": "Linerunner",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1954,7 +2110,11 @@
         "Name": "Hombre de Escarcha",
         "Description": "Prenda Sintética Cálida",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2005,7 +2165,11 @@
         "Name": "EVA",
         "Description": "Traje Espacial",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2056,7 +2220,11 @@
         "Name": "Traje Exo",
         "Description": "Traje Espacial Industrial",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2107,7 +2275,11 @@
         "Name": "Capataz",
         "Description": "Chaqueta de Trabajo Sólida",
         "Type": "armors",
+        "Categories": "Miner Coreward",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2158,7 +2330,11 @@
         "Name": "Tunelador",
         "Description": "Ropa de Trabajo Compuesta",
         "Type": "armors",
+        "Categories": "Miner Coreward",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2209,7 +2385,11 @@
         "Name": "Triturador de Piedra",
         "Description": "Traje Espacial Industrial",
         "Type": "armors",
+        "Categories": "Miner Coreward Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2260,7 +2440,11 @@
         "Name": "Acorazado",
         "Description": "Traje Espacial Industrial",
         "Type": "armors",
+        "Categories": "Miner Coreward",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2311,7 +2495,11 @@
         "Name": "Gehenna",
         "Description": "Traje Espacial Industrial",
         "Type": "armors",
+        "Categories": "Miner Coreward",
+        "TechLevel": "7",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2362,7 +2550,11 @@
         "Name": "Stryker",
         "Description": "Prenda de Seguridad",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2413,7 +2605,11 @@
         "Name": "Bobby",
         "Description": "Ropa de Trabajo Blindada de Seguridad",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2464,7 +2660,11 @@
         "Name": "Guardia Centinela",
         "Description": "Armadura de Aramida",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2515,7 +2715,11 @@
         "Name": "Clobber",
         "Description": "Fuerza de Tarea de Armadura de Ceramita",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2566,7 +2770,11 @@
         "Name": "Frente Rojo",
         "Description": "Prenda Común",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2617,7 +2825,11 @@
         "Name": "Huelga",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2668,7 +2880,11 @@
         "Name": "Mono Urbano",
         "Description": "Ropa de Trabajo",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2719,7 +2935,11 @@
         "Name": "Partidista",
         "Description": "Chaqueta Blindada",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2770,7 +2990,11 @@
         "Name": "Impactador",
         "Description": "Armadura de Trabajo",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2821,7 +3045,11 @@
         "Name": "Frente Popular",
         "Description": "Armadura de Aramida",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2872,7 +3100,11 @@
         "Name": "Guerrilla",
         "Description": "Coraza de Pecho Сhobham Casera",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2923,7 +3155,11 @@
         "Name": "Rackham Jack",
         "Description": "Prenda de Plástico",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2974,7 +3210,11 @@
         "Name": "Corsario",
         "Description": "Ropa de Trabajo Compuesta DIY",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3025,7 +3265,11 @@
         "Name": "Filibustero",
         "Description": "Ropa de Trabajo de Aramida DIY",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3076,7 +3320,11 @@
         "Name": "Corsario",
         "Description": "DIY Metal Breastplate",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3127,7 +3375,11 @@
         "Name": "Traficante",
         "Description": "Armadura Metálica",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3178,7 +3430,11 @@
         "Name": "Bucanero",
         "Description": "Peto de Aramida Casero",
         "Type": "armors",
+        "Categories": "UnchainedBelt Tianming",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3229,7 +3485,11 @@
         "Name": "Trapos Malditos",
         "Description": "Tela Común",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3280,7 +3540,11 @@
         "Name": "Harapos Llorosos",
         "Description": "Tela Común",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3331,7 +3595,11 @@
         "Name": "Cuero Humano",
         "Description": "Armadura de Cuero",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3382,7 +3650,11 @@
         "Name": "Chaqueta Espectral",
         "Description": "Armadura de Hueso",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3433,7 +3705,11 @@
         "Name": "Maldición",
         "Description": "Armadura de Aramida de Culto",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3484,7 +3760,11 @@
         "Name": "Tejido de Serpiente",
         "Description": "Tela Venusiana",
         "Type": "armors",
+        "Categories": "Venus",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3535,7 +3815,11 @@
         "Name": "Quetzal-Zinkli",
         "Description": "Armadura Ligera Venusiana",
         "Type": "armors",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3586,7 +3870,11 @@
         "Name": "Ocelotheque",
         "Description": "Armadura Ligera Venusiana",
         "Type": "armors",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3637,7 +3925,11 @@
         "Name": "Tilmatli",
         "Description": "Armadura Emplumada Venusiana",
         "Type": "armors",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3688,7 +3980,11 @@
         "Name": "Chimalli",
         "Description": "Armadura Pesada Venusiana",
         "Type": "armors",
+        "Categories": "Tezctlan",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3739,7 +4035,11 @@
         "Name": "Quautemec",
         "Description": "Armadura Pesada Venusiana",
         "Type": "armors",
+        "Categories": "Tezctlan",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3790,7 +4090,11 @@
         "Name": "Tepeiolotl",
         "Description": "Armadura Pesada Venusiana",
         "Type": "armors",
+        "Categories": "Tezctlan",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3841,7 +4145,11 @@
         "Name": "Shu'la At-Talif",
         "Description": "Tela Mercuriana",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3892,7 +4200,11 @@
         "Name": "At-Taufana",
         "Description": "Tela Mercuriana",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3943,7 +4255,11 @@
         "Name": "Armadura de Espejo",
         "Description": "Armadura Mercuriana",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3994,7 +4310,11 @@
         "Name": "Badr",
         "Description": "Armadura Media Mercuriana",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4045,7 +4365,11 @@
         "Name": "Ash Shakina",
         "Description": "Armadura Pesada Mercuriana",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4096,7 +4420,11 @@
         "Name": "Umbría",
         "Description": "Tela",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4147,7 +4475,11 @@
         "Name": "Guardia Azul",
         "Description": "Uniforme",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4198,7 +4530,11 @@
         "Name": "Patrón de Sombra",
         "Description": "Chaqueta Kevlar",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4249,7 +4585,11 @@
         "Name": "Diseño Misterioso",
         "Description": "Armadura de Aramida",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "7",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4300,7 +4640,11 @@
         "Name": "Árbitro",
         "Description": "Armadura de Hobham",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4351,7 +4695,11 @@
         "Name": "Lux",
         "Description": "Tela",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4402,7 +4750,11 @@
         "Name": "Mirmex",
         "Description": "Chaqueta de Plástico",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4453,7 +4805,11 @@
         "Name": "Diseño del Alba",
         "Description": "Desfile de Armadura de Aramida",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4504,7 +4860,11 @@
         "Name": "Patrón de Aurora",
         "Description": "Armadura de Kevlar",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4555,7 +4915,11 @@
         "Name": "Mirmidón",
         "Description": "Coraza de Ceramita",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4606,7 +4970,11 @@
         "Name": "Batida",
         "Description": "Tela",
         "Type": "armors",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4657,7 +5025,11 @@
         "Name": "Chico Escarlata",
         "Description": "Prenda Sintética",
         "Type": "armors",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4708,7 +5080,11 @@
         "Name": "Patrón de Masacre",
         "Description": "Armadura de Kevlar",
         "Type": "armors",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4759,7 +5135,11 @@
         "Name": "Diseño de Masacre",
         "Description": "Traje Espacial",
         "Type": "armors",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "7",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4810,7 +5190,11 @@
         "Name": "Patrón de Señor de La Guerra",
         "Description": "Servoarmadura Сhobham",
         "Type": "armors",
+        "Categories": "RealWare",
+        "TechLevel": "10",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4861,7 +5245,11 @@
         "Name": "Farmacéutico",
         "Description": "Ropa de Laboratorio de Plástico",
         "Type": "armors",
+        "Categories": "DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4912,7 +5300,11 @@
         "Name": "Chaqueta de Protección Química",
         "Description": "Ropa de Trabajo Compuesta",
         "Type": "armors",
+        "Categories": "DaydreamChem",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4963,7 +5355,11 @@
         "Name": "Eliminador",
         "Description": "Traje Espacial Industrial",
         "Type": "armors",
+        "Categories": "DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5014,7 +5410,11 @@
         "Name": "Patrón de Vivisección",
         "Description": "Servoarmadura Сhobham",
         "Type": "armors",
+        "Categories": "DaydreamChem",
+        "TechLevel": "9",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5065,7 +5465,11 @@
         "Name": "Patrón Profético",
         "Description": "Armadura de Poder de Ceramita",
         "Type": "armors",
+        "Categories": "Sunlight",
+        "TechLevel": "10",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5116,7 +5520,11 @@
         "Name": "Karnonos",
         "Description": "Armadura de Arámida",
         "Type": "armors",
+        "Categories": "Sunlight",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5167,7 +5575,11 @@
         "Name": "Plumero",
         "Description": "Ropa de trabajo para camioneros",
         "Type": "armors",
+        "Categories": "Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5218,7 +5630,11 @@
         "Name": "Stratum",
         "Description": "Armadura de Aramida de Ingeniero",
         "Type": "armors",
+        "Categories": "Planetbridge",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5269,7 +5685,11 @@
         "Name": "Cerbero",
         "Description": "Cáscara de Ceramita",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5320,7 +5740,11 @@
         "Name": "Escala FA",
         "Description": "Armadura de Kevlar",
         "Type": "armors",
+        "Categories": "Dilthey",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5371,7 +5795,11 @@
         "Name": "Sutana",
         "Description": "Ropa de Trabajo",
         "Type": "armors",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5422,7 +5850,11 @@
         "Name": "Patrón Serafín",
         "Description": "Armadura de Poder de Ceramita",
         "Type": "armors",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5473,7 +5905,11 @@
         "Name": "Tenebris",
         "Description": "Cota de Malla Lunar",
         "Type": "armors",
+        "Categories": "Moon",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5524,7 +5960,11 @@
         "Name": "Gótico",
         "Description": "Armadura Lunar",
         "Type": "armors",
+        "Categories": "Moon",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5575,7 +6015,11 @@
         "Name": "Kasten-Brust",
         "Description": "Armadura Lunar",
         "Type": "armors",
+        "Categories": "Moon",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5626,7 +6070,11 @@
         "Name": "Vertis",
         "Description": "Armadura Pesada Lunar",
         "Type": "armors",
+        "Categories": "Moon",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5677,7 +6125,11 @@
         "Name": "Caparazón de Quitina",
         "Description": "Caparazón Primitivo",
         "Type": "armors",
+        "Categories": "Venus",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5731,7 +6183,11 @@
       "Name",
       "Description",
       "Type",
+      "Categories",
+      "TechLevel",
+      "ItemClass",
       "ArmorClass",
+      "ArmorSubClass",
       "ResistSheet",
       "MaxDurability",
       "Weight"
@@ -5742,7 +6198,11 @@
         "Name": "Vae Victis",
         "Description": "Tela Común",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5793,7 +6253,11 @@
         "Name": "Sombrero Pescador",
         "Description": "Tela Común",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5844,7 +6308,11 @@
         "Name": "Galgo",
         "Description": "Tela Común",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5895,7 +6363,11 @@
         "Name": "Sabueso",
         "Description": "Ropa Común",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5946,7 +6418,11 @@
         "Name": "Sombrero de Rana",
         "Description": "Tela Común",
         "Type": "helmets",
+        "Categories": "Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5997,7 +6473,11 @@
         "Name": "Camino de Las Estrellas",
         "Description": "Gafas Comunes",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6048,7 +6528,11 @@
         "Name": "77 Punks",
         "Description": "Gafas Comunes",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6099,7 +6583,11 @@
         "Name": "Careta Antigás",
         "Description": "Ropa de Trabajo de Plástico",
         "Type": "helmets",
+        "Categories": "Common Civillian",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6150,7 +6638,11 @@
         "Name": "Lechoncito",
         "Description": "Ropa de Laboratorio Común",
         "Type": "helmets",
+        "Categories": "Science Dilthey",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6201,7 +6693,11 @@
         "Name": "Phylter",
         "Description": "Vestuario de Laboratorio Compuesto",
         "Type": "helmets",
+        "Categories": "Science Dilthey",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6252,7 +6748,11 @@
         "Name": "Hazmat",
         "Description": "Casco Hazmat de Plástico",
         "Type": "helmets",
+        "Categories": "Science Dilthey",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6303,7 +6803,11 @@
         "Name": "Cirujano",
         "Description": "Trabajador Médico de Plástico",
         "Type": "helmets",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6354,7 +6858,11 @@
         "Name": "Med. Hazmat",
         "Description": "Casco de Hazmat de Plástico",
         "Type": "helmets",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6405,7 +6913,11 @@
         "Name": "Pirogov",
         "Description": "Casco Médico de Kevlar",
         "Type": "helmets",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6456,7 +6968,11 @@
         "Name": "Ibn Sina",
         "Description": "Casco Médico de Ceramita",
         "Type": "helmets",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6507,7 +7023,11 @@
         "Name": "Ricochet",
         "Description": "Casco de Kevlar de Prisión",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6558,7 +7078,11 @@
         "Name": "Brigante",
         "Description": "Prenda Común",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6609,7 +7133,11 @@
         "Name": "Gallo",
         "Description": "Prenda Sintética de Prisión",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6660,7 +7188,11 @@
         "Name": "Casey",
         "Description": "Prenda Sintética de Prisión",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6711,7 +7243,11 @@
         "Name": "Diadema",
         "Description": "Ropa de Prisión",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6762,7 +7298,11 @@
         "Name": "Coffey",
         "Description": "Casco Chobham de Prisión",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6813,7 +7353,11 @@
         "Name": "Gorra Militar",
         "Description": "Ropa de Trabajo Militar",
         "Type": "helmets",
+        "Categories": "Military RealWare Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6864,7 +7408,11 @@
         "Name": "Pasamontañas",
         "Description": "Ropa",
         "Type": "helmets",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6915,7 +7463,11 @@
         "Name": "Comando",
         "Description": "Casco Táctico",
         "Type": "helmets",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6966,7 +7518,11 @@
         "Name": "Cuerpo de Sanidad",
         "Description": "Casco de Metal de Médico Militar",
         "Type": "helmets",
+        "Categories": "Military Medical Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7017,7 +7573,11 @@
         "Name": "Casco de Gloria",
         "Description": "Casco de Metal",
         "Type": "helmets",
+        "Categories": "Security RealWare Grasshopper Tianming",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7068,7 +7628,11 @@
         "Name": "Cadete",
         "Description": "Casco Militar de Aramida",
         "Type": "helmets",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7119,7 +7683,11 @@
         "Name": "Casco Legendario",
         "Description": "Casco de Aramida",
         "Type": "helmets",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7170,7 +7738,11 @@
         "Name": "Carkas",
         "Description": "Casco de Poder Сhobham",
         "Type": "helmets",
+        "Categories": "Military RealWare Grasshopper",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7221,7 +7793,11 @@
         "Name": "Manitas",
         "Description": "Gorro Sintético",
         "Type": "helmets",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7272,7 +7848,11 @@
         "Name": "Hombre de Escarcha",
         "Description": "Prenda Sintética Cálida",
         "Type": "helmets",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7323,7 +7903,11 @@
         "Name": "Corredor de Líneas",
         "Description": "Ropa de Trabajo",
         "Type": "helmets",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7374,7 +7958,11 @@
         "Name": "EVA",
         "Description": "Casco de Traje Espacial",
         "Type": "helmets",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7425,7 +8013,11 @@
         "Name": "Perfecto",
         "Description": "Ropa de Trabajo de Minero Compuesto",
         "Type": "helmets",
+        "Categories": "Miner Coreward Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7476,7 +8068,11 @@
         "Name": "Capataz",
         "Description": "Casco Blindado",
         "Type": "helmets",
+        "Categories": "Miner Coreward",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7527,7 +8123,11 @@
         "Name": "Tunelador",
         "Description": "Gorra Blindada",
         "Type": "helmets",
+        "Categories": "Miner Coreward",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7578,7 +8178,11 @@
         "Name": "Acorazado",
         "Description": "Casco de Traje Espacial Industrial",
         "Type": "helmets",
+        "Categories": "Miner Coreward",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7629,7 +8233,11 @@
         "Name": "Gehenna",
         "Description": "Casco de Traje Espacial Industrial",
         "Type": "helmets",
+        "Categories": "Miner Coreward",
+        "TechLevel": "7",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7680,7 +8288,11 @@
         "Name": "Stryker",
         "Description": "Gorra de Seguridad Sintética",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7731,7 +8343,11 @@
         "Name": "Stryker",
         "Description": "Kepi de Seguridad",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7782,7 +8398,11 @@
         "Name": "Guardia",
         "Description": "Casco de Aramida",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7833,7 +8453,11 @@
         "Name": "Clobber",
         "Description": "Casco de Ceramita de La Fuerza de Tareas",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7884,7 +8508,11 @@
         "Name": "Huelga",
         "Description": "Prenda Sintética",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7935,7 +8563,11 @@
         "Name": "Partidista",
         "Description": "Máscara de Gas Blindada",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7986,7 +8618,11 @@
         "Name": "Impactador",
         "Description": "Casco de Traje Espacial",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8037,7 +8673,11 @@
         "Name": "Frente Popular",
         "Description": "Casco de Aramida",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8088,7 +8728,11 @@
         "Name": "Guerrilla",
         "Description": "Casco Chobham Hecho Por Uno Mismo",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8139,7 +8783,11 @@
         "Name": "Sonrisa",
         "Description": "Ropa de Trabajo de Plástico",
         "Type": "helmets",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8190,7 +8838,11 @@
         "Name": "Filibustero",
         "Description": "DIY Сomposite Cap",
         "Type": "helmets",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8241,7 +8893,11 @@
         "Name": "Corsario",
         "Description": "Casco de Metal Casero",
         "Type": "helmets",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8292,7 +8948,11 @@
         "Name": "Traficante",
         "Description": "Casco Metálico",
         "Type": "helmets",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8343,7 +9003,11 @@
         "Name": "Bucanero",
         "Description": "Casco-Máscara de Aramida Casero",
         "Type": "helmets",
+        "Categories": "UnchainedBelt Tianming",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8394,7 +9058,11 @@
         "Name": "Chaqueta Espectral",
         "Description": "Casco de Calavera",
         "Type": "helmets",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8445,7 +9113,11 @@
         "Name": "Maldición",
         "Description": "Casco de Aramida de Culto",
         "Type": "helmets",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8496,7 +9168,11 @@
         "Name": "Chalchiuitl",
         "Description": "Tela Venusiana",
         "Type": "helmets",
+        "Categories": "Venus",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8547,7 +9223,11 @@
         "Name": "Quetzal-Zinkli",
         "Description": "Casco Ligero Venusiano",
         "Type": "helmets",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8598,7 +9278,11 @@
         "Name": "Oceloteque",
         "Description": "Casco Ligero Venusiano",
         "Type": "helmets",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8649,7 +9333,11 @@
         "Name": "Quetzal",
         "Description": "Casco Emplumado",
         "Type": "helmets",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8700,7 +9388,11 @@
         "Name": "Teccatl",
         "Description": "Máscara",
         "Type": "helmets",
+        "Categories": "Tezctlan",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8751,7 +9443,11 @@
         "Name": "Quautemec",
         "Description": "Casco Pesado Venusiano",
         "Type": "helmets",
+        "Categories": "Tezctlan",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8802,7 +9498,11 @@
         "Name": "Tepeiolotl",
         "Description": "Casco Pesado Venusiano",
         "Type": "helmets",
+        "Categories": "Tezctlan",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8853,7 +9553,11 @@
         "Name": "Fikr",
         "Description": "Tela Mercuriana",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8904,7 +9608,11 @@
         "Name": "As-Sifara",
         "Description": "Tela Mercuriana",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8955,7 +9663,11 @@
         "Name": "Diestros",
         "Description": "Armadura Mercuriana",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9006,7 +9718,11 @@
         "Name": "Badr",
         "Description": "Casco Medio Mercuriano",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9057,7 +9773,11 @@
         "Name": "Ash Shakina",
         "Description": "Casco Pesado Mercuriano",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9108,7 +9828,11 @@
         "Name": "Guardia Azul",
         "Description": "Gorra Uniforme Compuesta",
         "Type": "helmets",
+        "Categories": "AnCom",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9159,7 +9883,11 @@
         "Name": "Árbitro",
         "Description": "Máscara de Aramida",
         "Type": "helmets",
+        "Categories": "AnCom",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9210,7 +9938,11 @@
         "Name": "Patrón de Sombra",
         "Description": "Máscara de Kevlar",
         "Type": "helmets",
+        "Categories": "AnCom",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9261,7 +9993,11 @@
         "Name": "Diseño Misterioso",
         "Description": "Casco de Aramida",
         "Type": "helmets",
+        "Categories": "AnCom",
+        "TechLevel": "7",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9312,7 +10048,11 @@
         "Name": "Mirmex",
         "Description": "Tapa de Plástico",
         "Type": "helmets",
+        "Categories": "SBN",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9363,7 +10103,11 @@
         "Name": "Diseño del Alba",
         "Description": "Casco de Aramida Desfile",
         "Type": "helmets",
+        "Categories": "SBN",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9414,7 +10158,11 @@
         "Name": "Patrón de Aurora",
         "Description": "Casco Kevlar",
         "Type": "helmets",
+        "Categories": "SBN",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9465,7 +10213,11 @@
         "Name": "Mirmidón",
         "Description": "Casco de Ceramita",
         "Type": "helmets",
+        "Categories": "SBN",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9516,7 +10268,11 @@
         "Name": "Chico Escarlata",
         "Description": "Prenda Sintética",
         "Type": "helmets",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9567,7 +10323,11 @@
         "Name": "Batida",
         "Description": "Casco Metálico",
         "Type": "helmets",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9618,7 +10378,11 @@
         "Name": "Patrón de Masacre",
         "Description": "Casco Kevlar",
         "Type": "helmets",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9669,7 +10433,11 @@
         "Name": "Diseño de Masacre",
         "Description": "Casco de Traje Espacial",
         "Type": "helmets",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "7",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9720,7 +10488,11 @@
         "Name": "Patrón de Señor de La Guerra",
         "Description": "Casco de Poder Сhobham",
         "Type": "helmets",
+        "Categories": "RealWare",
+        "TechLevel": "10",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9771,7 +10543,11 @@
         "Name": "Farmacéutico",
         "Description": "Ropa de Laboratorio de Plástico",
         "Type": "helmets",
+        "Categories": "DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9822,7 +10598,11 @@
         "Name": "Casco Hazmat",
         "Description": "Casco Compuesto",
         "Type": "helmets",
+        "Categories": "DaydreamChem",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9873,7 +10653,11 @@
         "Name": "Eliminador",
         "Description": "Casco de Traje Espacial Industrial",
         "Type": "helmets",
+        "Categories": "DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9924,7 +10708,11 @@
         "Name": "Patrón de Vivisección",
         "Description": "Casco de Poder Сhobham",
         "Type": "helmets",
+        "Categories": "DaydreamChem",
+        "TechLevel": "9",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9975,7 +10763,11 @@
         "Name": "Profeta",
         "Description": "Casco de Potencia de Ceramita.",
         "Type": "helmets",
+        "Categories": "Sunlight",
+        "TechLevel": "10",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10026,7 +10818,11 @@
         "Name": "Karnonos",
         "Description": "Casco de aramida",
         "Type": "helmets",
+        "Categories": "Sunlight",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10077,7 +10873,11 @@
         "Name": "Plumero",
         "Description": "Casco de Camionero",
         "Type": "helmets",
+        "Categories": "Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10128,7 +10928,11 @@
         "Name": "Stratum",
         "Description": "Casco de aramida de ingeniero",
         "Type": "helmets",
+        "Categories": "Planetbridge",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10179,7 +10983,11 @@
         "Name": "Cerbero",
         "Description": "Máscara de Ceramita",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10230,7 +11038,11 @@
         "Name": "Escala FA",
         "Description": "Casco Kevlar",
         "Type": "helmets",
+        "Categories": "Dilthey",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10281,7 +11093,11 @@
         "Name": "Vínculos Espirituales",
         "Description": "Dispositivo de Control Mental",
         "Type": "helmets",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10332,7 +11148,11 @@
         "Name": "Rostro del Justo",
         "Description": "Ropa de Trabajo Ritual",
         "Type": "helmets",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10383,7 +11203,11 @@
         "Name": "Rostro de Serafín",
         "Description": "Casco de Potencia de Ceramita.",
         "Type": "helmets",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10434,7 +11258,11 @@
         "Name": "Tenebris",
         "Description": "Casco de Luz Lunar",
         "Type": "helmets",
+        "Categories": "Moon",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10485,7 +11313,11 @@
         "Name": "Bacinete",
         "Description": "Casco Lunar",
         "Type": "helmets",
+        "Categories": "Moon",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10536,7 +11368,11 @@
         "Name": "Fletus",
         "Description": "Casco Pesado Lunar",
         "Type": "helmets",
+        "Categories": "Moon",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10587,7 +11423,11 @@
         "Name": "Vertis",
         "Description": "Casco Pesado Lunar",
         "Type": "helmets",
+        "Categories": "Moon",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10638,7 +11478,11 @@
         "Name": "Esquilo",
         "Description": "Máscara Cuasimórfica",
         "Type": "helmets",
+        "Categories": "Ron",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [],
         "MaxDurability": "150",
         "Weight": "3.3"
@@ -10648,7 +11492,11 @@
         "Name": "Caparazón de Quitina",
         "Description": "Casco Primitivo",
         "Type": "helmets",
+        "Categories": "Venus",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10699,7 +11547,11 @@
         "Name": "Sombrero de Año Nuevo",
         "Description": "Ropa Festiva",
         "Type": "helmets",
+        "Categories": "none",
+        "TechLevel": "100",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10753,7 +11605,11 @@
       "Name",
       "Description",
       "Type",
+      "Categories",
+      "TechLevel",
+      "ItemClass",
       "ArmorClass",
+      "ArmorSubClass",
       "ResistSheet",
       "MaxDurability",
       "Weight"
@@ -10764,7 +11620,11 @@
         "Name": "Pantalones Para el Desierto",
         "Description": "Ropa",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10815,7 +11675,11 @@
         "Name": "Pantalones",
         "Description": "Tela Común",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10866,7 +11730,11 @@
         "Name": "Mercancía Turbia",
         "Description": "Ropa",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10917,7 +11785,11 @@
         "Name": "Jeans",
         "Description": "Ropa",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10968,7 +11840,11 @@
         "Name": "Jeans Marrones",
         "Description": "Ropa",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11019,7 +11895,11 @@
         "Name": "Hiberpants",
         "Description": "Prenda Sintética",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11070,7 +11950,11 @@
         "Name": "Hiberpants",
         "Description": "Tela Sintética",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11121,7 +12005,11 @@
         "Name": "Galgo",
         "Description": "Tela Común",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11172,7 +12060,11 @@
         "Name": "Sabueso",
         "Description": "Tela Común",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11223,7 +12115,11 @@
         "Name": "Sylvester",
         "Description": "Ropa de Trabajo",
         "Type": "leggings",
+        "Categories": "Common Civillian",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11274,7 +12170,11 @@
         "Name": "Pantalones de Laboratorio",
         "Description": "Vestuario de Laboratorio de Plástico",
         "Type": "leggings",
+        "Categories": "Science Dilthey",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11325,7 +12225,11 @@
         "Name": "Labpantalones",
         "Description": "Ropa de Laboratorio de Plástico",
         "Type": "leggings",
+        "Categories": "Science Dilthey",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11376,7 +12280,11 @@
         "Name": "Pantalones de Laboratorio de Campo",
         "Description": "Vestuario de Laboratorio Compuesto",
         "Type": "leggings",
+        "Categories": "Science Dilthey",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11427,7 +12335,11 @@
         "Name": "Hazmat",
         "Description": "Pantalones de Seguridad de Plástico",
         "Type": "leggings",
+        "Categories": "Science Dilthey",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11478,7 +12390,11 @@
         "Name": "Scrub-5",
         "Description": "Prenda Médica",
         "Type": "leggings",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11529,7 +12445,11 @@
         "Name": "Med Hazmat",
         "Description": "Pantalones Plásticos Para Materiales Peligrosos",
         "Type": "leggings",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11580,7 +12500,11 @@
         "Name": "Pirogov",
         "Description": "Pantalones Médicos de Kevlar",
         "Type": "leggings",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11631,7 +12555,11 @@
         "Name": "Ibn Sina",
         "Description": "Pantalones Médicos de Ceramita",
         "Type": "leggings",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11682,7 +12610,11 @@
         "Name": "Pantalones de Cárcel",
         "Description": "Ropa",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11733,7 +12665,11 @@
         "Name": "Condenado",
         "Description": "Prenda Acorazada de Prisión",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11784,7 +12720,11 @@
         "Name": "Brigante",
         "Description": "Pantalones Kevlar",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11835,7 +12775,11 @@
         "Name": "Brutella",
         "Description": "Pantalones de Kevlar de Prisión",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11886,7 +12830,11 @@
         "Name": "Coffey",
         "Description": "Pantalones de Prisión Chobham",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11937,7 +12885,11 @@
         "Name": "Pantalones de Carga",
         "Description": "Ropa de Trabajo Militar",
         "Type": "leggings",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11988,7 +12940,11 @@
         "Name": "Comando",
         "Description": "Pantalones de Trabajo",
         "Type": "leggings",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12039,7 +12995,11 @@
         "Name": "Sanitario",
         "Description": "Pantalones Metálicos de Un Médico Militar",
         "Type": "leggings",
+        "Categories": "Military Medical Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12090,7 +13050,11 @@
         "Name": "Pantalones de Gloria",
         "Description": "Pantalones Metálicos",
         "Type": "leggings",
+        "Categories": "Security RealWare Grasshopper Tianming",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12141,7 +13105,11 @@
         "Name": "Cadete",
         "Description": "Pantalones de Aramida Militar",
         "Type": "leggings",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12192,7 +13160,11 @@
         "Name": "Pantalones Legendarios",
         "Description": "Pantalones de Aramida",
         "Type": "leggings",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12243,7 +13215,11 @@
         "Name": "Carkas",
         "Description": "Pantalones de Poder Сhobham",
         "Type": "leggings",
+        "Categories": "Military RealWare Grasshopper",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12294,7 +13270,11 @@
         "Name": "Manitas",
         "Description": "Pantalones de Trabajo",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12345,7 +13325,11 @@
         "Name": "Linerunner",
         "Description": "Prenda Sintética",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12396,7 +13380,11 @@
         "Name": "Corredor de Línea",
         "Description": "Prenda Sintética",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12447,7 +13435,11 @@
         "Name": "Frostman",
         "Description": "Prenda Sintética Cálida",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12498,7 +13490,11 @@
         "Name": "EVA",
         "Description": "Pantalones de Traje Espacial",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12549,7 +13545,11 @@
         "Name": "Capataz",
         "Description": "Pantalones Sintéticos",
         "Type": "leggings",
+        "Categories": "Miner Coreward",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12600,7 +13600,11 @@
         "Name": "Excavador",
         "Description": "Ropa Especial Compuesta",
         "Type": "leggings",
+        "Categories": "Miner Coreward",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12651,7 +13655,11 @@
         "Name": "Acorazado",
         "Description": "Pantalones de Traje Espacial Industrial",
         "Type": "leggings",
+        "Categories": "Miner Coreward",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12702,7 +13710,11 @@
         "Name": "Gehenna",
         "Description": "Pantalones de Traje Espacial Industrial",
         "Type": "leggings",
+        "Categories": "Miner Coreward",
+        "TechLevel": "7",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12753,7 +13765,11 @@
         "Name": "Stryker",
         "Description": "Pantalones de Seguridad",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12804,7 +13820,11 @@
         "Name": "Vimes",
         "Description": "Pantalones Blindados",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12855,7 +13875,11 @@
         "Name": "Puntal",
         "Description": "Pantalones de Aramida",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12906,7 +13930,11 @@
         "Name": "Clobber",
         "Description": "Fuerza de Tarea de Pantalones de Ceramita",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12957,7 +13985,11 @@
         "Name": "Frente Rojo",
         "Description": "Prenda Común",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13008,7 +14040,11 @@
         "Name": "Huelga",
         "Description": "Prenda Sintética",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13059,7 +14095,11 @@
         "Name": "Mono Urbano",
         "Description": "Ropa de Trabajo",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13110,7 +14150,11 @@
         "Name": "Partidista",
         "Description": "Pantalones Blindados",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13161,7 +14205,11 @@
         "Name": "Impactador",
         "Description": "Pantalones de Traje Espacial",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13212,7 +14260,11 @@
         "Name": "Frente Popular",
         "Description": "Pantalones de Aramida",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13263,7 +14315,11 @@
         "Name": "Guerrilla",
         "Description": "Pantalones Chobham Caseros",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13314,7 +14370,11 @@
         "Name": "Rackham Jack",
         "Description": "Ropa de Trabajo de Plástico",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13365,7 +14425,11 @@
         "Name": "Filibustero",
         "Description": "Pantalones Compuestos de Bricolaje",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13416,7 +14480,11 @@
         "Name": "Ushkuynik",
         "Description": "Pantalones Blindados de Bricolaje",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13467,7 +14535,11 @@
         "Name": "Corsario",
         "Description": "Pantalones Metálicos",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13518,7 +14590,11 @@
         "Name": "Traficante",
         "Description": "Pantalones Metalicos",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13569,7 +14645,11 @@
         "Name": "Bucanero",
         "Description": "Pantalones de Aramida Caseros",
         "Type": "leggings",
+        "Categories": "UnchainedBelt Tianming",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13620,7 +14700,11 @@
         "Name": "Maldición",
         "Description": "Pantalones de Aramida de Culto",
         "Type": "leggings",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13671,7 +14755,11 @@
         "Name": "Ishtakol",
         "Description": "Tela Venusiana",
         "Type": "leggings",
+        "Categories": "Venus",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13722,7 +14810,11 @@
         "Name": "Huipil",
         "Description": "Venda de Muslo Venusiana",
         "Type": "leggings",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13773,7 +14865,11 @@
         "Name": "Quautemec",
         "Description": "Pantalones Pesados Venusianos",
         "Type": "leggings",
+        "Categories": "Tezctlan",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13824,7 +14920,11 @@
         "Name": "Tepeiolotl",
         "Description": "Pantalones Pesados Venusianos",
         "Type": "leggings",
+        "Categories": "Tezctlan",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13875,7 +14975,11 @@
         "Name": "Al-Masahib",
         "Description": "Tela Mercuriana",
         "Type": "leggings",
+        "Categories": "Mercury",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13926,7 +15030,11 @@
         "Name": "Badr",
         "Description": "Armadura Media Mercuriana",
         "Type": "leggings",
+        "Categories": "Mercury",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13977,7 +15085,11 @@
         "Name": "Ash Shakina",
         "Description": "Armadura Pesada Mercuriana",
         "Type": "leggings",
+        "Categories": "Mercury",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14028,7 +15140,11 @@
         "Name": "Umbría",
         "Description": "Tela",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14079,7 +15195,11 @@
         "Name": "Guardia Azul",
         "Description": "Pantalón de Uniforme Compuesto",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14130,7 +15250,11 @@
         "Name": "Patrón de Sombra",
         "Description": "Pantalones Kevlar",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14181,7 +15305,11 @@
         "Name": "Diseño Misterioso",
         "Description": "Pantalones de Aramida",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "7",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14232,7 +15360,11 @@
         "Name": "Árbitro",
         "Description": "Pantalones Chobham",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14283,7 +15415,11 @@
         "Name": "Lux",
         "Description": "Tela",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14334,7 +15470,11 @@
         "Name": "Mirmex",
         "Description": "Pantalones de Plastico",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14385,7 +15525,11 @@
         "Name": "Diseño del Alba",
         "Description": "Pantalones de Aramida Desfile",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14436,7 +15580,11 @@
         "Name": "Patrón de Aurora",
         "Description": "Pantalones Kevlar",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14487,7 +15635,11 @@
         "Name": "Mirmidón",
         "Description": "Pantalones de Ceramita",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14538,7 +15690,11 @@
         "Name": "Batida",
         "Description": "Tela",
         "Type": "leggings",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14589,7 +15745,11 @@
         "Name": "Patrón de Masacre",
         "Description": "Pantalones Kevlar",
         "Type": "leggings",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14640,7 +15800,11 @@
         "Name": "Diseño de Masacre",
         "Description": "Pantalones de Traje Espacial",
         "Type": "leggings",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "7",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14691,7 +15855,11 @@
         "Name": "Patrón de Señor de La Guerra",
         "Description": "Pantalones de Poder Сhobham",
         "Type": "leggings",
+        "Categories": "RealWare",
+        "TechLevel": "10",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14742,7 +15910,11 @@
         "Name": "Farmacéutico",
         "Description": "Ropa de Laboratorio de Plástico",
         "Type": "leggings",
+        "Categories": "DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14793,7 +15965,11 @@
         "Name": "Pantalones de Protección Química",
         "Description": "Pantalones Compuestos",
         "Type": "leggings",
+        "Categories": "DaydreamChem",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14844,7 +16020,11 @@
         "Name": "Eliminador",
         "Description": "Pantalones de Traje Espacial Industrial",
         "Type": "leggings",
+        "Categories": "DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14895,7 +16075,11 @@
         "Name": "Patrón de Vivisección",
         "Description": "Pantalones de Poder Сhobham",
         "Type": "leggings",
+        "Categories": "DaydreamChem",
+        "TechLevel": "9",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14946,7 +16130,11 @@
         "Name": "Patrón Profeta",
         "Description": "Pantalones de Poder de Ceramita",
         "Type": "leggings",
+        "Categories": "Sunlight",
+        "TechLevel": "10",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14997,7 +16185,11 @@
         "Name": "Karnonos",
         "Description": "Pantalones de aramida",
         "Type": "leggings",
+        "Categories": "Sunlight",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15048,7 +16240,11 @@
         "Name": "Plumero",
         "Description": "Pantalones de camionero",
         "Type": "leggings",
+        "Categories": "Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15099,7 +16295,11 @@
         "Name": "Stratum",
         "Description": "Pantalones de Aramida de Ingeniero",
         "Type": "leggings",
+        "Categories": "Planetbridge",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15150,7 +16350,11 @@
         "Name": "Cerbero",
         "Description": "Pantalones de Ceramita",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15201,7 +16405,11 @@
         "Name": "Escala FA",
         "Description": "Pantalones Kevlar",
         "Type": "leggings",
+        "Categories": "Dilthey",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15252,7 +16460,11 @@
         "Name": "Pantalones de Vestir",
         "Description": "Pantalones de Trabajo",
         "Type": "leggings",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15303,7 +16515,11 @@
         "Name": "Patrón Serafín",
         "Description": "Pantalones de Poder de Ceramita",
         "Type": "leggings",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15354,7 +16570,11 @@
         "Name": "Gótico",
         "Description": "Pantalones Lunares",
         "Type": "leggings",
+        "Categories": "Moon",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15405,7 +16625,11 @@
         "Name": "Vertis",
         "Description": "Pantalones Pesados ​​Luna",
         "Type": "leggings",
+        "Categories": "Moon",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15456,7 +16680,11 @@
         "Name": "Pantalones de Quitina",
         "Description": "Armadura Primitiva Para Las Piernas",
         "Type": "leggings",
+        "Categories": "Venus",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15510,7 +16738,11 @@
       "Name",
       "Description",
       "Type",
+      "Categories",
+      "TechLevel",
+      "ItemClass",
       "ArmorClass",
+      "ArmorSubClass",
       "ResistSheet",
       "MaxDurability",
       "Weight"
@@ -15521,7 +16753,11 @@
         "Name": "Zapatillas",
         "Description": "Tela",
         "Type": "boots",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15572,7 +16808,11 @@
         "Name": "Zapatillas",
         "Description": "Tela",
         "Type": "boots",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15623,7 +16863,11 @@
         "Name": "Stajanovista",
         "Description": "Botas Comunes",
         "Type": "boots",
+        "Categories": "Common Civillian",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15674,7 +16918,11 @@
         "Name": "Labotenes",
         "Description": "Ropa de Laboratorio Compuesta",
         "Type": "boots",
+        "Categories": "Science Dilthey",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15725,7 +16973,11 @@
         "Name": "Hazmat",
         "Description": "Botas de Protección Química de Plástico",
         "Type": "boots",
+        "Categories": "Science Dilthey",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15776,7 +17028,11 @@
         "Name": "Scrub-5",
         "Description": "Ropa Médica",
         "Type": "boots",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15827,7 +17083,11 @@
         "Name": "Scrub-5",
         "Description": "Prenda Médica",
         "Type": "boots",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15878,7 +17138,11 @@
         "Name": "Pirogov",
         "Description": "Botas Médicas de Kevlar",
         "Type": "boots",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15929,7 +17193,11 @@
         "Name": "Ibn Sina",
         "Description": "Botas Médicas de Ceramita",
         "Type": "boots",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "6",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15980,7 +17248,11 @@
         "Name": "Pies",
         "Description": "Ropa de Prisión",
         "Type": "boots",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16031,7 +17303,11 @@
         "Name": "Brigante",
         "Description": "Botas Kevlar",
         "Type": "boots",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16082,7 +17358,11 @@
         "Name": "Brutella",
         "Description": "Botas Tácticas de Kevlar Para Prisión",
         "Type": "boots",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16133,7 +17413,11 @@
         "Name": "Jackboots",
         "Description": "Ropa de Trabajo Militar",
         "Type": "boots",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16184,7 +17468,11 @@
         "Name": "Botas de Gloria",
         "Description": "Botas de Metal",
         "Type": "boots",
+        "Categories": "Security RealWare Grasshopper Tianming",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16235,7 +17523,11 @@
         "Name": "Cadete",
         "Description": "Botas Militares de Aramida",
         "Type": "boots",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16286,7 +17578,11 @@
         "Name": "Botas Legendarias",
         "Description": "Zapatos de Aramida",
         "Type": "boots",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16337,7 +17633,11 @@
         "Name": "Carkas",
         "Description": "Botas Recargadas",
         "Type": "boots",
+        "Categories": "Military RealWare Grasshopper",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16388,7 +17688,11 @@
         "Name": "Linerunner",
         "Description": "Prenda Sintética",
         "Type": "boots",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16439,7 +17743,11 @@
         "Name": "Muñeco de Nieve",
         "Description": "Prenda Sintética Cálida",
         "Type": "boots",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16490,7 +17798,11 @@
         "Name": "EVA",
         "Description": "Botas de Traje Espacial",
         "Type": "boots",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16541,7 +17853,11 @@
         "Name": "Capataz",
         "Description": "Calzado de Plastico",
         "Type": "boots",
+        "Categories": "Miner Coreward",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16592,7 +17908,11 @@
         "Name": "Tunneler",
         "Description": "Botas de Trabajo Compuestas",
         "Type": "boots",
+        "Categories": "Miner Coreward",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16643,7 +17963,11 @@
         "Name": "Acorazado",
         "Description": "Botas de Traje Espacial Industrial",
         "Type": "boots",
+        "Categories": "Miner Coreward",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16694,7 +18018,11 @@
         "Name": "Gehenna",
         "Description": "Botas de Traje Espacial Industrial",
         "Type": "boots",
+        "Categories": "Miner Coreward",
+        "TechLevel": "7",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16745,7 +18073,11 @@
         "Name": "Vimes",
         "Description": "Botas Blindadas",
         "Type": "boots",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16796,7 +18128,11 @@
         "Name": "Guardia de Cruce",
         "Description": "Botas de Aramida",
         "Type": "boots",
+        "Categories": "FrancheComte",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16847,7 +18183,11 @@
         "Name": "Cosmonauta",
         "Description": "Botines de Ceramita de La Fuerza de Tareas",
         "Type": "boots",
+        "Categories": "FrancheComte",
+        "TechLevel": "6",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16898,7 +18238,11 @@
         "Name": "Mono Urbano",
         "Description": "Ropa de Trabajo",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16949,7 +18293,11 @@
         "Name": "Partidista",
         "Description": "Botas Blindadas",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17000,7 +18348,11 @@
         "Name": "Impactador",
         "Description": "Botas de Traje Espacial",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17051,7 +18403,11 @@
         "Name": "Frente Popular",
         "Description": "Botas de Aramida",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17102,7 +18458,11 @@
         "Name": "Guerrilla",
         "Description": "DIY Chobham Jackboots",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17153,7 +18513,11 @@
         "Name": "Hessiano",
         "Description": "Ropa de Trabajo Blindada",
         "Type": "boots",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17204,7 +18568,11 @@
         "Name": "Corsario",
         "Description": "Escarpines de Metal",
         "Type": "boots",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17255,7 +18623,11 @@
         "Name": "Traficante",
         "Description": "Botas Metalicas",
         "Type": "boots",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17306,7 +18678,11 @@
         "Name": "Bucanero",
         "Description": "Sabatones de Aramida Caseros",
         "Type": "boots",
+        "Categories": "UnchainedBelt Tianming",
+        "TechLevel": "6",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17357,7 +18733,11 @@
         "Name": "Maldición",
         "Description": "Botas de Aramida de Culto",
         "Type": "boots",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17408,7 +18788,11 @@
         "Name": "Cuetlaxtli",
         "Description": "Sandalias Venusianas",
         "Type": "boots",
+        "Categories": "Venus",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17459,7 +18843,11 @@
         "Name": "Quetzal-Zinkli",
         "Description": "Botas Ligeras Venusianas",
         "Type": "boots",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17510,7 +18898,11 @@
         "Name": "Quautemec",
         "Description": "Botas Pesadas Venusinas",
         "Type": "boots",
+        "Categories": "Tezctlan",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17561,7 +18953,11 @@
         "Name": "Sirm al-Akhtar",
         "Description": "Tela Mercuriana",
         "Type": "boots",
+        "Categories": "Mercury",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17612,7 +19008,11 @@
         "Name": "Badr",
         "Description": "Botas Medianas Mercurianas",
         "Type": "boots",
+        "Categories": "Mercury",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17663,7 +19063,11 @@
         "Name": "Umbría",
         "Description": "Tela",
         "Type": "boots",
+        "Categories": "AnCom",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17714,7 +19118,11 @@
         "Name": "Patrón de Sombra",
         "Description": "Botas Kevlar",
         "Type": "boots",
+        "Categories": "AnCom",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17765,7 +19173,11 @@
         "Name": "Diseño Misterioso",
         "Description": "Botas de Aramida",
         "Type": "boots",
+        "Categories": "AnCom",
+        "TechLevel": "7",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17816,7 +19228,11 @@
         "Name": "Árbitro",
         "Description": "Botas Chobham",
         "Type": "boots",
+        "Categories": "AnCom",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17867,7 +19283,11 @@
         "Name": "Mirmex",
         "Description": "Calzado de Plastico",
         "Type": "boots",
+        "Categories": "SBN",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17918,7 +19338,11 @@
         "Name": "Diseño del Alba",
         "Description": "Botas de Aramida Desfile",
         "Type": "boots",
+        "Categories": "SBN",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17969,7 +19393,11 @@
         "Name": "Patrón de Aurora",
         "Description": "Botas Kevlar",
         "Type": "boots",
+        "Categories": "SBN",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18020,7 +19448,11 @@
         "Name": "Mirmidón",
         "Description": "Botas de Ceramita",
         "Type": "boots",
+        "Categories": "SBN",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18071,7 +19503,11 @@
         "Name": "Batida",
         "Description": "Tela",
         "Type": "boots",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18122,7 +19558,11 @@
         "Name": "Patrón de Masacre",
         "Description": "Botas Kevlar",
         "Type": "boots",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18173,7 +19613,11 @@
         "Name": "Diseño de Masacre",
         "Description": "Botas de Traje Espacial",
         "Type": "boots",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "7",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18224,7 +19668,11 @@
         "Name": "Patrón del Señor de La Guerra",
         "Description": "Botas de Poder Сhobham",
         "Type": "boots",
+        "Categories": "RealWare",
+        "TechLevel": "10",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18275,7 +19723,11 @@
         "Name": "Botas de Protección Química",
         "Description": "Botas Compuestas",
         "Type": "boots",
+        "Categories": "DaydreamChem",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18326,7 +19778,11 @@
         "Name": "Patrón de Vivisección",
         "Description": "Botas de Poder Сhobham",
         "Type": "boots",
+        "Categories": "DaydreamChem",
+        "TechLevel": "9",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18377,7 +19833,11 @@
         "Name": "Patrón Profeta",
         "Description": "Botas de Poder de Ceramita",
         "Type": "boots",
+        "Categories": "Sunlight",
+        "TechLevel": "10",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18428,7 +19888,11 @@
         "Name": "Karnonos",
         "Description": "Botas de aramida",
         "Type": "boots",
+        "Categories": "Sunlight",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18479,7 +19943,11 @@
         "Name": "Plumero",
         "Description": "Botas de camionero",
         "Type": "boots",
+        "Categories": "Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18530,7 +19998,11 @@
         "Name": "Stratum",
         "Description": "Botas de Aramida para Ingeniero",
         "Type": "boots",
+        "Categories": "Planetbridge",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18581,7 +20053,11 @@
         "Name": "Cerbero",
         "Description": "Botas de Ceramita",
         "Type": "boots",
+        "Categories": "FrancheComte",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18632,7 +20108,11 @@
         "Name": "Escala FA",
         "Description": "Botas Kevlar",
         "Type": "boots",
+        "Categories": "Dilthey",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18683,7 +20163,11 @@
         "Name": "Zapatos de Sacerdote",
         "Description": "Botas de Trabajo",
         "Type": "boots",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18734,7 +20218,11 @@
         "Name": "Patrón Serafín",
         "Description": "Botas de Poder de Ceramita",
         "Type": "boots",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18785,7 +20273,11 @@
         "Name": "Gótico",
         "Description": "Escarpes Lunares",
         "Type": "boots",
+        "Categories": "Moon",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18836,7 +20328,11 @@
         "Name": "Vertis",
         "Description": "Botas Pesadas Lunares",
         "Type": "boots",
+        "Categories": "Moon",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18887,7 +20383,11 @@
         "Name": "Quitina Pesada",
         "Description": "Armadura de Araña",
         "Type": "boots",
+        "Categories": "Venus",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
