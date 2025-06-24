@@ -4,12 +4,23 @@ import pandas as pd
 from typing import Dict, List, Any, Tuple
 import math
 from languages import translations
+import os
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[logging.FileHandler("armorpicker.log"), logging.StreamHandler()]
+)
+
+logger = logging.getLogger(__name__)
 
 class ArmorPicker:
     def __init__(self):
         self.resistance_types = ["blunt", "pierce", "lacer", "fire", "cold", "poison", "shock", "beam"]
         self.current_language = "English"
-        self.current_version = "0.9"  # Default version
+        self.current_version = "0.9.2"  # Default version
         self.armor_data = {}
 
         # Color gradient configuration
@@ -39,6 +50,12 @@ class ArmorPicker:
         
         # Initialize languages for default version
         self.languages = self.get_version_languages(self.current_version)
+
+        # Tech Levels
+        self.tech_levels = [1,2,3,4,5,6,7,8,9,10]
+        self.armor_categories_block = ['Common Civillian', 'Common Civillian Managment']
+        self.armor_class =  ['Cloth', 'HeavyArmor', 'LightArmor', 'MediumArmor', 'PowerArmor']
+        self.armor_subclass =  ['Default', 'Quasi']
 
         # Load default language data
         self.load_armor_data("English")
@@ -83,7 +100,13 @@ class ArmorPicker:
     
     def get_translation(self, key: str) -> str:
         """Get translation for current language"""
-        return self.translations.get(self.current_language, self.translations["English"]).get(key, key)
+        if (self.translations[self.current_language]):
+            if self.translations[self.current_language].get(key):
+                return self.translations[self.current_language].get(key)
+            else:
+                return self.translations["English"].get(key, key)
+
+        # return self.translations.get(self.current_language, self.translations["English"]).get(key, key)
     
     def get_armor_types(self) -> List[str]:
         """Get unique armor types from the data"""
@@ -92,21 +115,60 @@ class ArmorPicker:
             armor_types.add(armor.get("Type", "Unknown"))
         return sorted(list(armor_types))
     
-    def filter_armors(self, resistance_filters: Dict[str, Dict]) -> List[Dict]:
+    def filter_armors(self, resistance_filters: Dict[str, Dict], selector_tech_level, armor_class, armor_subclass, armor_categories_block) -> List[Dict]:
         """Filter armors based on resistance requirements"""
-        filtered_armors = []
+        
+        # Get all filtered armors grouped by type
+        filtered_armors_by_type = {}
         
         # Dynamically get all armor categories from the data
         for category_name, category_content in self.armor_data.items():
+
             # Skip if this isn't a category with armor data
             if not isinstance(category_content, dict) or "data" not in category_content:
                 continue
                 
+            # Get category data for boots, leggings, armor, helmets
             category_data = category_content.get("data", [])
             
             for armor in category_data:
                 meets_requirements = True
+
+                if not (armor.get("ArmorClass")):
+                    logger.warning(f"Armor {armor.get('Name')} has no ArmorClass")
                 
+                if not (armor.get("TechLevel")):
+                    logger.warning(f"Armor {armor.get('Name')} has no TechLevel")
+
+                if not (armor.get("Categories")):
+                    logger.warning(f"Armor {armor.get('Name')} has no Category")
+
+                if not (armor.get("ArmorSubClass")):
+                    logger.warning(f"Armor {armor.get('Name')} has no ArmorSubClass")
+
+                if (armor_categories_block and armor.get("Categories") and armor.get("Categories") in armor_categories_block):
+                    logger.warning(f"{armor.get('Categories')} skipped as in {armor_categories_block}")
+                    meets_requirements = False
+                    continue
+
+                if (selector_tech_level and armor.get("TechLevel")):
+                    if (int(armor.get("TechLevel")) < selector_tech_level):
+                        logger.warning(f"{armor.get('TechLevel')} skipped as below {selector_tech_level}")
+                        meets_requirements = False
+                        continue
+
+                # We excluded some armor classes in filter
+                if (armor_class and armor.get("ArmorClass") and armor.get("ArmorClass") not in armor_class):
+                    logger.warning(f"{armor.get('ArmorClass')} skipped as not {armor_class}")
+                    meets_requirements = False
+                    continue
+
+                # Some items have None subclass so we treat them as default
+                if (armor_subclass and armor.get("ArmorSubClass") and armor.get("ArmorSubClass") not in armor_subclass):
+                    logger.warning(f"{armor.get('ArmorSubClass')} skipped as not {armor_subclass}")
+                    meets_requirements = False
+                    continue
+
                 # Check each resistance requirement
                 for resist_type, filter_config in resistance_filters.items():
                     if not filter_config["enabled"]:
@@ -133,17 +195,21 @@ class ArmorPicker:
                             break
                     
                     # Check if armor meets minimum requirement
-                    if armor_resist_value < required_value:
-                        meets_requirements = False
-                        break
+                    # Armor score here and required value is a resulting resist, disabling for now as we need to evaluate first.
+                    # if armor_resist_value < required_value:
+                    #     meets_requirements = False
+                    #     break
                 
                 if meets_requirements:
+                    armor_type = armor.get("Type", "Unknown")
+                    if armor_type not in filtered_armors_by_type:
+                        filtered_armors_by_type[armor_type] = []
                     # Add category information to the armor data for better identification
                     armor_with_category = armor.copy()
                     armor_with_category["Category"] = category_name
-                    filtered_armors.append(armor_with_category)
+                    filtered_armors_by_type[armor_type].append(armor_with_category)
         
-        return filtered_armors
+        return filtered_armors_by_type
     
     def sort_armors(self, armors: List[Dict], sort_by: str, sort_order: str) -> List[Dict]:
         """Sort armors by specified column and order"""
@@ -184,7 +250,7 @@ class ArmorPicker:
             # If sorting fails, return original list
             return armors
 
-    def find_armor_combinations(self, resistance_filters: Dict[str, Dict], language: str = None, invincible_perk: bool = False, hardened_talent: bool = False, hardened_talent_lvl: int = 1) -> str:
+    def find_armor_combinations(self, filtered_armors, resistance_filters: Dict[str, Dict], language: str = None, invincible_perk: bool = False, hardened_talent: bool = False, hardened_talent_lvl: int = 1) -> str:
         """Find armor combinations that meet resistance requirements"""
         if language and language != self.current_language:
             self.load_armor_data(language)
@@ -201,28 +267,29 @@ class ArmorPicker:
             return f"<p>{self.get_translation('no_requirements_set')}</p>"
         
         # Get all armors grouped by type
-        armor_by_type = {}
-        for category_name, category_content in self.armor_data.items():
-            if not isinstance(category_content, dict) or "data" not in category_content:
-                continue
+        # armor_by_type = {}
+        armor_by_type = filtered_armors
+        # for category_name, category_content in self.armor_data.items():
+        #     if not isinstance(category_content, dict) or "data" not in category_content:
+        #         continue
                 
-            for armor in category_content.get("data", []):
-                armor_type = armor.get("Type", "Unknown")
-                if armor_type not in armor_by_type:
-                    armor_by_type[armor_type] = []
-                armor_with_category = armor.copy()
-                armor_with_category["Category"] = category_name
-                armor_by_type[armor_type].append(armor_with_category)
+        #     for armor in category_content.get("data", []):
+        #         armor_type = armor.get("Type", "Unknown")
+        #         if armor_type not in armor_by_type:
+        #             armor_by_type[armor_type] = []
+        #         armor_with_category = armor.copy()
+        #         armor_with_category["Category"] = category_name
+        #         armor_by_type[armor_type].append(armor_with_category)
         
         # Find best armor combinations
         combinations = []
-        armor_types = list(armor_by_type.keys())
+        armor_types = list(filtered_armors.keys())
         
         # Generate combinations (one armor per type)
         from itertools import product
         
         # Limit combinations to prevent performance issues
-        max_combinations_per_type = 5
+        max_combinations_per_type = 15
         limited_armor_by_type = {}
         for armor_type, armors in armor_by_type.items():
             # Sort by total resistance for enabled requirements
@@ -238,14 +305,62 @@ class ArmorPicker:
             limited_armor_by_type[armor_type] = sorted_armors[:max_combinations_per_type]
         
         # Generate all possible combinations
+        # if len(limited_armor_by_type) > 1:
+        #     armor_lists = list(limited_armor_by_type.values())
+        #     for combination in product(*armor_lists):
+        #         combo_score = self.evaluate_combination(combination, enabled_requirements, invincible_perk, hardened_talent, hardened_talent_lvl)
+        #         
+        #         # Calculate percentage and filter above threshold
+        #         filter_above_threshold = True
+        # 
+        #         for resist_type in combo_score['resulting_resistances']:
+        #                 required_resistance = enabled_requirements[resist_type]
+        #                 actual_resistance = combo_score['resulting_resistances'][resist_type]['score']
+        #                 percentage_exceeded = (actual_resistance - required_resistance) / required_resistance * 100
+        #                 if percentage_exceeded > 10:
+        #                     filter_above_threshold = False
+        #                     break
+        # 
+        #         if filter_above_threshold:
+        #             combinations.append({
+        #                 'armors': combination,
+        #                 'score': combo_score
+        #             })
+        # 
+        from concurrent.futures import ThreadPoolExecutor
+
         if len(limited_armor_by_type) > 1:
             armor_lists = list(limited_armor_by_type.values())
-            for combination in product(*armor_lists):
+
+            # Function to process each combination
+            def process_combination(combination):
                 combo_score = self.evaluate_combination(combination, enabled_requirements, invincible_perk, hardened_talent, hardened_talent_lvl)
-                combinations.append({
-                    'armors': combination,
-                    'score': combo_score
-                })
+
+                filter_above_threshold = True
+
+                for resist_type in combo_score['resulting_resistances']:
+                    required_resistance = enabled_requirements[resist_type]
+                    actual_resistance = combo_score['resulting_resistances'][resist_type]['score']
+                    percentage_exceeded = (actual_resistance - required_resistance) / required_resistance * 100
+                    if percentage_exceeded > 10:
+                        filter_above_threshold = False
+                        break
+
+                if filter_above_threshold:
+                    return {'armors': combination, 'score': combo_score}
+                else:
+                    return None
+
+            # Set the maximum number of threads to the number of CPU cores
+            max_threads = os.cpu_count() or 1  # Use all available CPU cores
+
+            # Use ThreadPoolExecutor to multithread the processing
+            with ThreadPoolExecutor(max_workers=max_threads) as executor:
+                futures = [executor.submit(process_combination, combination) for combination in product(*armor_lists)]
+                results = [future.result() for future in futures]
+
+            # Filter out None results and add valid combinations to the list
+            combinations.extend([result for result in results if result is not None])
         
         # Sort combinations by quality (best matches first)
         # Now includes dispersion: lower dispersion (more balanced) is better
@@ -260,16 +375,24 @@ class ArmorPicker:
         
         if good_combinations:
             # Use combinations that meet the threshold
-            final_combinations = good_combinations[:20]
+            final_combinations = good_combinations[:100]
         elif combinations:
             # No combinations meet threshold, but return the best match(es)
-            final_combinations = combinations[:5]  # Return top 5 best matches even if they don't meet requirements
+            final_combinations = combinations[:20]  # Return top 5 best matches even if they don't meet requirements
         else:
             # This should rarely happen, but handle the edge case
             return f"<p>{self.get_translation('no_combinations_found')}</p>"
         
         # Create HTML table for combinations
         return self.create_combinations_table_html(final_combinations, enabled_requirements)
+
+    def calculate_armor_score_from_resistance(resulting_resistance):
+        if resulting_resistance >= 1:
+            return None  # Avoid log of non-positive number
+        numerator = math.log(1 - resulting_resistance)
+        denominator = -0.035 * math.log(1.75)
+        armor_score = numerator / denominator
+        return armor_score
 
     def calculate_resulting_resistance(self, total_armor_score: int) -> float:
         """Calculate resulting resistance percentage using the formula"""
@@ -497,8 +620,6 @@ class ArmorPicker:
             
             max_value = max(combo['score']['resulting_resistances'][key]['score'] for key in combo['score']['resulting_resistances'])
             min_value = min(combo['score']['resulting_resistances'][key]['score'] for key in combo['score']['resulting_resistances'])
-            print(f"Maximum value: {max_value}")
-            print(f"Minimum value: {min_value}")
 
             # Show just the raw scores
             for resist_type in requirements.keys():
@@ -639,14 +760,15 @@ class ArmorPicker:
         
     def get_top_armors_per_type(self, filtered_armors: List[Dict], max_per_type: int = 4) -> List[Dict]:
         """Get top armors from each armor type"""
-        armor_types = {}
+        # armor_types = {}  
+        armor_types = filtered_armors
         
         # Group by armor type
-        for armor in filtered_armors:
-            armor_type = armor.get("Type", "Unknown")
-            if armor_type not in armor_types:
-                armor_types[armor_type] = []
-            armor_types[armor_type].append(armor)
+        # for armor in filtered_armors:
+            # armor_type = armor.get("Type", "Unknown")
+            # if armor_type not in armor_types:
+                # armor_types[armor_type] = []
+            # armor_types[armor_type].append(armor)
         
         # Get top items from each type (sorted by total resistance)
         result = []
@@ -867,7 +989,7 @@ def create_armor_picker_interface():
         """Handle version change"""
         return picker.change_version(version)
     
-    def search_armors(language, version, current_sort_by, current_sort_order, invincible_perk, hardened_talent, hardened_talent_lvl, *args):
+    def search_armors(language, version, current_sort_by, current_sort_order, invincible_perk, hardened_talent, hardened_talent_lvl, selector_tech_level, *args):
         """Search armors with current language"""
         # Ensure version and data are loaded for current language
         picker.change_version(version)
@@ -875,10 +997,10 @@ def create_armor_picker_interface():
 
         # Parse resistance filter arguments
         resistance_filters = {}
-        expected_args = len(picker.resistance_types) * 2
-        if len(args) != expected_args:
-            args = list(args) + [True, 0] * (expected_args - len(args))
-        
+        # expected_args = len(picker.resistance_types) * 2
+        # if len(args) != expected_args:
+        #     args = list(args) + [True, 0] * (expected_args - len(args))
+            
         for i, resist_type in enumerate(picker.resistance_types):
             if i * 2 + 1 < len(args):
                 enabled = args[i * 2]  # Toggle
@@ -893,8 +1015,16 @@ def create_armor_picker_interface():
                     "value": 0
                 }
         
+        # print(args[:16])
+        # print(args[16:]) # Resist and value is 16 look above
+        # print("")
+
+        arg_armor_class = args[16:][0]
+        arg_armor_subclass = args[16:][1]
+        arg_armor_categories_block = args[16:][2]
+
         # Filter armors
-        filtered_armors = picker.filter_armors(resistance_filters)
+        filtered_armors = picker.filter_armors(resistance_filters, selector_tech_level, arg_armor_class, arg_armor_subclass, arg_armor_categories_block)
 
         # Get top 4 from each armor type
         top_armors = picker.get_top_armors_per_type(filtered_armors, max_per_type=99)
@@ -911,7 +1041,7 @@ def create_armor_picker_interface():
         html_table = picker.create_styled_table_html(sorted_armors, current_sort_by, current_sort_order, language)
         
         # Find armor combinations
-        combinations_html = picker.find_armor_combinations(resistance_filters, language, invincible_perk, hardened_talent, hardened_talent_lvl)
+        combinations_html = picker.find_armor_combinations(filtered_armors, resistance_filters, language, invincible_perk, hardened_talent, hardened_talent_lvl)
         
         return html_table, combinations_html, current_sort_by, current_sort_order
     
@@ -941,7 +1071,6 @@ def create_armor_picker_interface():
         except (json.JSONDecodeError, Exception) as e:
             return gr.update(), gr.update(), gr.update()
 
-    
     # Create interface components
     with gr.Blocks(title="QM Armor Picker", theme=gr.themes.Soft()) as interface:
         # Hidden state for sorting
@@ -996,7 +1125,55 @@ def create_armor_picker_interface():
         # Dynamic content that updates with language
         subtitle_md = gr.Markdown("Select resistance requirements and search for armors. Click column headers to sort results.")
         legend_md = gr.Markdown("**Color Legend**: Resistance values are colored from 🔴 Red (low) to 🟢 Green (high)")
-        
+
+        with gr.Sidebar(position="left"):
+            extra_settings_markdown = gr.Markdown("# Extra Settings")
+            extra_settings_markdown_text = gr.Markdown("Extra settings to narrow down and speed up searching")
+            extra_settings_textlevels_text = gr.Markdown("Tech Levels")
+            with gr.Row():
+                with gr.Row():
+                    selector_tech_level = gr.Slider(
+                        1, 
+                        10, 
+                        value=1, 
+                        step=1,
+                        label="Min Tech Level",
+                        show_label=False,
+                        info="Min level",
+                        interactive=True,
+                        )
+            extra_settings_armorclass_text = gr.Markdown("Armor Class")
+            with gr.Row():
+                with gr.Row():
+                    selector_armor_class = gr.CheckboxGroup(
+                        picker.armor_class, 
+                        value=['HeavyArmor', 'LightArmor', 'MediumArmor', 'PowerArmor'], 
+                        label="Armor Class", 
+                        interactive=True,
+                        show_label=False,
+                        ),
+            extra_settings_armorsubclass_text = gr.Markdown("Armor SubClass")
+            with gr.Row():
+                with gr.Row():
+                    selector_armor_subclass = gr.CheckboxGroup(
+                        picker.armor_subclass, 
+                        value=['Default'], 
+                        label="Armor SubClass", 
+                        info="All Quasimorph items are Quasi. Everything else is Default.",
+                        interactive=True,
+                        show_label=False,
+                        ),
+            extra_settings_armorignore_text = gr.Markdown("Armor Ignore")
+            with gr.Row():
+                with gr.Row():
+                    selector_armor_categories_block = gr.CheckboxGroup(
+                        picker.armor_categories_block, 
+                        value=[], 
+                        label="Armor Categories Block", 
+                        info="These are the categories that are blocked by default as they are low tier.",
+                        interactive=True,
+                        show_label=False,
+                        ),
         with gr.Row():
             with gr.Column(scale=1):
                 filters_md = gr.Markdown("## Resistance Filters")
@@ -1005,11 +1182,13 @@ def create_armor_picker_interface():
                 with gr.Row():
                     version_selector = gr.Dropdown(
                         choices=["0.9", "0.9.2"],
-                        value="0.9",
+                        value="0.9.2",
                         label="Game Version",
                         scale=1
                     )
                 
+                search_btn = gr.Button("Search Armors", variant="primary")
+
                 # Create toggle and value inputs for each resistance type
                 resistance_inputs = []
                 resistance_checkboxes = []  # Store checkbox references
@@ -1047,10 +1226,8 @@ def create_armor_picker_interface():
                             scale=1,
                             label="Hardened Level",
                         )
-
-                search_btn = gr.Button("Search Armors", variant="primary")
-            
-            with gr.Column(scale=3):
+                        
+            with gr.Column(scale=4):
                 results_md = gr.Markdown("## Results")
                 
                 with gr.Tabs():
@@ -1067,7 +1244,7 @@ def create_armor_picker_interface():
                             label="Matching Armors",
                             value="<p>Click 'Search Armors' to see results...</p>"
                         )
-                        
+                    
                 # Hidden elements for JavaScript communication
                 with gr.Column(visible=False):
                     sort_trigger_btn = gr.Button("Sort Trigger", elem_id="sort-trigger-btn")
@@ -1158,15 +1335,52 @@ def create_armor_picker_interface():
             updates.append(gr.TabItem(label=picker.get_translation('individual_armors_tab')))  # individual armors tab
             updates.append(gr.Checkbox(label=picker.get_translation('perk_invincible')))
             updates.append(gr.Checkbox(label=picker.get_translation('talent_all_resists')))
-            
+            updates.append(gr.Checkbox(label=picker.get_translation('talent_all_resist_damage'))) # hardened_talent_lvl
+
+            updates.append(f"# {picker.get_translation('extra_settings_markdown')}") # extra_settings_markdown
+            updates.append(f"{picker.get_translation('extra_settings_markdown_text')}") # extra_settings_markdown_text
+            updates.append(f"{picker.get_translation('extra_settings_textlevels_text')}") # extra_settings_textlevels_text
+            updates.append(gr.Slider(info=picker.get_translation('selector_tech_level'))) # selector_tech_level
+            updates.append(f"{picker.get_translation('extra_settings_armorclass_text')}") # extra_settings_armorclass_text
+            updates.append(f"{picker.get_translation('extra_settings_armorsubclass_text')}") # extra_settings_armorsubclass_text
+            updates.append(f"{picker.get_translation('extra_settings_armorignore_text')}") # extra_settings_armorignore_text
+
             # Update checkbox labels for resistance types
             for resist_type in picker.resistance_types:
                 updates.append(gr.Checkbox(label=picker.get_translation(resist_type)))
             
+            updates.append(gr.CheckboxGroup(info=picker.get_translation('selector_armor_subclass_info'))) # selector_armor_subclass
+            updates.append(gr.CheckboxGroup(info=picker.get_translation('selector_armor_categories_block_info'))) # selector_armor_categories_block
+
             return updates
         
         # Set up event handlers - update text components and checkbox labels
-        outputs_list = [title_md, subtitle_md, legend_md, filters_md, results_md, search_btn, individual_results, combination_results, version_selector, armor_combinations_tab, individual_armors_tab, invincible_perk, hardened_talent, hardened_talent_lvl] + resistance_checkboxes
+        outputs_list = [
+            title_md,
+            subtitle_md,
+            legend_md,
+            filters_md,
+            results_md,
+            search_btn,
+            individual_results,
+            combination_results,
+            version_selector,
+            armor_combinations_tab,
+            individual_armors_tab,
+            invincible_perk,
+            hardened_talent,
+            hardened_talent_lvl,
+            extra_settings_markdown,
+            extra_settings_markdown_text,
+            extra_settings_textlevels_text,
+            selector_tech_level,
+            extra_settings_armorclass_text,
+            extra_settings_armorsubclass_text,
+            extra_settings_armorignore_text,
+            ] + \
+            resistance_checkboxes + \
+            list(selector_armor_subclass) + \
+            list(selector_armor_categories_block)
 
         language_selector.change(
             fn=update_ui_language,
@@ -1179,8 +1393,21 @@ def create_armor_picker_interface():
             result_html, combo_html, new_sort_by, new_sort_order = search_armors(language, version, "name", "asc", *args)
             return result_html, combo_html, new_sort_by, new_sort_order
         
-        search_inputs = [language_selector, version_selector, invincible_perk, hardened_talent, hardened_talent_lvl] + resistance_inputs
+        search_inputs = [
+            language_selector, 
+            version_selector, 
+            invincible_perk, 
+            hardened_talent, 
+            hardened_talent_lvl, 
+            selector_tech_level
+            ] + \
+            resistance_inputs + \
+            list(selector_armor_class) + \
+            list(selector_armor_subclass) + \
+            list(selector_armor_categories_block)
 
+        
+        
         search_btn.click(
             fn=initial_search,
             inputs=search_inputs,
