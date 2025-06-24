@@ -1,6 +1,7 @@
 # QM Armor Picker
 
 Armor selection tool for the Quasimorph game, featuring multi-language support and filtering.
+## [Live Demo](https://huggingface.co/spaces/ARZUMATA/QM_ArmorPicker)
 
 ![Preview](media/preview.png)
 
