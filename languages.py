@@ -38,6 +38,16 @@ translations = {
         "individual_armors_tab": "Individual Armors",
         "perk_invincible": "Invincible Perk (+12 all resistances)",
         "talent_all_resists": "Hardened (+10% resistances)",
+        "extra_settings_markdown": "Extra Settings",
+        "extra_settings_markdown_text": "Extra settings to narrow down and speed up searching",
+        "extra_settings_textlevels_text": "Tech Levels",
+        "selector_tech_level": "Min level",
+        "extra_settings_armorclass_text": "Armor Class",
+        "extra_settings_armorsubclass_text": "Armor SubClass",
+        "extra_settings_armorignore_text": "Armor Ignore",
+        "selector_armor_subclass_info": "All Quasimorph items are Quasi. Everything else is Default.",
+        "selector_armor_categories_block_info": "These are the categories that are blocked by default as they are low tier.",
+
     },
     "Русский": {
         "title": "QM Подборщик Брони",
@@ -77,6 +87,16 @@ translations = {
         "individual_armors_tab": "Общий список брони",
         "perk_invincible": "Непобедимый (+12 ко всем сопротивлениям)",
         "talent_all_resists": "Закаленный (+10% к сопротивлениям)",
+        "extra_settings_markdown": "Дополнительные настройки",
+        "extra_settings_markdown_text": "Дополнительные настройки для уточнения и ускорения поиска",
+        "extra_settings_textlevels_text": "Технические уровни",
+        "selector_tech_level": "Минимальный уровень",
+        "extra_settings_armorclass_text": "Класс брони",
+        "extra_settings_armorsubclass_text": "Подкласс брони",
+        "extra_settings_armorignore_text": "Игнорирование брони",
+        "selector_armor_subclass_info": "Все предметы Квазиморфа являются Quasi. Всё остальное - Default.",
+        "selector_armor_categories_block_info": "Это категории, которые заблокированы по умолчанию, так как они низкого уровня."
+
     },
     "Deutsch": {
         "title": "QM Rüstungs-Picker",
@@ -116,6 +136,16 @@ translations = {
         "individual_armors_tab": "Einzelne Rüstungen",
         "perk_invincible": "Unverwundbar (+12 alle Widerstände)",
         "talent_all_resists": "Abhärtung (+10% Widerstände)",
+        "extra_settings_markdown": "Zusätzliche Einstellungen",
+        "extra_settings_markdown_text": "Zusätzliche Einstellungen zur Eingrenzung und Beschleunigung der Suche",
+        "extra_settings_textlevels_text": "Technische Ebenen",
+        "selector_tech_level": "Min. Level",
+        "extra_settings_armorclass_text": "Rüstungsart",
+        "extra_settings_armorsubclass_text": "Rüstungsunterklasse",
+        "extra_settings_armorignore_text": "Rüstungsignorieren",
+        "selector_armor_subclass_info": "Alle Quasimorph-Artikel sind Quasi. Alles andere ist Default.",
+        "selector_armor_categories_block_info": "Dies sind die Kategorien, die standardmäßig blockiert sind, da sie niedrigerer Stufe sind."
+
     },
     "Français": {
         "title": "QM Sélecteur d'Armure",
@@ -155,6 +185,16 @@ translations = {
         "individual_armors_tab": "Armures Individuelles",
         "perk_invincible": "Invincible (+12 toutes résistances)",
         "talent_all_resists": "Durcissement (+10% résistances)",
+        "extra_settings_markdown": "Paramètres supplémentaires",
+        "extra_settings_markdown_text": "Paramètres supplémentaires pour affiner et accélérer la recherche",
+        "extra_settings_textlevels_text": "Niveaux techniques",
+        "selector_tech_level": "Niveau min",
+        "extra_settings_armorclass_text": "Classe d'armure",
+        "extra_settings_armorsubclass_text": "Sous-classe d'armure",
+        "extra_settings_armorignore_text": "Ignorer l'armure",
+        "selector_armor_subclass_info": "Tous les objets Quasimorph sont Quasi. Tout le reste est Default.",
+        "selector_armor_categories_block_info": "Ce sont les catégories qui sont bloquées par défaut car elles sont de bas niveau."
+
     },
     "Español": {
         "title": "QM Selector de Armadura",
@@ -194,6 +234,16 @@ translations = {
         "individual_armors_tab": "Armaduras Individuales",
         "perk_invincible": "Invencible (+12 todas las resistencias)",
         "talent_all_resists": "Fortalecedor (+10% resistencias)",
+        "extra_settings_markdown": "Configuraciones adicionales",
+        "extra_settings_markdown_text": "Configuraciones adicionales para precisar y acelerar la búsqueda",
+        "extra_settings_textlevels_text": "Niveles técnicos",
+        "selector_tech_level": "Nivel mínimo",
+        "extra_settings_armorclass_text": "Clase de armadura",
+        "extra_settings_armorsubclass_text": "Subclase de armadura",
+        "extra_settings_armorignore_text": "Ignorar armadura",
+        "selector_armor_subclass_info": "Todos los artículos Quasimorph son Quasi. Todo lo demás es Default.",
+        "selector_armor_categories_block_info": "Estas son las categorías que están bloqueadas por defecto ya que son de nivel bajo."
+
     },
     "Polski": {
         "title": "QM Wybieracz Zbroi",
@@ -233,6 +283,16 @@ translations = {
         "individual_armors_tab": "Pojedyncze Zbroje",
         "perk_invincible": "Niezniszczalność (+12 wszystkie odporności)",
         "talent_all_resists": "Utwardzanie (+10% odporności)",
+        "extra_settings_markdown": "Dodatkowe ustawienia",
+        "extra_settings_markdown_text": "Dodatkowe ustawienia do zawężania i przyspieszania wyszukiwania",
+        "extra_settings_textlevels_text": "Poziomy technologiczne",
+        "selector_tech_level": "Min poziom",
+        "extra_settings_armorclass_text": "Klasa zbroi",
+        "extra_settings_armorsubclass_text": "Podklasa zbroi",
+        "extra_settings_armorignore_text": "Ignoruj zbroję",
+        "selector_armor_subclass_info": "Wszystkie przedmioty Quasimorph są Quasi. Wszystko inne to Default.",
+        "selector_armor_categories_block_info": "To są kategorie, które są domyślnie zablokowane, ponieważ są niskiego poziomu."
+
     },
     "Türkçe": {
         "title": "QM Zırh Seçici",
@@ -272,6 +332,16 @@ translations = {
         "individual_armors_tab": "Tekil Zırhlar",
         "perk_invincible": "Yenilmez (+12 tüm dirençler)",
         "talent_all_resists": "Sertleşme (+10% dirençler)",
+        "extra_settings_markdown": "Ekstra Ayarlar",
+        "extra_settings_markdown_text": "Arama işlemini daraltmak ve hızlandırmak için ek ayarlar",
+        "extra_settings_textlevels_text": "Teknik Seviyeler",
+        "selector_tech_level": "Min seviye",
+        "extra_settings_armorclass_text": "Zırh Sınıfı",
+        "extra_settings_armorsubclass_text": "Zırh Alt Sınıfı",
+        "extra_settings_armorignore_text": "Zırhı Yoksay",
+        "selector_armor_subclass_info": "Tüm Quasimorph eşyaları Quasi'dir. Diğer her şey Default'tır.",
+        "selector_armor_categories_block_info": "Bunlar, düşük seviyede oldukları için varsayılan olarak engellenmiş kategorilerdir."
+
     },
     "Português Brasileiro": {
         "title": "QM Seletor de Armadura",
@@ -311,6 +381,16 @@ translations = {
         "individual_armors_tab": "Armaduras Individuais",
         "perk_invincible": "Invencível (+12 todas resistências)",
         "talent_all_resists": "Enrijecimento (+10% resistências)",
+        "extra_settings_markdown": "Configurações Adicionais",
+        "extra_settings_markdown_text": "Configurações adicionais para restringir e acelerar a pesquisa",
+        "extra_settings_textlevels_text": "Níveis Técnicos",
+        "selector_tech_level": "Nível mínimo",
+        "extra_settings_armorclass_text": "Classe de Armadura",
+        "extra_settings_armorsubclass_text": "Subclasse de Armadura",
+        "extra_settings_armorignore_text": "Ignorar Armadura",
+        "selector_armor_subclass_info": "Todos os itens Quasimorph são Quasi. Todo o resto é Default.",
+        "selector_armor_categories_block_info": "Estas são as categorias que estão bloqueadas por padrão, pois são de baixo nível."
+
     },
     "한국어": {
         "title": "QM 갑옷 선택기",
@@ -350,6 +430,16 @@ translations = {
         "individual_armors_tab": "개별 갑옷",
         "perk_invincible": "천하무적 (+12 모든 저항)",
         "talent_all_resists": "경화 (+10% 저항)",
+        "extra_settings_markdown": "추가 설정",
+        "extra_settings_markdown_text": "검색을 좁히고 빠르게 하기 위한 추가 설정",
+        "extra_settings_textlevels_text": "기술 수준",
+        "selector_tech_level": "최소 수준",
+        "extra_settings_armorclass_text": "갑옷 클래스",
+        "extra_settings_armorsubclass_text": "갑옷 서브 클래스",
+        "extra_settings_armorignore_text": "갑옷 무시",
+        "selector_armor_subclass_info": "모든 Quasimorph 아이템은 Quasi입니다. 나머지는 Default입니다.",
+        "selector_armor_categories_block_info": "이들은 기본적으로 차단된 카테고리로, 낮은 수준입니다."
+
     },
     "日本": {
         "title": "QM アーマーピッカー",
@@ -389,6 +479,16 @@ translations = {
         "individual_armors_tab": "個別の防具",
         "perk_invincible": "無敵 (+12 全抵抗)",
         "talent_all_resists": "硬化 (+10% 抵抗)",
+        "extra_settings_markdown": "追加設定",
+        "extra_settings_markdown_text": "検索を絞り込み、速度を上げるための追加設定",
+        "extra_settings_textlevels_text": "技術レベル",
+        "selector_tech_level": "最小レベル",
+        "extra_settings_armorclass_text": "アーマークラス",
+        "extra_settings_armorsubclass_text": "アーマーサブクラス",
+        "extra_settings_armorignore_text": "アーマーを無視",
+        "selector_armor_subclass_info": "すべてのQuasimorphアイテムはQuasiです。他のすべてはDefaultです。",
+        "selector_armor_categories_block_info": "これらはデフォルトでブロックされているカテゴリで、低いティアです。"
+
     },
     "中国人": {
         "title": "QM 护甲选择器",
@@ -428,5 +528,14 @@ translations = {
         "individual_armors_tab": "单个护甲",
         "perk_invincible": "无敌无敌天赋 (+12 所有抗性)",
         "talent_all_resists": "皮糙肉厚 (+10% 抗性)",
+        "extra_settings_markdown": "额外设置",
+        "extra_settings_markdown_text": "缩小和加速搜索的额外设置",
+        "extra_settings_textlevels_text": "技术水平",
+        "selector_tech_level": "最小等级",
+        "extra_settings_armorclass_text": "护甲类别",
+        "extra_settings_armorsubclass_text": "护甲子类别",
+        "extra_settings_armorignore_text": "忽略护甲",
+        "selector_armor_subclass_info": "所有的Quasimorph物品都是Quasi。其他的都是Default。",
+        "selector_armor_categories_block_info": "这些是默认被阻止的类别，因为它们是低级别的。"
     }
 }

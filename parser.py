@@ -403,9 +403,9 @@ def main():
                 lang_data = create_language_specific_data(matching_categories, lang_name)
                 lang_filtered = filter_data_by_headers(
                     lang_data,
-                    selected_headers=['Id', 'Name', 'Description', 'Type', 'ArmorClass', 'ResistSheet', 'MaxDurability', 'Weight'],
+                    selected_headers=['Id', 'Name', 'Description', 'Type', 'Categories', 'TechLevel', 'ItemClass', 'ArmorClass', 'ArmorSubClass', 'ResistSheet', 'MaxDurability', 'Weight'],
                 )
-                
+
                 lang_filename = f"armor_data_{lang_name.lower().replace(' ', '_')}.json"
                 save_data_to_json(lang_filtered, lang_filename)
         

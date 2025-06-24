@@ -5,7 +5,11 @@
       "Name",
       "Description",
       "Type",
+      "Categories",
+      "TechLevel",
+      "ItemClass",
       "ArmorClass",
+      "ArmorSubClass",
       "ResistSheet",
       "MaxDurability",
       "Weight"
@@ -16,7 +20,11 @@
         "Name": "티셔츠",
         "Description": "옷",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -67,7 +75,11 @@
         "Name": "티셔츠",
         "Description": "옷",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -118,7 +130,11 @@
         "Name": "티셔츠",
         "Description": "옷",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -169,7 +185,11 @@
         "Name": "히버셔츠",
         "Description": "합성 의복",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -220,7 +240,11 @@
         "Name": "히버셔츠",
         "Description": "합성 의복",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -271,7 +295,11 @@
         "Name": "하얀 단추",
         "Description": "합성 의복",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -322,7 +350,11 @@
         "Name": "검은 버튼 다운",
         "Description": "합성 의복",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -373,7 +405,11 @@
         "Name": "카버",
         "Description": "합성 의류",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -424,7 +460,11 @@
         "Name": "베르체티",
         "Description": "합성 의복",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -475,7 +515,11 @@
         "Name": "그레이하운드",
         "Description": "보통 후디",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -526,7 +570,11 @@
         "Name": "블러드하운드",
         "Description": "보통 후디",
         "Type": "armors",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -577,7 +625,11 @@
         "Name": "실베스터",
         "Description": "플라스틱 재킷",
         "Type": "armors",
+        "Categories": "Common Civillian",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -628,7 +680,11 @@
         "Name": "가운",
         "Description": "플라스틱 의료 의류",
         "Type": "armors",
+        "Categories": "Science Dilthey",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -679,7 +735,11 @@
         "Name": "랩코트",
         "Description": "플라스틱 연구소 의류",
         "Type": "armors",
+        "Categories": "Science Dilthey",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -730,7 +790,11 @@
         "Name": "랩복",
         "Description": "복합 실험복",
         "Type": "armors",
+        "Categories": "Science Dilthey",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -781,7 +845,11 @@
         "Name": "화학 방호복",
         "Description": "플라스틱 방사성 위생복",
         "Type": "armors",
+        "Categories": "Science Dilthey",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -832,7 +900,11 @@
         "Name": "진료소-A",
         "Description": "의료복",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -883,7 +955,11 @@
         "Name": "스크럽-5",
         "Description": "의료용 의복",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -934,7 +1010,11 @@
         "Name": "의료 방사 차단복",
         "Description": "플라스틱 방사성 물질 방호복",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -985,7 +1065,11 @@
         "Name": "피로고프",
         "Description": "의료용 헬멧 방탄복",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1036,7 +1120,11 @@
         "Name": "이븐 시나",
         "Description": "의료용 세라미트 갑옷",
         "Type": "armors",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1087,7 +1175,11 @@
         "Name": "마크된",
         "Description": "교도소 의상",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1138,7 +1230,11 @@
         "Name": "죄수용 재킷",
         "Description": "옷",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1189,7 +1285,11 @@
         "Name": "유죄 판결받은",
         "Description": "교도소 팔찌 옷",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1240,7 +1340,11 @@
         "Name": "브리건트",
         "Description": "임시 방어구",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1291,7 +1395,11 @@
         "Name": "브루텔라",
         "Description": "감옥용 케블러 흉갑",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1342,7 +1450,11 @@
         "Name": "코피",
         "Description": "교도소 초밤 흉갑",
         "Type": "armors",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1393,7 +1505,11 @@
         "Name": "텔냐슈카",
         "Description": "군복",
         "Type": "armors",
+        "Categories": "Military RealWare Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1444,7 +1560,11 @@
         "Name": "초록색 재킷",
         "Description": "옷",
         "Type": "armors",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1495,7 +1615,11 @@
         "Name": "커맨도",
         "Description": "군복",
         "Type": "armors",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1546,7 +1670,11 @@
         "Name": "군의관",
         "Description": "군용 의료 메탈 아머",
         "Type": "armors",
+        "Categories": "Military Medical Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1597,7 +1725,11 @@
         "Name": "글로리",
         "Description": "금속 갑옷 재킷",
         "Type": "armors",
+        "Categories": "Security RealWare Grasshopper Tianming",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1648,7 +1780,11 @@
         "Name": "카데트",
         "Description": "군용 아라미드 갑옷",
         "Type": "armors",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1699,7 +1835,11 @@
         "Name": "전설급 방어구",
         "Description": "아라미드 갑옷",
         "Type": "armors",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1750,7 +1890,11 @@
         "Name": "카르카스",
         "Description": "홉햄 파워아머",
         "Type": "armors",
+        "Categories": "Military RealWare Grasshopper",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1801,7 +1945,11 @@
         "Name": "다재다능한 사람",
         "Description": "작업복",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1852,7 +2000,11 @@
         "Name": "라인러너",
         "Description": "합성 의복",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1903,7 +2055,11 @@
         "Name": "라인러너",
         "Description": "합성 의복",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -1954,7 +2110,11 @@
         "Name": "서리 인간",
         "Description": "따뜻한 합성 의복",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2005,7 +2165,11 @@
         "Name": "EVA",
         "Description": "우주복",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2056,7 +2220,11 @@
         "Name": "에그조수트",
         "Description": "산업용 우주복",
         "Type": "armors",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2107,7 +2275,11 @@
         "Name": "현장 주임",
         "Description": "견고한 작업복 재킷",
         "Type": "armors",
+        "Categories": "Miner Coreward",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2158,7 +2330,11 @@
         "Name": "터널러",
         "Description": "복합 작업복",
         "Type": "armors",
+        "Categories": "Miner Coreward",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2209,7 +2385,11 @@
         "Name": "돌 분쇄기",
         "Description": "산업용 스페이스슈트",
         "Type": "armors",
+        "Categories": "Miner Coreward Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2260,7 +2440,11 @@
         "Name": "철갑선",
         "Description": "산업용 스페이스수트",
         "Type": "armors",
+        "Categories": "Miner Coreward",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2311,7 +2495,11 @@
         "Name": "게헨나",
         "Description": "산업용 스페이스수트",
         "Type": "armors",
+        "Categories": "Miner Coreward",
+        "TechLevel": "7",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2362,7 +2550,11 @@
         "Name": "스트라이커",
         "Description": "보안 의복",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2413,7 +2605,11 @@
         "Name": "바비",
         "Description": "보안 방탄 작업복",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2464,7 +2660,11 @@
         "Name": "경비병",
         "Description": "아라미드 갑옷",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2515,7 +2715,11 @@
         "Name": "우주비행사",
         "Description": "임무대 그릇 갑옷",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2566,7 +2770,11 @@
         "Name": "레드 프론트",
         "Description": "보통 옷",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2617,7 +2825,11 @@
         "Name": "스트라이크",
         "Description": "합성 의류",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2668,7 +2880,11 @@
         "Name": "도시 원숭이",
         "Description": "작업복",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2719,7 +2935,11 @@
         "Name": "도당",
         "Description": "갑옷 재킷",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2770,7 +2990,11 @@
         "Name": "임팩터",
         "Description": "작업용 방어구",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2821,7 +3045,11 @@
         "Name": "인민 전선",
         "Description": "아라미드 갑옷",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2872,7 +3100,11 @@
         "Name": "게릴라",
         "Description": "DIY 초밤 흉갑",
         "Type": "armors",
+        "Categories": "CResistance",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2923,7 +3155,11 @@
         "Name": "싯씨잭",
         "Description": "플라스틱 의복",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -2974,7 +3210,11 @@
         "Name": "필리버스터",
         "Description": "DIY 복합 작업복",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3025,7 +3265,11 @@
         "Name": "필리버스터",
         "Description": "DIY 아라미드 작업복",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3076,7 +3320,11 @@
         "Name": "해적",
         "Description": "DIY 금속 흉갑",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3127,7 +3375,11 @@
         "Name": "밀수업자",
         "Description": "금속 갑옷",
         "Type": "armors",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3178,7 +3430,11 @@
         "Name": "해적",
         "Description": "DIY 아라미드 흉갑",
         "Type": "armors",
+        "Categories": "UnchainedBelt Tianming",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3229,7 +3485,11 @@
         "Name": "저주받은 래그",
         "Description": "평범한 옷감",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3280,7 +3540,11 @@
         "Name": "통곡하는 랩",
         "Description": "보통의 천",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3331,7 +3595,11 @@
         "Name": "인간 가죽",
         "Description": "가죽 갑옷",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3382,7 +3650,11 @@
         "Name": "망령 재킷",
         "Description": "뼈 갑옷",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3433,7 +3705,11 @@
         "Name": "저주",
         "Description": "컬트 아라미드 갑옷",
         "Type": "armors",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3484,7 +3760,11 @@
         "Name": "뱀이 얽힌",
         "Description": "금성 천",
         "Type": "armors",
+        "Categories": "Venus",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3535,7 +3815,11 @@
         "Name": "케찰-진클리",
         "Description": "금성 경갑",
         "Type": "armors",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3586,7 +3870,11 @@
         "Name": "오셀로테크",
         "Description": "비너스 경량 갑옷",
         "Type": "armors",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3637,7 +3925,11 @@
         "Name": "틸마틀리",
         "Description": "비너스 깃털 갑옷",
         "Type": "armors",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3688,7 +3980,11 @@
         "Name": "치말리",
         "Description": "금성의 헤비 아머",
         "Type": "armors",
+        "Categories": "Tezctlan",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3739,7 +4035,11 @@
         "Name": "콰우테멕",
         "Description": "비너스의 헤비 아머",
         "Type": "armors",
+        "Categories": "Tezctlan",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3790,7 +4090,11 @@
         "Name": "테페이올롯",
         "Description": "금성의 헤비 아머",
         "Type": "armors",
+        "Categories": "Tezctlan",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3841,7 +4145,11 @@
         "Name": "슈'라 앗-탈리프",
         "Description": "수성 천옷",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3892,7 +4200,11 @@
         "Name": "아트-타우파나",
         "Description": "머큐리안 옷감",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3943,7 +4255,11 @@
         "Name": "거울 갑옷",
         "Description": "머큐리아 방어구",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -3994,7 +4310,11 @@
         "Name": "바드르",
         "Description": "거북시 중급 갑옷",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4045,7 +4365,11 @@
         "Name": "아쉬 샤키나",
         "Description": "머큐리안 헤비 아머",
         "Type": "armors",
+        "Categories": "Mercury",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4096,7 +4420,11 @@
         "Name": "암영부",
         "Description": "옷",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4147,7 +4475,11 @@
         "Name": "블루 가드",
         "Description": "유니폼",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4198,7 +4530,11 @@
         "Name": "그림자 패턴",
         "Description": "케블라 재킷",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4249,7 +4585,11 @@
         "Name": "수수께끼 문양",
         "Description": "아라미드 갑옷",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "7",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4300,7 +4640,11 @@
         "Name": "중재자",
         "Description": "Сhobham 갑옷",
         "Type": "armors",
+        "Categories": "AnCom",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4351,7 +4695,11 @@
         "Name": "럭스",
         "Description": "옷",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4402,7 +4750,11 @@
         "Name": "미르멕스",
         "Description": "플라스틱 재킷",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4453,7 +4805,11 @@
         "Name": "새벽 문양",
         "Description": "퍼레이드 아라미드 갑옷",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4504,7 +4860,11 @@
         "Name": "오로라 패턴",
         "Description": "케블라 갑옷",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4555,7 +4915,11 @@
         "Name": "물라도네츠",
         "Description": "세라마이트 흉갑",
         "Type": "armors",
+        "Categories": "SBN",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4606,7 +4970,11 @@
         "Name": "배투",
         "Description": "옷",
         "Type": "armors",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4657,7 +5025,11 @@
         "Name": "스칼렛 보이",
         "Description": "합성 의복",
         "Type": "armors",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4708,7 +5080,11 @@
         "Name": "학살 패턴",
         "Description": "케블라 갑옷",
         "Type": "armors",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4759,7 +5135,11 @@
         "Name": "대학살 문양",
         "Description": "우주복",
         "Type": "armors",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "7",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4810,7 +5190,11 @@
         "Name": "워로드 패턴",
         "Description": "홉햄 파워아머",
         "Type": "armors",
+        "Categories": "RealWare",
+        "TechLevel": "10",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4861,7 +5245,11 @@
         "Name": "제약사",
         "Description": "플라스틱 연구소 의류",
         "Type": "armors",
+        "Categories": "DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4912,7 +5300,11 @@
         "Name": "화학물질 보호복",
         "Description": "복합 작업복",
         "Type": "armors",
+        "Categories": "DaydreamChem",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -4963,7 +5355,11 @@
         "Name": "제거자",
         "Description": "산업용 스페이스수트",
         "Type": "armors",
+        "Categories": "DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5014,7 +5410,11 @@
         "Name": "생체 해부 패턴",
         "Description": "홉햄 파워아머",
         "Type": "armors",
+        "Categories": "DaydreamChem",
+        "TechLevel": "9",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5065,7 +5465,11 @@
         "Name": "예언자 패턴",
         "Description": "세라마이트 파워 아머",
         "Type": "armors",
+        "Categories": "Sunlight",
+        "TechLevel": "10",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5116,7 +5520,11 @@
         "Name": "카르노노스",
         "Description": "아라미드 갑옷",
         "Type": "armors",
+        "Categories": "Sunlight",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5167,7 +5575,11 @@
         "Name": "더스터",
         "Description": "트럭맨 작업복",
         "Type": "armors",
+        "Categories": "Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5218,7 +5630,11 @@
         "Name": "지충",
         "Description": "공학자 아미드 갑옷",
         "Type": "armors",
+        "Categories": "Planetbridge",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5269,7 +5685,11 @@
         "Name": "케르베로스",
         "Description": "세라믹 판",
         "Type": "armors",
+        "Categories": "FrancheComte",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5320,7 +5740,11 @@
         "Name": "FA 스케일",
         "Description": "케블라 갑옷",
         "Type": "armors",
+        "Categories": "Dilthey",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5371,7 +5795,11 @@
         "Name": "Sutana",
         "Description": "작업복",
         "Type": "armors",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5422,7 +5850,11 @@
         "Name": "세라핌 패턴",
         "Description": "세라마이트 파워 아머",
         "Type": "armors",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "8",
+        "ItemClass": "Armor",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5473,7 +5905,11 @@
         "Name": "테네브리스",
         "Description": "문 체인메일",
         "Type": "armors",
+        "Categories": "Moon",
+        "TechLevel": "1",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5524,7 +5960,11 @@
         "Name": "고딕",
         "Description": "달 갑옷",
         "Type": "armors",
+        "Categories": "Moon",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5575,7 +6015,11 @@
         "Name": "카스텐-브루스트",
         "Description": "달 갑옷",
         "Type": "armors",
+        "Categories": "Moon",
+        "TechLevel": "4",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5626,7 +6070,11 @@
         "Name": "베르티스",
         "Description": "문 헤비 아머",
         "Type": "armors",
+        "Categories": "Moon",
+        "TechLevel": "5",
+        "ItemClass": "Armor",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5677,7 +6125,11 @@
         "Name": "키틴 껍질",
         "Description": "이종한 보드",
         "Type": "armors",
+        "Categories": "Venus",
+        "TechLevel": "2",
+        "ItemClass": "Armor",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5731,7 +6183,11 @@
       "Name",
       "Description",
       "Type",
+      "Categories",
+      "TechLevel",
+      "ItemClass",
       "ArmorClass",
+      "ArmorSubClass",
       "ResistSheet",
       "MaxDurability",
       "Weight"
@@ -5742,7 +6198,11 @@
         "Name": "패배한 자에게 슬픔을",
         "Description": "보통 천",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5793,7 +6253,11 @@
         "Name": "파나마",
         "Description": "보통 천",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5844,7 +6308,11 @@
         "Name": "그레이하운드",
         "Description": "보통 천",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5895,7 +6363,11 @@
         "Name": "블러드하운드",
         "Description": "보통 천",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5946,7 +6418,11 @@
         "Name": "개구리 모자",
         "Description": "평범한 천직",
         "Type": "helmets",
+        "Categories": "Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -5997,7 +6473,11 @@
         "Name": "스타웨이",
         "Description": "일반 안경",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6048,7 +6528,11 @@
         "Name": "77 펑크",
         "Description": "보통 안경",
         "Type": "helmets",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6099,7 +6583,11 @@
         "Name": "방독면",
         "Description": "플라스틱 작업복",
         "Type": "helmets",
+        "Categories": "Common Civillian",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6150,7 +6638,11 @@
         "Name": "돼지 새끼",
         "Description": "일반 실험복",
         "Type": "helmets",
+        "Categories": "Science Dilthey",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6201,7 +6693,11 @@
         "Name": "필터",
         "Description": "복합 실험복",
         "Type": "helmets",
+        "Categories": "Science Dilthey",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6252,7 +6748,11 @@
         "Name": "위험물질 방호복",
         "Description": "플라스틱 방사능 방호 헬멧",
         "Type": "helmets",
+        "Categories": "Science Dilthey",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6303,7 +6803,11 @@
         "Name": "외과의사",
         "Description": "플라스틱 의료 종사자",
         "Type": "helmets",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6354,7 +6858,11 @@
         "Name": "의료 위험물질 보호",
         "Description": "플라스틱 화학물질 방호 헬멧",
         "Type": "helmets",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6405,7 +6913,11 @@
         "Name": "피로고프",
         "Description": "편성된 메디컬 헬멧",
         "Type": "helmets",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6456,7 +6968,11 @@
         "Name": "이븐 시나",
         "Description": "세라마이트 의료용 헬멧",
         "Type": "helmets",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6507,7 +7023,11 @@
         "Name": "리코셰",
         "Description": "교도소 편조 헬멧",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6558,7 +7078,11 @@
         "Name": "브리건트",
         "Description": "일반 의류",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6609,7 +7133,11 @@
         "Name": "수탉",
         "Description": "교도소 합성 의복",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6660,7 +7188,11 @@
         "Name": "케이시",
         "Description": "감옥 합성 의복",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6711,7 +7243,11 @@
         "Name": "헤어밴드",
         "Description": "교도소 의상",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6762,7 +7298,11 @@
         "Name": "코피",
         "Description": "교도소 촙햄 헬멧",
         "Type": "helmets",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6813,7 +7353,11 @@
         "Name": "밀리터리 캡",
         "Description": "군용 작업복",
         "Type": "helmets",
+        "Categories": "Military RealWare Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6864,7 +7408,11 @@
         "Name": "발라클라바",
         "Description": "옷",
         "Type": "helmets",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6915,7 +7463,11 @@
         "Name": "커맨도",
         "Description": "전술 헬멧",
         "Type": "helmets",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -6966,7 +7518,11 @@
         "Name": "보충 요원",
         "Description": "군의료사 금속 헬멧",
         "Type": "helmets",
+        "Categories": "Military Medical Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7017,7 +7573,11 @@
         "Name": "글로리 헬멧",
         "Description": "금속 헬멧",
         "Type": "helmets",
+        "Categories": "Security RealWare Grasshopper Tianming",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7068,7 +7628,11 @@
         "Name": "카데트",
         "Description": "군용 아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7119,7 +7683,11 @@
         "Name": "전설급 헬멧",
         "Description": "아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7170,7 +7738,11 @@
         "Name": "카르카스",
         "Description": "Сhobham 파워 헬멧",
         "Type": "helmets",
+        "Categories": "Military RealWare Grasshopper",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7221,7 +7793,11 @@
         "Name": "편의점 직원",
         "Description": "합성캡",
         "Type": "helmets",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7272,7 +7848,11 @@
         "Name": "서리 남자",
         "Description": "따뜻한 합성 의복",
         "Type": "helmets",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7323,7 +7903,11 @@
         "Name": "라인러너",
         "Description": "작업복",
         "Type": "helmets",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7374,7 +7958,11 @@
         "Name": "EVA",
         "Description": "승용 공간복",
         "Type": "helmets",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7425,7 +8013,11 @@
         "Name": "완벽한",
         "Description": "복합 광부 작업복",
         "Type": "helmets",
+        "Categories": "Miner Coreward Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7476,7 +8068,11 @@
         "Name": "공장주임",
         "Description": "기갑 헬멧",
         "Type": "helmets",
+        "Categories": "Miner Coreward",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7527,7 +8123,11 @@
         "Name": "터널러",
         "Description": "기갑 모자",
         "Type": "helmets",
+        "Categories": "Miner Coreward",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7578,7 +8178,11 @@
         "Name": "철갑선",
         "Description": "산업용 우주복 헬멧",
         "Type": "helmets",
+        "Categories": "Miner Coreward",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7629,7 +8233,11 @@
         "Name": "Gehenna",
         "Description": "산업용 우주복 헬멧",
         "Type": "helmets",
+        "Categories": "Miner Coreward",
+        "TechLevel": "7",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7680,7 +8288,11 @@
         "Name": "스트라이커",
         "Description": "합성 보안 모자",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7731,7 +8343,11 @@
         "Name": "스트라이커",
         "Description": "작업복 안전 모자",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7782,7 +8398,11 @@
         "Name": "지휘관",
         "Description": "아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7833,7 +8453,11 @@
         "Name": "우주비행사",
         "Description": "태스크 포스 세라미트 헬멧",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7884,7 +8508,11 @@
         "Name": "스트라이크",
         "Description": "합성 의류",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7935,7 +8563,11 @@
         "Name": "도당",
         "Description": "기갑 방독면",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -7986,7 +8618,11 @@
         "Name": "임팩터",
         "Description": "우주복 헬멧",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8037,7 +8673,11 @@
         "Name": "인민 전선",
         "Description": "아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8088,7 +8728,11 @@
         "Name": "게릴라",
         "Description": "DIY 초밤 헬멧",
         "Type": "helmets",
+        "Categories": "CResistance",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8139,7 +8783,11 @@
         "Name": "미소",
         "Description": "플라스틱 작업복",
         "Type": "helmets",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8190,7 +8838,11 @@
         "Name": "필리버스터",
         "Description": "DIY 복합 모자",
         "Type": "helmets",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8241,7 +8893,11 @@
         "Name": "해적",
         "Description": "DIY 금속 헬멧",
         "Type": "helmets",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8292,7 +8948,11 @@
         "Name": "밀수업자",
         "Description": "금속 헬멧",
         "Type": "helmets",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8343,7 +9003,11 @@
         "Name": "해적",
         "Description": "DIY 아라미드 마스크 헬멧",
         "Type": "helmets",
+        "Categories": "UnchainedBelt Tianming",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8394,7 +9058,11 @@
         "Name": "망령 재킷",
         "Description": "해골 헬멧",
         "Type": "helmets",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8445,7 +9113,11 @@
         "Name": "저주",
         "Description": "컬트 아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8496,7 +9168,11 @@
         "Name": "찰치우이틀",
         "Description": "비너스 옷감",
         "Type": "helmets",
+        "Categories": "Venus",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8547,7 +9223,11 @@
         "Name": "케살-진클리",
         "Description": "금성의 경량 헬멧",
         "Type": "helmets",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8598,7 +9278,11 @@
         "Name": "오셀로테크",
         "Description": "금성의 경량 헬멧",
         "Type": "helmets",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8649,7 +9333,11 @@
         "Name": "케트살",
         "Description": "깃털 장식을 한 헬멧",
         "Type": "helmets",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8700,7 +9388,11 @@
         "Name": "테카틀",
         "Description": "얼굴 마스크",
         "Type": "helmets",
+        "Categories": "Tezctlan",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8751,7 +9443,11 @@
         "Name": "콰우테멕",
         "Description": "금성인 중장갑 헬멧",
         "Type": "helmets",
+        "Categories": "Tezctlan",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8802,7 +9498,11 @@
         "Name": "Tepeiolotl",
         "Description": "금성의 헤비 헬멧",
         "Type": "helmets",
+        "Categories": "Tezctlan",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8853,7 +9553,11 @@
         "Name": "피크르",
         "Description": "수성의 옷감",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8904,7 +9608,11 @@
         "Name": "아스-시파라",
         "Description": "수성 천",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -8955,7 +9663,11 @@
         "Name": "티아라",
         "Description": "수은 갑옷",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9006,7 +9718,11 @@
         "Name": "바드르",
         "Description": "머큐리안 미디엄 헬멧",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9057,7 +9773,11 @@
         "Name": "애쉬 샤키나",
         "Description": "머큐리안 헤비 헬멧",
         "Type": "helmets",
+        "Categories": "Mercury",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9108,7 +9828,11 @@
         "Name": "블루 가드",
         "Description": "복합 유니폼 캡",
         "Type": "helmets",
+        "Categories": "AnCom",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9159,7 +9883,11 @@
         "Name": "중재자",
         "Description": "아라미드 마스크",
         "Type": "helmets",
+        "Categories": "AnCom",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9210,7 +9938,11 @@
         "Name": "그림자 패턴",
         "Description": "케블라 마스크",
         "Type": "helmets",
+        "Categories": "AnCom",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9261,7 +9993,11 @@
         "Name": "수수께끼 문양",
         "Description": "아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "AnCom",
+        "TechLevel": "7",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9312,7 +10048,11 @@
         "Name": "미르멕스",
         "Description": "플라스틱 캡",
         "Type": "helmets",
+        "Categories": "SBN",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9363,7 +10103,11 @@
         "Name": "새벽 문양",
         "Description": "퍼레이드 아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "SBN",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9414,7 +10158,11 @@
         "Name": "오로라 패턴",
         "Description": "케블라 헬멧",
         "Type": "helmets",
+        "Categories": "SBN",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9465,7 +10213,11 @@
         "Name": "미르미돈",
         "Description": "세라마이트 헬멧",
         "Type": "helmets",
+        "Categories": "SBN",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9516,7 +10268,11 @@
         "Name": "스칼렛 보이",
         "Description": "합성 의복",
         "Type": "helmets",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9567,7 +10323,11 @@
         "Name": "배투",
         "Description": "금속 헬멧",
         "Type": "helmets",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9618,7 +10378,11 @@
         "Name": "학살 패턴",
         "Description": "케블라 헬멧",
         "Type": "helmets",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9669,7 +10433,11 @@
         "Name": "대학살 문양",
         "Description": "우주복 헬멧",
         "Type": "helmets",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "7",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9720,7 +10488,11 @@
         "Name": "전쟁 군주 패턴",
         "Description": "Сhobham 파워 헬멧",
         "Type": "helmets",
+        "Categories": "RealWare",
+        "TechLevel": "10",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9771,7 +10543,11 @@
         "Name": "제약사",
         "Description": "플라스틱 연구소 의류",
         "Type": "helmets",
+        "Categories": "DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9822,7 +10598,11 @@
         "Name": "화학물질 방호 헬멧",
         "Description": "복합 헬멧",
         "Type": "helmets",
+        "Categories": "DaydreamChem",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9873,7 +10653,11 @@
         "Name": "제거자",
         "Description": "산업용 우주복 헬멧",
         "Type": "helmets",
+        "Categories": "DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9924,7 +10708,11 @@
         "Name": "생체 해부 패턴",
         "Description": "Сhobham 파워 헬멧",
         "Type": "helmets",
+        "Categories": "DaydreamChem",
+        "TechLevel": "9",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -9975,7 +10763,11 @@
         "Name": "예언자",
         "Description": "세라마이트 파워 헬멧",
         "Type": "helmets",
+        "Categories": "Sunlight",
+        "TechLevel": "10",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10026,7 +10818,11 @@
         "Name": "카르노노스",
         "Description": "아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "Sunlight",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10077,7 +10873,11 @@
         "Name": "더스터",
         "Description": "트럭맨 헬멧",
         "Type": "helmets",
+        "Categories": "Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10128,7 +10928,11 @@
         "Name": "지충",
         "Description": "엔지니어 아라미드 헬멧",
         "Type": "helmets",
+        "Categories": "Planetbridge",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10179,7 +10983,11 @@
         "Name": "케르베로스",
         "Description": "세라마이트 마스크",
         "Type": "helmets",
+        "Categories": "FrancheComte",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10230,7 +11038,11 @@
         "Name": "FA 척도",
         "Description": "케블라 헬멧",
         "Type": "helmets",
+        "Categories": "Dilthey",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10281,7 +11093,11 @@
         "Name": "영적 결핍",
         "Description": "마음 통제 장치",
         "Type": "helmets",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10332,7 +11148,11 @@
         "Name": "의인의 모습",
         "Description": "의식 작업복",
         "Type": "helmets",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10383,7 +11203,11 @@
         "Name": "세라핌의 얼굴",
         "Description": "세라마이트 파워 헬멧",
         "Type": "helmets",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "8",
+        "ItemClass": "Helmet",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10434,7 +11258,11 @@
         "Name": "테네브리스",
         "Description": "달빛 헬멧",
         "Type": "helmets",
+        "Categories": "Moon",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10485,7 +11313,11 @@
         "Name": "바스넷",
         "Description": "달 헬멧",
         "Type": "helmets",
+        "Categories": "Moon",
+        "TechLevel": "4",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10536,7 +11368,11 @@
         "Name": "플레터스",
         "Description": "달 무거운 투구",
         "Type": "helmets",
+        "Categories": "Moon",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10587,7 +11423,11 @@
         "Name": "베르티스",
         "Description": "달 무거운 헬멧",
         "Type": "helmets",
+        "Categories": "Moon",
+        "TechLevel": "5",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10638,7 +11478,11 @@
         "Name": "에스킬루스",
         "Description": "준형성 가면",
         "Type": "helmets",
+        "Categories": "Ron",
+        "TechLevel": "1",
+        "ItemClass": "Helmet",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [],
         "MaxDurability": "150",
         "Weight": "3.3"
@@ -10648,7 +11492,11 @@
         "Name": "키틴 껍질",
         "Description": "원시 투구",
         "Type": "helmets",
+        "Categories": "Venus",
+        "TechLevel": "2",
+        "ItemClass": "Helmet",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10699,7 +11547,11 @@
         "Name": "새해 모자",
         "Description": "축제용 의상",
         "Type": "helmets",
+        "Categories": "none",
+        "TechLevel": "100",
+        "ItemClass": "Helmet",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10753,7 +11605,11 @@
       "Name",
       "Description",
       "Type",
+      "Categories",
+      "TechLevel",
+      "ItemClass",
       "ArmorClass",
+      "ArmorSubClass",
       "ResistSheet",
       "MaxDurability",
       "Weight"
@@ -10764,7 +11620,11 @@
         "Name": "사막용 바지",
         "Description": "옷",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10815,7 +11675,11 @@
         "Name": "바지",
         "Description": "평범한 천직",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10866,7 +11730,11 @@
         "Name": "검은색 카고 바지",
         "Description": "옷",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10917,7 +11785,11 @@
         "Name": "청바지",
         "Description": "옷",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -10968,7 +11840,11 @@
         "Name": "갈색 바지",
         "Description": "옷",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11019,7 +11895,11 @@
         "Name": "히버팬츠",
         "Description": "합성 의복",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11070,7 +11950,11 @@
         "Name": "히버팬츠",
         "Description": "합성 천",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11121,7 +12005,11 @@
         "Name": "그레이하운드",
         "Description": "보통 천",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11172,7 +12060,11 @@
         "Name": "블러드하운드",
         "Description": "보통 천",
         "Type": "leggings",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11223,7 +12115,11 @@
         "Name": "실베스터",
         "Description": "작업복",
         "Type": "leggings",
+        "Categories": "Common Civillian",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11274,7 +12170,11 @@
         "Name": "실험실 바지",
         "Description": "플라스틱 실험복",
         "Type": "leggings",
+        "Categories": "Science Dilthey",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11325,7 +12225,11 @@
         "Name": "랩바지",
         "Description": "플라스틱 실험복",
         "Type": "leggings",
+        "Categories": "Science Dilthey",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11376,7 +12280,11 @@
         "Name": "현장 실험복",
         "Description": "복합 실험복",
         "Type": "leggings",
+        "Categories": "Science Dilthey",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11427,7 +12335,11 @@
         "Name": "위험물 보호복",
         "Description": "플라스틱 방호 바지",
         "Type": "leggings",
+        "Categories": "Science Dilthey",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11478,7 +12390,11 @@
         "Name": "스크럽-5",
         "Description": "의료복",
         "Type": "leggings",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11529,7 +12445,11 @@
         "Name": "의료 화학보호",
         "Description": "플라스틱 방화 바지",
         "Type": "leggings",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11580,7 +12500,11 @@
         "Name": "피로고브",
         "Description": "키블라 의료 바지",
         "Type": "leggings",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11631,7 +12555,11 @@
         "Name": "이븐 시나",
         "Description": "세라마이트 의료 바지",
         "Type": "leggings",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11682,7 +12610,11 @@
         "Name": "죄수용 바지",
         "Description": "옷",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11733,7 +12665,11 @@
         "Name": "유죄 판결받은",
         "Description": "교도소 갑옷 의복",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11784,7 +12720,11 @@
         "Name": "브리건트",
         "Description": "케블라 바지",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11835,7 +12775,11 @@
         "Name": "브루텔라",
         "Description": "교도소 키블라 바지",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11886,7 +12830,11 @@
         "Name": "코피",
         "Description": "교도소 바지 쵸범",
         "Type": "leggings",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11937,7 +12885,11 @@
         "Name": "카고 바지",
         "Description": "군복",
         "Type": "leggings",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -11988,7 +12940,11 @@
         "Name": "커맨도",
         "Description": "작업복 바지",
         "Type": "leggings",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12039,7 +12995,11 @@
         "Name": "보충대원",
         "Description": "군 의료병의 금속 바지",
         "Type": "leggings",
+        "Categories": "Military Medical Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12090,7 +13050,11 @@
         "Name": "글로리 바지",
         "Description": "금속 바지",
         "Type": "leggings",
+        "Categories": "Security RealWare Grasshopper Tianming",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12141,7 +13105,11 @@
         "Name": "카데트",
         "Description": "군용 아라미드 바지",
         "Type": "leggings",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12192,7 +13160,11 @@
         "Name": "전설급 바지",
         "Description": "아라미드 바지",
         "Type": "leggings",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12243,7 +13215,11 @@
         "Name": "카르카스",
         "Description": "쵸밤파워팬츠",
         "Type": "leggings",
+        "Categories": "Military RealWare Grasshopper",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12294,7 +13270,11 @@
         "Name": "다재다능한 사람",
         "Description": "작업복 바지",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12345,7 +13325,11 @@
         "Name": "라인러너",
         "Description": "합성 의복",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12396,7 +13380,11 @@
         "Name": "라인러너",
         "Description": "합성 의상",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12447,7 +13435,11 @@
         "Name": "눈사람",
         "Description": "따뜻한 합성의상",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12498,7 +13490,11 @@
         "Name": "EVA",
         "Description": "우주복 바지",
         "Type": "leggings",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12549,7 +13545,11 @@
         "Name": "현장감독",
         "Description": "합성바지",
         "Type": "leggings",
+        "Categories": "Miner Coreward",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12600,7 +13600,11 @@
         "Name": "터널러",
         "Description": "복합 작업복 바지",
         "Type": "leggings",
+        "Categories": "Miner Coreward",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12651,7 +13655,11 @@
         "Name": "철통함",
         "Description": "산업용 우주복 바지",
         "Type": "leggings",
+        "Categories": "Miner Coreward",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12702,7 +13710,11 @@
         "Name": "게헨나",
         "Description": "산업용 우주복 바지",
         "Type": "leggings",
+        "Categories": "Miner Coreward",
+        "TechLevel": "7",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12753,7 +13765,11 @@
         "Name": "Stryker",
         "Description": "보안 바지",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12804,7 +13820,11 @@
         "Name": "바임스",
         "Description": "장갑바지",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12855,7 +13875,11 @@
         "Name": "포인츠맨",
         "Description": "아라미드 바지",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12906,7 +13930,11 @@
         "Name": "우주비행사",
         "Description": "세라믹 바지 작전대",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -12957,7 +13985,11 @@
         "Name": "레드 프론트",
         "Description": "보통 의류",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13008,7 +14040,11 @@
         "Name": "스트라이크",
         "Description": "합성 의복",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13059,7 +14095,11 @@
         "Name": "도시 원숭이",
         "Description": "작업복",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13110,7 +14150,11 @@
         "Name": "도당",
         "Description": "장갑바지",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13161,7 +14205,11 @@
         "Name": "임팩터",
         "Description": "우주복 바지",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13212,7 +14260,11 @@
         "Name": "인민 전선",
         "Description": "아라미드 바지",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13263,7 +14315,11 @@
         "Name": "게릴라",
         "Description": "DIY 초벰 바지",
         "Type": "leggings",
+        "Categories": "CResistance",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13314,7 +14370,11 @@
         "Name": "싯시 자크",
         "Description": "폴리머 특수 의류",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13365,7 +14425,11 @@
         "Name": "필리버스터",
         "Description": "DIY 복합 바지",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13416,7 +14480,11 @@
         "Name": "우슈크이닉",
         "Description": "DIY 갑옷 바지",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13467,7 +14535,11 @@
         "Name": "해적",
         "Description": "금속 바지",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13518,7 +14590,11 @@
         "Name": "밀수업자",
         "Description": "금속 바지",
         "Type": "leggings",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13569,7 +14645,11 @@
         "Name": "해적",
         "Description": "DIY 아라미드 바지",
         "Type": "leggings",
+        "Categories": "UnchainedBelt Tianming",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13620,7 +14700,11 @@
         "Name": "저주",
         "Description": "컬트 아라미드 바지",
         "Type": "leggings",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13671,7 +14755,11 @@
         "Name": "이슈타콜",
         "Description": "금성 옷감",
         "Type": "leggings",
+        "Categories": "Venus",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13722,7 +14810,11 @@
         "Name": "휘필",
         "Description": "비너스 허벅지 포장",
         "Type": "leggings",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13773,7 +14865,11 @@
         "Name": "콰우테멕",
         "Description": "긴안의 무거운 바지",
         "Type": "leggings",
+        "Categories": "Tezctlan",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13824,7 +14920,11 @@
         "Name": "테페이올로틀",
         "Description": "비너스 무거운 바지",
         "Type": "leggings",
+        "Categories": "Tezctlan",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13875,7 +14975,11 @@
         "Name": "알 마사히브",
         "Description": "머큐리언 옷감",
         "Type": "leggings",
+        "Categories": "Mercury",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13926,7 +15030,11 @@
         "Name": "바드르",
         "Description": "머큐리 중급 갑옷",
         "Type": "leggings",
+        "Categories": "Mercury",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -13977,7 +15085,11 @@
         "Name": "아쉬 샤키나",
         "Description": "머큐리아 무겁고 강력한 갑옷",
         "Type": "leggings",
+        "Categories": "Mercury",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14028,7 +15140,11 @@
         "Name": "암영부",
         "Description": "옷",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14079,7 +15195,11 @@
         "Name": "파란 가드",
         "Description": "복합 유니폼 팬츠",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14130,7 +15250,11 @@
         "Name": "그림자 패턴",
         "Description": "케블라 바지",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14181,7 +15305,11 @@
         "Name": "수수께끼 문양",
         "Description": "아라미드 바지",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "7",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14232,7 +15360,11 @@
         "Name": "중재자",
         "Description": "초밤바지",
         "Type": "leggings",
+        "Categories": "AnCom",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14283,7 +15415,11 @@
         "Name": "럭스",
         "Description": "옷",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14334,7 +15470,11 @@
         "Name": "미르멕스",
         "Description": "플라스틱 바지",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14385,7 +15525,11 @@
         "Name": "새벽 문양",
         "Description": "퍼레이드 아라미드 바지",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14436,7 +15580,11 @@
         "Name": "오로라 패턴",
         "Description": "케블라 바지",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14487,7 +15635,11 @@
         "Name": "미르미돈",
         "Description": "세라마이트 팬츠",
         "Type": "leggings",
+        "Categories": "SBN",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14538,7 +15690,11 @@
         "Name": "배투",
         "Description": "옷",
         "Type": "leggings",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14589,7 +15745,11 @@
         "Name": "학살 패턴",
         "Description": "케블라 바지",
         "Type": "leggings",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14640,7 +15800,11 @@
         "Name": "대학살 문양",
         "Description": "우주복 바지",
         "Type": "leggings",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "7",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14691,7 +15855,11 @@
         "Name": "전쟁 군주 무늬",
         "Description": "쵸밤파워팬츠",
         "Type": "leggings",
+        "Categories": "RealWare",
+        "TechLevel": "10",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14742,7 +15910,11 @@
         "Name": "제약사",
         "Description": "플라스틱 연구소 의류",
         "Type": "leggings",
+        "Categories": "DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14793,7 +15965,11 @@
         "Name": "화학물질 보호바지",
         "Description": "복합팬츠",
         "Type": "leggings",
+        "Categories": "DaydreamChem",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14844,7 +16020,11 @@
         "Name": "제거자",
         "Description": "산업용 우주복 바지",
         "Type": "leggings",
+        "Categories": "DaydreamChem",
+        "TechLevel": "4",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14895,7 +16075,11 @@
         "Name": "생체 해부 패턴",
         "Description": "쵸밤파워팬츠",
         "Type": "leggings",
+        "Categories": "DaydreamChem",
+        "TechLevel": "9",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14946,7 +16130,11 @@
         "Name": "예언자 패턴",
         "Description": "세라마이트 파워팬츠",
         "Type": "leggings",
+        "Categories": "Sunlight",
+        "TechLevel": "10",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -14997,7 +16185,11 @@
         "Name": "카르노노스",
         "Description": "아라미드 바지",
         "Type": "leggings",
+        "Categories": "Sunlight",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15048,7 +16240,11 @@
         "Name": "더스터",
         "Description": "트럭 운전사 바지",
         "Type": "leggings",
+        "Categories": "Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15099,7 +16295,11 @@
         "Name": "지충",
         "Description": "엔지니어 아라미드 바지",
         "Type": "leggings",
+        "Categories": "Planetbridge",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15150,7 +16350,11 @@
         "Name": "케르베루스",
         "Description": "세라마이트 팬츠",
         "Type": "leggings",
+        "Categories": "FrancheComte",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15201,7 +16405,11 @@
         "Name": "FA 스케일",
         "Description": "케블라 바지",
         "Type": "leggings",
+        "Categories": "Dilthey",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15252,7 +16460,11 @@
         "Name": "정장 바지",
         "Description": "작업복 바지",
         "Type": "leggings",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15303,7 +16515,11 @@
         "Name": "세라핌 패턴",
         "Description": "세라마이트 파워팬츠",
         "Type": "leggings",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "8",
+        "ItemClass": "Leggings",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15354,7 +16570,11 @@
         "Name": "고딕",
         "Description": "달 바지",
         "Type": "leggings",
+        "Categories": "Moon",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15405,7 +16625,11 @@
         "Name": "베르티스",
         "Description": "문 헤비 팬츠",
         "Type": "leggings",
+        "Categories": "Moon",
+        "TechLevel": "5",
+        "ItemClass": "Leggings",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15456,7 +16680,11 @@
         "Name": "키틴 바지",
         "Description": "원시 다리 갑옷",
         "Type": "leggings",
+        "Categories": "Venus",
+        "TechLevel": "2",
+        "ItemClass": "Leggings",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15510,7 +16738,11 @@
       "Name",
       "Description",
       "Type",
+      "Categories",
+      "TechLevel",
+      "ItemClass",
       "ArmorClass",
+      "ArmorSubClass",
       "ResistSheet",
       "MaxDurability",
       "Weight"
@@ -15521,7 +16753,11 @@
         "Name": "스니커즈",
         "Description": "옷",
         "Type": "boots",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15572,7 +16808,11 @@
         "Name": "스니커즈",
         "Description": "옷",
         "Type": "boots",
+        "Categories": "Common Civillian Managment",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15623,7 +16863,11 @@
         "Name": "스타하노베츠",
         "Description": "일반 부츠",
         "Type": "boots",
+        "Categories": "Common Civillian",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15674,7 +16918,11 @@
         "Name": "랩부츠",
         "Description": "복합 실험복",
         "Type": "boots",
+        "Categories": "Science Dilthey",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15725,7 +16973,11 @@
         "Name": "위험물질 보호복",
         "Description": "플라스틱 화학물질 방호 부츠",
         "Type": "boots",
+        "Categories": "Science Dilthey",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15776,7 +17028,11 @@
         "Name": "스크럽-5",
         "Description": "의료 복장",
         "Type": "boots",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15827,7 +17083,11 @@
         "Name": "스크럽-5",
         "Description": "의료 의복",
         "Type": "boots",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15878,7 +17138,11 @@
         "Name": "피로고프",
         "Description": "케블라 의료 부츠",
         "Type": "boots",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15929,7 +17193,11 @@
         "Name": "이븐 시나",
         "Description": "세라마이트 의료 부츠",
         "Type": "boots",
+        "Categories": "Medical DaydreamChem",
+        "TechLevel": "6",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -15980,7 +17248,11 @@
         "Name": "발",
         "Description": "교도소 의복",
         "Type": "boots",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16031,7 +17303,11 @@
         "Name": "브리건트",
         "Description": "케블라 부츠",
         "Type": "boots",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16082,7 +17358,11 @@
         "Name": "브루텔라",
         "Description": "교도소용 케블러 부츠",
         "Type": "boots",
+        "Categories": "Prison UnchainedBelt",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16133,7 +17413,11 @@
         "Name": "잭부츠",
         "Description": "군복",
         "Type": "boots",
+        "Categories": "Security RealWare SheduThousand Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16184,7 +17468,11 @@
         "Name": "글로리 부츠",
         "Description": "금속 부츠",
         "Type": "boots",
+        "Categories": "Security RealWare Grasshopper Tianming",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16235,7 +17523,11 @@
         "Name": "카데트",
         "Description": "군용 아라미드 잭부츠",
         "Type": "boots",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16286,7 +17578,11 @@
         "Name": "전설급 부츠",
         "Description": "아라미드 신발",
         "Type": "boots",
+        "Categories": "Military RealWare Grasshopper Tianming",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16337,7 +17633,11 @@
         "Name": "카르카스",
         "Description": "강화 부츠",
         "Type": "boots",
+        "Categories": "Military RealWare Grasshopper",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16388,7 +17688,11 @@
         "Name": "라인러너",
         "Description": "합성 섬유",
         "Type": "boots",
+        "Categories": "Worker Planetbridge Tianming",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16439,7 +17743,11 @@
         "Name": "눈사람",
         "Description": "따뜻한 합성 의복",
         "Type": "boots",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16490,7 +17798,11 @@
         "Name": "EVA",
         "Description": "우주복 부츠",
         "Type": "boots",
+        "Categories": "Worker Planetbridge Grasshopper",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16541,7 +17853,11 @@
         "Name": "현장 주임",
         "Description": "플라스틱 신발",
         "Type": "boots",
+        "Categories": "Miner Coreward",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16592,7 +17908,11 @@
         "Name": "터널러",
         "Description": "복합 작업복 부츠",
         "Type": "boots",
+        "Categories": "Miner Coreward",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16643,7 +17963,11 @@
         "Name": "철갑선",
         "Description": "산업용 우주복 부츠",
         "Type": "boots",
+        "Categories": "Miner Coreward",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16694,7 +18018,11 @@
         "Name": "Gehenna",
         "Description": "산업용 우주복 부츠",
         "Type": "boots",
+        "Categories": "Miner Coreward",
+        "TechLevel": "7",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16745,7 +18073,11 @@
         "Name": "바임스",
         "Description": "기갑 부츠",
         "Type": "boots",
+        "Categories": "FrancheComte",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16796,7 +18128,11 @@
         "Name": "포인츠맨",
         "Description": "아라미드 부츠",
         "Type": "boots",
+        "Categories": "FrancheComte",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16847,7 +18183,11 @@
         "Name": "우주 비행사",
         "Description": "세라밋 부족의 임무군사원",
         "Type": "boots",
+        "Categories": "FrancheComte",
+        "TechLevel": "6",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16898,7 +18238,11 @@
         "Name": "도시 원숭이",
         "Description": "작업복",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -16949,7 +18293,11 @@
         "Name": "도당",
         "Description": "기갑 부츠",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17000,7 +18348,11 @@
         "Name": "임팩터",
         "Description": "우주복 부츠",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17051,7 +18403,11 @@
         "Name": "인민 전선",
         "Description": "아라미드 부츠",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17102,7 +18458,11 @@
         "Name": "게릴라",
         "Description": "DIY 쵸범 잭부츠",
         "Type": "boots",
+        "Categories": "CResistance",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17153,7 +18513,11 @@
         "Name": "헤시안",
         "Description": "갑옷 작업복",
         "Type": "boots",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17204,7 +18568,11 @@
         "Name": "해적",
         "Description": "금속 부츠",
         "Type": "boots",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17255,7 +18623,11 @@
         "Name": "밀수업자",
         "Description": "금속 부츠",
         "Type": "boots",
+        "Categories": "UnchainedBelt",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17306,7 +18678,11 @@
         "Name": "해적",
         "Description": "DIY 아라미드 사바톤",
         "Type": "boots",
+        "Categories": "UnchainedBelt Tianming",
+        "TechLevel": "6",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17357,7 +18733,11 @@
         "Name": "저주",
         "Description": "컬트 아라미드 부츠",
         "Type": "boots",
+        "Categories": "Possessed SheduThousand",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17408,7 +18788,11 @@
         "Name": "쿠에틀락스틀리",
         "Description": "금성의 샌들",
         "Type": "boots",
+        "Categories": "Venus",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17459,7 +18843,11 @@
         "Name": "케찰-진클리",
         "Description": "비너스 가볍고 벗",
         "Type": "boots",
+        "Categories": "XiomaraMasks",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17510,7 +18898,11 @@
         "Name": "쿠아우테멕",
         "Description": "금성의 무거운 부츠",
         "Type": "boots",
+        "Categories": "Tezctlan",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17561,7 +18953,11 @@
         "Name": "시름 알-악흐타르",
         "Description": "머큐리아 천",
         "Type": "boots",
+        "Categories": "Mercury",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17612,7 +19008,11 @@
         "Name": "바드르",
         "Description": "수성 중간 부츠",
         "Type": "boots",
+        "Categories": "Mercury",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17663,7 +19063,11 @@
         "Name": "암영부",
         "Description": "옷",
         "Type": "boots",
+        "Categories": "AnCom",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17714,7 +19118,11 @@
         "Name": "그림자도형",
         "Description": "케블라 부츠",
         "Type": "boots",
+        "Categories": "AnCom",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17765,7 +19173,11 @@
         "Name": "수수께끼 문양",
         "Description": "아라미드 부츠",
         "Type": "boots",
+        "Categories": "AnCom",
+        "TechLevel": "7",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17816,7 +19228,11 @@
         "Name": "중재자",
         "Description": "초밤부츠",
         "Type": "boots",
+        "Categories": "AnCom",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17867,7 +19283,11 @@
         "Name": "미르멕스",
         "Description": "플라스틱 신발",
         "Type": "boots",
+        "Categories": "SBN",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17918,7 +19338,11 @@
         "Name": "새벽 문양",
         "Description": "퍼레이드 아라미드 부츠",
         "Type": "boots",
+        "Categories": "SBN",
+        "TechLevel": "4",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -17969,7 +19393,11 @@
         "Name": "오로라 패턴",
         "Description": "케블라 부츠",
         "Type": "boots",
+        "Categories": "SBN",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18020,7 +19448,11 @@
         "Name": "밀미돈",
         "Description": "세라마이트 부츠",
         "Type": "boots",
+        "Categories": "SBN",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18071,7 +19503,11 @@
         "Name": "배투",
         "Description": "옷",
         "Type": "boots",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "1",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18122,7 +19558,11 @@
         "Name": "학살 패턴",
         "Description": "케블라 부츠",
         "Type": "boots",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "3",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18173,7 +19613,11 @@
         "Name": "대학살 문양",
         "Description": "우주복 부츠",
         "Type": "boots",
+        "Categories": "RealWare SheduThousand",
+        "TechLevel": "7",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18224,7 +19668,11 @@
         "Name": "워로드 패턴",
         "Description": "Сhobham 파워 부츠",
         "Type": "boots",
+        "Categories": "RealWare",
+        "TechLevel": "10",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18275,7 +19723,11 @@
         "Name": "화학 물질 방호 부츠",
         "Description": "복합 부츠",
         "Type": "boots",
+        "Categories": "DaydreamChem",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "Cloth",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18326,7 +19778,11 @@
         "Name": "생체 해부 패턴",
         "Description": "Сhobham 파워 부츠",
         "Type": "boots",
+        "Categories": "DaydreamChem",
+        "TechLevel": "9",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18377,7 +19833,11 @@
         "Name": "예언자 패턴",
         "Description": "세라마이트 파워 부츠",
         "Type": "boots",
+        "Categories": "Sunlight",
+        "TechLevel": "10",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18428,7 +19888,11 @@
         "Name": "카르노노스",
         "Description": "아라미드 부츠",
         "Type": "boots",
+        "Categories": "Sunlight",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18479,7 +19943,11 @@
         "Name": "더스터",
         "Description": "트럭 기사 부츠",
         "Type": "boots",
+        "Categories": "Grasshopper",
+        "TechLevel": "6",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18530,7 +19998,11 @@
         "Name": "지충",
         "Description": "엔지니어 아라미드 부츠",
         "Type": "boots",
+        "Categories": "Planetbridge",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18581,7 +20053,11 @@
         "Name": "케르베로스",
         "Description": "세라마이트 부츠",
         "Type": "boots",
+        "Categories": "FrancheComte",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18632,7 +20108,11 @@
         "Name": "FA 척도",
         "Description": "케블라 부츠",
         "Type": "boots",
+        "Categories": "Dilthey",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18683,7 +20163,11 @@
         "Name": "사제 신발",
         "Description": "작업복 부츠",
         "Type": "boots",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "LightArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18734,7 +20218,11 @@
         "Name": "세라핌 패턴",
         "Description": "세라마이트 파워 부츠",
         "Type": "boots",
+        "Categories": "ChurchRevelation",
+        "TechLevel": "8",
+        "ItemClass": "Boots",
         "ArmorClass": "PowerArmor",
+        "ArmorSubClass": "Default",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18785,7 +20273,11 @@
         "Name": "고딕",
         "Description": "달 조끼",
         "Type": "boots",
+        "Categories": "Moon",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18836,7 +20328,11 @@
         "Name": "베르티스",
         "Description": "문 헤비 부츠",
         "Type": "boots",
+        "Categories": "Moon",
+        "TechLevel": "5",
+        "ItemClass": "Boots",
         "ArmorClass": "HeavyArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
@@ -18887,7 +20383,11 @@
         "Name": "무거운 키틴",
         "Description": "거미 갑옷",
         "Type": "boots",
+        "Categories": "Venus",
+        "TechLevel": "2",
+        "ItemClass": "Boots",
         "ArmorClass": "MediumArmor",
+        "ArmorSubClass": "Quasi",
         "ResistSheet": [
           {
             "ResistType": "blunt",
